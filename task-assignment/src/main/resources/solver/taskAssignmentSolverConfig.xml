@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+  <!--<environmentMode>FULL_ASSERT</environmentMode>-->
+  <solutionClass>domain.TaskAssagnmentSolution</solutionClass>
+  <entityClass>domain.TaskOrEmployee</entityClass>
+  <entityClass>domain.Task</entityClass>
+
+  <scoreDirectorFactory>
+    <scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>
+  </scoreDirectorFactory>
+ 
+  <termination>
+    <secondsSpentLimit>15</secondsSpentLimit>
+  </termination>
+</solver>
