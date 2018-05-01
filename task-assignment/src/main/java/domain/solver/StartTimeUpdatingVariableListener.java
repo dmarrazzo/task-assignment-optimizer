@@ -13,7 +13,7 @@ public class StartTimeUpdatingVariableListener implements VariableListener<Task>
 
 	@Override
 	public void afterEntityAdded(ScoreDirector scoreDirector, Task task) {
-		// NOP
+        updateStartTime(scoreDirector, task);
 	}
 
 	@Override
