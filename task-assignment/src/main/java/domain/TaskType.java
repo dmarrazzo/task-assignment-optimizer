@@ -43,4 +43,10 @@ public class TaskType implements Serializable {
 	public void setPriority(Priority priority) {
 		this.priority = priority;
 	}
+
+	@Override
+	public String toString() {
+		return String.format("TaskType [id=%s, duration=%s, requiredSkillList=%s, priority=%s]", id, duration,
+				requiredSkillList, priority);
+	}
 }

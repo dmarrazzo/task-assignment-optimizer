@@ -86,6 +86,12 @@ public class Task extends TaskOrEmployee implements Serializable {
 	// ************************************************************************
 
 	@Override
+	public String toString() {
+		return String.format("Task [previousTaskOrEmployee=%s, employee=%s, taskType=%s, startTime=%s]",
+				previousTaskOrEmployee, employee, taskType, startTime);
+	}
+	
+	@Override
 	public Integer getEndTime() {
 		if (getStartTime() == null)
 			return taskType.getDuration();
@@ -96,7 +102,7 @@ public class Task extends TaskOrEmployee implements Serializable {
 		int count = 0;
 
 		for (Skill skill : taskType.getRequiredSkillList()) {
-			if (employee == null || !employee.getSkillSet().contains(skill))
+			if (employee != null && !employee.getSkillSet().contains(skill))
 				count++;
 		}
 
