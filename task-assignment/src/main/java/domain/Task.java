@@ -34,15 +34,17 @@ public class Task extends TaskOrEmployee implements Serializable {
 			sources = { @PlanningVariableReference(variableName = "previousTaskOrEmployee") })
 	private Integer startTime; // In minutes
 
+	public Task() {
+	}
+	
 	public Task(String id, int priority, int duration, HashSet<Skill> skills) {
 		taskType = new TaskType();
 		taskType.setId(id);
 		taskType.setPriority(Priority.fromValue(priority));
 		taskType.setDuration(duration);
-		taskType.setRequiredSkillList(skills);		
+		taskType.setRequiredSkillList(skills);
 	}
-	
-	
+
 	// ************************************************************************
 	// Getters / Setters
 	// ************************************************************************
@@ -70,7 +72,7 @@ public class Task extends TaskOrEmployee implements Serializable {
 	public void setTaskType(TaskType taskType) {
 		this.taskType = taskType;
 	}
-	
+
 	public Integer getStartTime() {
 		return startTime;
 	}
@@ -78,25 +80,31 @@ public class Task extends TaskOrEmployee implements Serializable {
 	public void setStartTime(Integer startTime) {
 		this.startTime = startTime;
 	}
-	
+
 	// ************************************************************************
 	// Complex methods
 	// ************************************************************************
 
 	@Override
 	public Integer getEndTime() {
+		if (getStartTime() == null)
+			return taskType.getDuration();
 		return getStartTime() + taskType.getDuration();
 	}
 
 	public int getMissingSkillCount() {
 		int count = 0;
-		
+
 		for (Skill skill : taskType.getRequiredSkillList()) {
-			if (employee == null || !employee.getSkillSet().contains(skill)) 
+			if (employee == null || !employee.getSkillSet().contains(skill))
 				count++;
 		}
-		
+
 		return count;
+	}
+
+	public Priority getPriority() {
+		return this.taskType.getPriority();
 	}
 
 }

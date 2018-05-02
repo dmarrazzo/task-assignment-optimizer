@@ -11,6 +11,9 @@ public class Employee extends TaskOrEmployee implements Serializable {
 	
 	private Set<Skill> skillSet;
 	
+	public Employee() {
+	}
+	
 	public Employee(String fullName, Set<Skill> skillSet) {
 		this.fullName = fullName;
 		this.skillSet = skillSet;
