@@ -57,6 +57,7 @@ public class Task extends TaskOrEmployee implements Serializable {
 		this.previousTaskOrEmployee = previousTaskOrEmployee;
 	}
 
+	@Override
 	public Employee getEmployee() {
 		return employee;
 	}
