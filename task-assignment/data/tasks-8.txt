@@ -1,10 +1,11 @@
 # Tasks 
 # id, priority, duration, skill1 [,skill2]*
-1, 3, 60, writing
-2, 3, 60, writing
-3, 3, 60, writing
-4, 2, 60, writing
-5, 2, 60, reading
-6, 2, 60, reading
-7, 1, 60, reading
-8, 1, 60, reading
+1,3,1,writing
+2,3,2,writing
+3,3,3,writing
+4,3,2,writing
+5,2,3,writing
+6,2,4,writing
+7,1,2,reading
+8,1,1,reading
+9,2,1,reading
