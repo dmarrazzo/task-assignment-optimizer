@@ -14,7 +14,7 @@ import org.optaplanner.core.api.score.buildin.bendable.BendableScore;
 public class TaskAssagnmentSolution implements Serializable {
 	private static final long serialVersionUID = 7896839531154664433L;
 
-	@PlanningScore(bendableHardLevelsSize = 1, bendableSoftLevelsSize = 2)
+	@PlanningScore(bendableHardLevelsSize = 1, bendableSoftLevelsSize = 4)
 	private BendableScore score;
 
 	@PlanningEntityCollectionProperty

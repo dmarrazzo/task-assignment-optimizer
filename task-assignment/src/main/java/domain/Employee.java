@@ -49,4 +49,9 @@ public class Employee extends TaskOrEmployee implements Serializable {
 	public String toString() {
 		return String.format("Employee [fullName=%s, skillSet=%s]", fullName, skillSet);
 	}
+
+	@Override
+	public String getId() {
+		return "emp "+getFullName();
+	}
 }

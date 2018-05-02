@@ -40,11 +40,11 @@ end
 // Soft constraints
 // ############################################################################
 
-rule "Priority order"
+rule "URGENT priority"
     when
-        Task(employee != null, $priority : priority, $endTime : endTime)
+        Task(employee != null, priority == Priority.URGENT, $endTime : endTime)
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, - $priority.getValue() * $endTime );
+        scoreHolder.addSoftConstraintMatch(kcontext, 0, - $endTime);
 end
 
 // Fairly distribute the workload among the employees
@@ -56,4 +56,20 @@ rule "Minimze makespan (starting with the latest ending employee first)"
         // eg. 3^2 + 3^2 + 3^2  = 27 < 4^2 + 2^2 + 3^2 = 29
         scoreHolder.addSoftConstraintMatch(kcontext, 1, - ($endTime * $endTime));
 end
+
+rule "NORMAL priority"
+    when
+        Task(employee != null, priority == Priority.NORMAL, $endTime : endTime)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, 2, - $endTime);
+end
+
+rule "LOW priority"
+    when
+        Task(employee != null, priority == Priority.LOW, $endTime : endTime)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, 3, - $endTime);
+end
+
+
 

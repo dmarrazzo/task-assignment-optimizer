@@ -11,8 +11,9 @@ import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
 import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
 
 import domain.solver.StartTimeUpdatingVariableListener;
+import domain.solver.TaskDifficultyComparator;
 
-@PlanningEntity
+@PlanningEntity(difficultyComparatorClass = TaskDifficultyComparator.class)
 public class Task extends TaskOrEmployee implements Serializable {
 
 	private static final long serialVersionUID = 1L;
@@ -82,36 +83,50 @@ public class Task extends TaskOrEmployee implements Serializable {
 		this.startTime = startTime;
 	}
 
+	public void setPriority(Priority priority) {
+		this.taskType.setPriority(priority);
+	}
+	
+	public Priority getPriority() {
+		return this.taskType.getPriority();
+	}
+
 	// ************************************************************************
 	// Complex methods
 	// ************************************************************************
 
 	@Override
 	public String toString() {
-		return String.format("Task [previousTaskOrEmployee=%s, employee=%s, taskType=%s, startTime=%s]",
-				previousTaskOrEmployee, employee, taskType, startTime);
+		String previousId = "NA";
+		if (previousTaskOrEmployee != null)
+			previousId = previousTaskOrEmployee.getId();
+		return String.format("Task [ %s, employee=%s, startTime=%s, previousTaskOrEmployee=%s]",
+				taskType, employee, startTime, previousId);
 	}
 	
 	@Override
 	public Integer getEndTime() {
 		if (getStartTime() == null)
-			return taskType.getDuration();
+			return null;
 		return getStartTime() + taskType.getDuration();
 	}
 
 	public int getMissingSkillCount() {
-		int count = 0;
-
-		for (Skill skill : taskType.getRequiredSkillList()) {
-			if (employee != null && !employee.getSkillSet().contains(skill))
-				count++;
-		}
-
-		return count;
+        if (employee == null) {
+            return 0;
+        }
+        int count = 0;
+        for (Skill skill : taskType.getRequiredSkillList()) {
+            if (!employee.getSkillSet().contains(skill)) {
+                count++;
+            }
+        }
+        return count;
 	}
 
-	public Priority getPriority() {
-		return this.taskType.getPriority();
+	@Override
+	public String getId() {
+		return "task "+taskType.getId();
 	}
 
 }

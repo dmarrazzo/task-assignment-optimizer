@@ -21,6 +21,6 @@ public class Skill implements Serializable {
 
 	@Override
 	public String toString() {
-		return String.format("Skill [name=%s]", name);
+		return String.format("%s", name);
 	}
 }

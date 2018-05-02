@@ -12,6 +12,8 @@ public abstract class TaskOrEmployee implements Serializable {
 
 	@InverseRelationShadowVariable(sourceVariableName = "previousTaskOrEmployee")
 	private Task nextTask;
+
+	public abstract String getId();
 	
     /**
      * @return sometimes null
