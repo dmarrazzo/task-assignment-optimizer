@@ -20,7 +20,7 @@ import domain.TaskAssagnmentSolution;
 public class Main {
 	public void solve() {
 		SolverFactory<TaskAssagnmentSolution> solverFactory = SolverFactory
-				.createFromKieContainerXmlResource("solver/taskAssignmentSolverConfig.xml");
+				.createFromXmlResource("solver/taskAssignmentSolverConfig.xml");
 		Solver<TaskAssagnmentSolution> solver = solverFactory.buildSolver();
 
 		TaskAssagnmentSolution unsolved = readProblemFacts();
