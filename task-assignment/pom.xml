@@ -17,15 +17,14 @@
 		</dependency>
 		<dependency>
 			<groupId>org.optaplanner</groupId>
-			<artifactId>optaplanner-persistence-common</artifactId>
+			<artifactId>optaplanner-benchmark</artifactId>
 		</dependency>
-		<dependency><!-- Most examples use the XStream integration -->
+		<!-- Testing -->
+		<dependency>
 			<groupId>org.optaplanner</groupId>
-			<artifactId>optaplanner-persistence-xstream</artifactId>
-		</dependency>
-		<dependency><!-- TODO add examples that use the JAXB integration -->
-			<groupId>org.optaplanner</groupId>
-			<artifactId>optaplanner-persistence-jaxb</artifactId>
+			<artifactId>optaplanner-test</artifactId>
+			<version>7.5.0.Final</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -47,17 +46,7 @@
 				<type>pom</type>
 				<scope>import</scope>
 			</dependency>
-<!--
-			<dependency>
-				<groupId>org.kie</groupId>
-				<artifactId>kie-platform-bom</artifactId>
-				<type>pom</type>
-				<version>7.6.0.Final</version>
-				<scope>import</scope>
-			</dependency>
--->
 		</dependencies>
-
 	</dependencyManagement>
 	<build>
 		<plugins>

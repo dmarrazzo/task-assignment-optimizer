@@ -24,56 +24,9 @@ public class Main {
 				.createFromXmlResource("solver/taskAssignmentSolverConfig.xml");
 		Solver<TaskAssagnmentSolution> solver = solverFactory.buildSolver();
 
-		TaskAssagnmentSolution unsolved = readProblemFacts();
+		TaskAssagnmentSolution unsolved = ProblemBuilder.readProblemFacts("data/employees-10.txt","data/tasks-40.txt");
 		TaskAssagnmentSolution solved = solver.solve(unsolved);
 		printSolution(solved);
-	}
-
-	private TaskAssagnmentSolution readProblemFacts() {
-		TaskAssagnmentSolution taskAssagnmentSolution = new TaskAssagnmentSolution();
-		Path inputFile = Paths.get("data/employees-3.txt");
-
-		try (Stream<String> stream = Files.lines(inputFile)) {
-			List<Employee> employees = stream.filter((line) -> !line.isEmpty() && !line.startsWith("#")).map((line) -> {
-				String[] tokens = line.split(",");
-				if (tokens.length < 2) {
-					throw new IllegalStateException("The line (" + line + ") has less than 2 tokens.");
-				}
-				HashSet<Skill> skills = new HashSet<>();
-				for (int i = 1; i < tokens.length; i++) {
-					skills.add(new Skill(tokens[i]));
-				}
-				return new Employee(tokens[0], skills);
-			}).collect(Collectors.toList());
-
-			taskAssagnmentSolution.setEmployeeList(employees);
-
-		} catch (IOException | NumberFormatException e) {
-			throw new IllegalStateException("Reading inputFile (" + inputFile + ") failed.", e);
-		}
-
-		inputFile = Paths.get("data/tasks-8.txt");
-		
-		try (Stream<String> stream = Files.lines(inputFile)) {
-			List<Task> tasks = stream.filter((line) -> !line.isEmpty() && !line.startsWith("#")).map((line) -> {
-				String[] tokens = line.split(",");
-				if (tokens.length < 4) {
-					throw new IllegalStateException("The line (" + line + ") has less than 4 tokens.");
-				}
-				HashSet<Skill> skills = new HashSet<>();
-				for (int i = 3; i < tokens.length; i++) {
-					skills.add(new Skill(tokens[i]));
-				}
-				return new Task(tokens[0], Integer.parseInt(tokens[1].trim()), Integer.parseInt(tokens[2].trim()), skills);
-			}).collect(Collectors.toList());
-
-			taskAssagnmentSolution.setTaskList(tasks);
-
-		} catch (IOException | NumberFormatException e) {
-			throw new IllegalStateException("Reading inputFile (" + inputFile + ") failed.", e);
-		}
-
-		return taskAssagnmentSolution;
 	}
 	
 	private void printSolution(TaskAssagnmentSolution solution) {

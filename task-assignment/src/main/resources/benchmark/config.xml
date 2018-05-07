@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<plannerBenchmark>
+  <benchmarkDirectory>local/data/nqueens</benchmarkDirectory>
+
+  <inheritedSolverBenchmark>
+    <problemBenchmarks>
+      ...
+      <inputSolutionFile>data/cloudbalancing/unsolved/100computers-300processes.xml</inputSolutionFile>
+      <inputSolutionFile>data/cloudbalancing/unsolved/200computers-600processes.xml</inputSolutionFile>
+    </problemBenchmarks>
+    <solver>
+      ...<!-- Common solver configuration -->
+    </solver>
+  </inheritedSolverBenchmark>
+
+  <solverBenchmark>
+    <name>Tabu Search</name>
+    <solver>
+      ...<!-- Tabu Search specific solver configuration -->
+    </solver>
+  </solverBenchmark>
+  <solverBenchmark>
+    <name>Simulated Annealing</name>
+    <solver>
+      ...<!-- Simulated Annealing specific solver configuration -->
+    </solver>
+  </solverBenchmark>
+  <solverBenchmark>
+    <name>Late Acceptance</name>
+    <solver>
+      ...<!-- Late Acceptance specific solver configuration -->
+    </solver>
+  </solverBenchmark>
+</plannerBenchmark>
