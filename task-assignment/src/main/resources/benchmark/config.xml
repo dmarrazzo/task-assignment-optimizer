@@ -8,8 +8,8 @@
 
 		<problemBenchmarks>
 			<xStreamAnnotatedClass>domain.TaskAssagnmentSolution</xStreamAnnotatedClass>
-			<inputSolutionFile>data/emp-3-task-8.xml</inputSolutionFile>
 			<inputSolutionFile>data/emp-10-task-40.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-10-task-100.xml</inputSolutionFile>
 
 			<!-- Statistics -->
 			<problemStatisticEnabled>true</problemStatisticEnabled>
@@ -42,6 +42,25 @@
 	<solverBenchmark>
 		<name>Tabu Search</name>
 		<solver>
+			<localSearch>
+				<localSearchType>TABU_SEARCH</localSearchType>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	<solverBenchmark>
+		<name>Hill Climbing</name>
+		<solver>
+			<localSearch>
+				<localSearchType>HILL_CLIMBING</localSearchType>
+			</localSearch>
+		</solver>
+	</solverBenchmark>
+	<solverBenchmark>
+		<name>Late Acceptance</name>
+		<solver>
+			<localSearch>
+				<localSearchType>LATE_ACCEPTANCE</localSearchType>
+			</localSearch>
 		</solver>
 	</solverBenchmark>
 	<solverBenchmark>
@@ -49,14 +68,9 @@
 		<solver>
 			<localSearch>
 				<acceptor>
-					<simulatedAnnealingStartingTemperature>[10]hard/[10000/10000/10000/10000]soft</simulatedAnnealingStartingTemperature>
+					<simulatedAnnealingStartingTemperature>[1]hard/[1000/1000/1000/1000]soft</simulatedAnnealingStartingTemperature>
 				</acceptor>
 			</localSearch>
-		</solver>
-	</solverBenchmark>
-	<solverBenchmark>
-		<name>Late Acceptance</name>
-		<solver>
 		</solver>
 	</solverBenchmark>
 </plannerBenchmark>

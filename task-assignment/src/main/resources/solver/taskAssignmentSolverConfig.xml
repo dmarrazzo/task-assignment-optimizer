@@ -7,19 +7,18 @@
 
 	<scoreDirectorFactory>
 		<scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>
-	    <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+		<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
 	</scoreDirectorFactory>
 
 	<termination>
 		<secondsSpentLimit>30</secondsSpentLimit>
 	</termination>
-	
+
 	<constructionHeuristic>
 		<constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
 	</constructionHeuristic>
 	<localSearch>
-		<acceptor>
-			<simulatedAnnealingStartingTemperature>[1]hard/[10000/10000/10000/10000]soft</simulatedAnnealingStartingTemperature>
-		</acceptor>
+		<localSearchType>TABU_SEARCH</localSearchType>
 	</localSearch>
+
 </solver>
