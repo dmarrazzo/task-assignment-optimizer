@@ -1,0 +1,144 @@
+<TaTaskAssigningSolution id="1">
+  <taskList id="2">
+    <TaTask id="3">
+      <taskType id="4">
+        <id>1</id>
+        <duration>1</duration>
+        <requiredSkillList id="5">
+          <TaSkill id="6">
+            <name>writing</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>URGENT</priority>
+      </taskType>
+    </TaTask>
+    <TaTask id="7">
+      <taskType id="8">
+        <id>2</id>
+        <duration>2</duration>
+        <requiredSkillList id="9">
+          <TaSkill id="10">
+            <name>writing</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>URGENT</priority>
+      </taskType>
+    </TaTask>
+    <TaTask id="11">
+      <taskType id="12">
+        <id>3</id>
+        <duration>3</duration>
+        <requiredSkillList id="13">
+          <TaSkill id="14">
+            <name>writing</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>URGENT</priority>
+      </taskType>
+    </TaTask>
+    <TaTask id="15">
+      <taskType id="16">
+        <id>4</id>
+        <duration>2</duration>
+        <requiredSkillList id="17">
+          <TaSkill id="18">
+            <name>writing</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>URGENT</priority>
+      </taskType>
+    </TaTask>
+    <TaTask id="19">
+      <taskType id="20">
+        <id>5</id>
+        <duration>3</duration>
+        <requiredSkillList id="21">
+          <TaSkill id="22">
+            <name>writing</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>NORMAL</priority>
+      </taskType>
+    </TaTask>
+    <TaTask id="23">
+      <taskType id="24">
+        <id>6</id>
+        <duration>4</duration>
+        <requiredSkillList id="25">
+          <TaSkill id="26">
+            <name>writing</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>NORMAL</priority>
+      </taskType>
+    </TaTask>
+    <TaTask id="27">
+      <taskType id="28">
+        <id>7</id>
+        <duration>2</duration>
+        <requiredSkillList id="29">
+          <TaSkill id="30">
+            <name>reading</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>LOW</priority>
+      </taskType>
+    </TaTask>
+    <TaTask id="31">
+      <taskType id="32">
+        <id>8</id>
+        <duration>1</duration>
+        <requiredSkillList id="33">
+          <TaSkill id="34">
+            <name>reading</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>LOW</priority>
+      </taskType>
+    </TaTask>
+    <TaTask id="35">
+      <taskType id="36">
+        <id>9</id>
+        <duration>1</duration>
+        <requiredSkillList id="37">
+          <TaSkill id="38">
+            <name>reading</name>
+          </TaSkill>
+        </requiredSkillList>
+        <priority>NORMAL</priority>
+      </taskType>
+    </TaTask>
+  </taskList>
+  <employeeList id="39">
+    <TaEmployee id="40">
+      <fullName>emp1</fullName>
+      <skillSet id="41">
+        <TaSkill id="42">
+          <name>writing</name>
+        </TaSkill>
+        <TaSkill id="43">
+          <name>reading</name>
+        </TaSkill>
+      </skillSet>
+    </TaEmployee>
+    <TaEmployee id="44">
+      <fullName>emp2</fullName>
+      <skillSet id="45">
+        <TaSkill id="46">
+          <name>writing</name>
+        </TaSkill>
+        <TaSkill id="47">
+          <name>reading</name>
+        </TaSkill>
+      </skillSet>
+    </TaEmployee>
+    <TaEmployee id="48">
+      <fullName>emp3</fullName>
+      <skillSet id="49">
+        <TaSkill id="50">
+          <name>reading</name>
+        </TaSkill>
+      </skillSet>
+    </TaEmployee>
+  </employeeList>
+</TaTaskAssigningSolution>

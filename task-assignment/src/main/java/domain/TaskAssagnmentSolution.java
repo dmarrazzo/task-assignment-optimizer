@@ -10,6 +10,9 @@ import org.optaplanner.core.api.domain.solution.drools.ProblemFactCollectionProp
 import org.optaplanner.core.api.domain.valuerange.ValueRangeProvider;
 import org.optaplanner.core.api.score.buildin.bendable.BendableScore;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("TaTaskAssigningSolution")
 @PlanningSolution
 public class TaskAssagnmentSolution implements Serializable {
 	private static final long serialVersionUID = 7896839531154664433L;

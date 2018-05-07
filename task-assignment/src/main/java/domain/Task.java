@@ -10,16 +10,20 @@ import org.optaplanner.core.api.domain.variable.PlanningVariable;
 import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
 import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+import domain.solver.PreviousTaskOrEmployeeStrengthComparator;
 import domain.solver.StartTimeUpdatingVariableListener;
 import domain.solver.TaskDifficultyComparator;
 
+@XStreamAlias("TaTask")
 @PlanningEntity(difficultyComparatorClass = TaskDifficultyComparator.class)
 public class Task extends TaskOrEmployee implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	@PlanningVariable(valueRangeProviderRefs = { "employeeRange",
-			"taskRange" }, graphType = PlanningVariableGraphType.CHAINED)
+			"taskRange" }, graphType = PlanningVariableGraphType.CHAINED, strengthComparatorClass = PreviousTaskOrEmployeeStrengthComparator.class)
 	private TaskOrEmployee previousTaskOrEmployee;
 
 	@AnchorShadowVariable(sourceVariableName = "previousTaskOrEmployee")
@@ -28,16 +32,18 @@ public class Task extends TaskOrEmployee implements Serializable {
 	private TaskType taskType;
 
 	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
-			// Arguable, to adhere to API specs (although this works), nextTask and employee
+			// Arguable, to adhere to API specs (although this works), nextTask
+			// and employee
 			// should also be a source,
-			// because this shadow must be triggered after nextTask and employee (but there
+			// because this shadow must be triggered after nextTask and employee
+			// (but there
 			// is no need to be triggered by those)
 			sources = { @PlanningVariableReference(variableName = "previousTaskOrEmployee") })
 	private Integer startTime; // In minutes
 
 	public Task() {
 	}
-	
+
 	public Task(String id, int priority, int duration, HashSet<Skill> skills) {
 		taskType = new TaskType();
 		taskType.setId(id);
@@ -86,7 +92,7 @@ public class Task extends TaskOrEmployee implements Serializable {
 	public void setPriority(Priority priority) {
 		this.taskType.setPriority(priority);
 	}
-	
+
 	public Priority getPriority() {
 		return this.taskType.getPriority();
 	}
@@ -100,10 +106,10 @@ public class Task extends TaskOrEmployee implements Serializable {
 		String previousId = "NA";
 		if (previousTaskOrEmployee != null)
 			previousId = previousTaskOrEmployee.getId();
-		return String.format("Task [ %s, employee=%s, startTime=%s, previousTaskOrEmployee=%s]",
-				taskType, employee, startTime, previousId);
+		return String.format("Task [ %s, employee=%s, startTime=%s, previousTaskOrEmployee=%s]", taskType, employee,
+				startTime, previousId);
 	}
-	
+
 	@Override
 	public Integer getEndTime() {
 		if (getStartTime() == null)
@@ -112,21 +118,22 @@ public class Task extends TaskOrEmployee implements Serializable {
 	}
 
 	public int getMissingSkillCount() {
-        if (employee == null) {
-            return 0;
-        }
-        int count = 0;
-        for (Skill skill : taskType.getRequiredSkillList()) {
-            if (!employee.getSkillSet().contains(skill)) {
-                count++;
-            }
-        }
-        return count;
+		if (employee == null) {
+			return 0;
+		}
+		int count = 0;
+		for (Skill skill : taskType.getRequiredSkillList()) {
+			if (!employee	.getSkillSet()
+							.contains(skill)) {
+				count++;
+			}
+		}
+		return count;
 	}
 
 	@Override
 	public String getId() {
-		return "task "+taskType.getId();
+		return "task " + taskType.getId();
 	}
 
 }

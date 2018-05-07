@@ -3,6 +3,9 @@ package domain;
 import java.io.Serializable;
 import java.util.Set;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("TaEmployee")
 public class Employee extends TaskOrEmployee implements Serializable {
 
 	private static final long serialVersionUID = -8397117902800537700L;

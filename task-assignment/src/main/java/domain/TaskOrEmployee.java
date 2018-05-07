@@ -14,16 +14,16 @@ public abstract class TaskOrEmployee implements Serializable {
 	private Task nextTask;
 
 	public abstract String getId();
-	
-    /**
-     * @return sometimes null
-     */
-    public abstract Integer getEndTime();
 
-    /**
-     * @return sometimes null
-     */
-    public abstract Employee getEmployee();
+	/**
+	 * @return sometimes null
+	 */
+	public abstract Integer getEndTime();
+
+	/**
+	 * @return sometimes null
+	 */
+	public abstract Employee getEmployee();
 
 	public Task getNextTask() {
 		return nextTask;

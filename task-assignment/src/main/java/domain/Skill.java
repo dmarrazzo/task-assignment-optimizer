@@ -4,6 +4,9 @@ import java.io.Serializable;
 
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("TaSkill")
 public class Skill implements Serializable {
 
 	private static final long serialVersionUID = -6463704897223188538L;

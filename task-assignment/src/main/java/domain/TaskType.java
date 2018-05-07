@@ -3,6 +3,9 @@ package domain;
 import java.io.Serializable;
 import java.util.Set;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("TaTaskType")
 public class TaskType implements Serializable {
 
 	private static final long serialVersionUID = 1123759308496138538L;
