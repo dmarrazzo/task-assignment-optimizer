@@ -1,14 +1,7 @@
 package app;
 
 import java.io.File;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
-import java.util.HashSet;
 import java.util.List;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 import org.apache.commons.lang3.StringUtils;
 import org.optaplanner.core.api.solver.Solver;
@@ -17,7 +10,6 @@ import org.optaplanner.persistence.common.api.domain.solution.SolutionFileIO;
 import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionFileIO;
 
 import domain.Employee;
-import domain.Skill;
 import domain.Task;
 import domain.TaskAssagnmentSolution;
 
