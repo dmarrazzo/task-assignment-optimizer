@@ -58,9 +58,9 @@ public class StartTimeUpdatingVariableListener implements VariableListener<TaskP
         TaskPart shadowTask = sourceTask;
         
         // loop on the chain following nextTask relantionship
-        while (shadowTask != null && !Objects.equals(shadowTask.getStartTime(), startTime)) {
+        while (shadowTask != null && !Objects.equals(shadowTask.getTask().getStartTime(), startTime)) {
             scoreDirector.beforeVariableChanged(shadowTask, "startTime");
-            shadowTask.setStartTime(startTime);
+            shadowTask.getTask().setStartTime(startTime);
             scoreDirector.afterVariableChanged(shadowTask, "startTime");
             previousEndTime = shadowTask.getEndTime();
             shadowTask = shadowTask.getNextTask();

@@ -5,6 +5,11 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Set;
 
+import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
+import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
+
+import domain.solver.StartTimeUpdatingVariableListener;
+
 // @PlanningEntity
 public class Task implements Serializable {
 
@@ -17,6 +22,13 @@ public class Task implements Serializable {
 	private LocalTime completionTime;
 	private Set<Skill> requiredSkillList;
 	private int priority;
+	
+	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
+	        // Arguable, to adhere to API specs (although this works), nextTask
+	        // and employee should also be a source,
+	        // because this shadow must be triggered after nextTask and employee
+	        // (but there is no need to be triggered by those)
+	        sources = { @PlanningVariableReference(entityClass=TaskPart.class, variableName = "previousTaskPartOrEmployee") })
 	private LocalTime startTime; // e.g. 08:20
 	private TaskPart[] taskParts;
 	private int maxParts;

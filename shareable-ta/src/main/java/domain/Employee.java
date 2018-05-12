@@ -21,19 +21,19 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 	
 	public Employee(String fullName, Set<Skill> skillSet) {
 		this.fullName = fullName;
-		startTime = LocalTime.parse("05:00");
+		setStartTime(LocalTime.parse("05:00"));
 		this.skillSet = skillSet;
 	}
 
 	public Employee(String fullName, LocalTime startTime, Set<Skill> skillSet) {
 		this.fullName = fullName;
-		this.startTime = startTime;
+		this.setStartTime(startTime);
 		this.skillSet = skillSet;
 	}
 
 	@Override
 	public String toString() {
-		return "Employee [fullName=" + fullName + ", startTime=" + startTime + ", skillSet=" + skillSet + "]";
+		return "Employee [fullName=" + fullName + ", startTime=" + getStartTime() + ", skillSet=" + skillSet + "]";
 	}
 	
 	// ************************************************************************
@@ -58,7 +58,7 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 
 	@Override
 	public LocalTime getEndTime() {
-		return startTime;
+		return getStartTime();
 	}
 
 	@Override
@@ -69,6 +69,14 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 	@Override
 	public String getId() {
 		return "emp "+getFullName();
+	}
+
+	public LocalTime getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(LocalTime startTime) {
+		this.startTime = startTime;
 	}
 
 }

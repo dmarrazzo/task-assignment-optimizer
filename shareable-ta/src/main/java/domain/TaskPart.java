@@ -7,15 +7,12 @@ import java.time.temporal.ChronoUnit;
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.AnchorShadowVariable;
-import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
-import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import domain.solver.PreviousTaskPartOrEmployeeStrengthComparator;
-import domain.solver.StartTimeUpdatingVariableListener;
 import domain.solver.TaskPartDifficultyComparator;
 
 @XStreamAlias("TaTaskPart")
@@ -30,14 +27,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	@AnchorShadowVariable(sourceVariableName = "previousTaskPartOrEmployee")
 	private Employee employee;
-
-	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
-	        // Arguable, to adhere to API specs (although this works), nextTask
-	        // and employee should also be a source,
-	        // because this shadow must be triggered after nextTask and employee
-	        // (but there is no need to be triggered by those)
-	        sources = { @PlanningVariableReference(variableName = "previousTaskPartOrEmployee") })
-	private LocalTime startTime;
 
 	private String id;
 
@@ -89,7 +78,7 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TaskPart [id=" + id + ", employee=" + employee + ", startTime=" + startTime + ", task=" + task
+		return "TaskPart [id=" + id + ", employee=" + employee + ", task=" + task
 		        + ", duration=" + duration + ", active=" + active + "]";
 	}
 	
@@ -126,6 +115,7 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	}
 
 	public void setPreviousTaskPartOrEmployee(TaskPartOrEmployee previousTaskPartOrEmployee) {
+		this.getTask().setStartTime(previousTaskPartOrEmployee.getEndTime());
 		this.previousTaskPartOrEmployee = previousTaskPartOrEmployee;
 	}
 
@@ -140,14 +130,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
-	}
-
-	public LocalTime getStartTime() {
-		return startTime;
-	}
-
-	public void setStartTime(LocalTime startTime) {
-		this.startTime = startTime;
 	}
 
 }

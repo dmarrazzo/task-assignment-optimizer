@@ -36,16 +36,18 @@ rule "Skill requirements"
         scoreHolder.addHardConstraintMatch(kcontext, 0, - $missingSkillCount);
 end
 
-// ############################################################################
-// Soft constraints
-// ############################################################################
-
 rule "High priority task must be accomplished on time"
     when
         TaskPart(employee != null, task.priority == 1, $outOfTime : outOfTime)
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, $outOfTime);
+        scoreHolder.addHardConstraintMatch(kcontext, 1, $outOfTime);
 end
+
+
+// ############################################################################
+// Soft constraints
+// ############################################################################
+
 
 // Fairly distribute the workload among the employees
 rule "Minimze makespan (starting with the latest ending employee first)"
@@ -54,14 +56,14 @@ rule "Minimze makespan (starting with the latest ending employee first)"
     then
         // Fairness and load balancing trick (see docs): squared to assure correctness in corner cases
         // eg. 3^2 + 3^2 + 3^2  = 27 < 4^2 + 2^2 + 3^2 = 29
-        scoreHolder.addSoftConstraintMatch(kcontext, 1, - ($min * $min));
+        scoreHolder.addSoftConstraintMatch(kcontext, 0, - ($min * $min));
 end
 
 rule "Other priorities"
     when
         TaskPart(employee != null, $priority : task.priority  > 1 , $outOfTime : outOfTime)
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, 2, (7 - $priority)*$outOfTime);
+        scoreHolder.addSoftConstraintMatch(kcontext, 1, (7 - $priority)*$outOfTime);
 end
 
 

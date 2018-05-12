@@ -20,7 +20,7 @@ public class ScoreConstraintTest {
 	private BendableScoreVerifier<TaskAssagnmentSolution> scoreVerifier = new BendableScoreVerifier<>(
 	        SolverFactory.createFromXmlResource("solver/taskAssignmentSolverConfig.xml"));
 	@Test
-    public void requiredCpuPowerTotal() {
+    public void tasks() {
 		TaskAssagnmentSolution solution = new TaskAssagnmentSolution();
 
 		List<Employee> employeeList = new ArrayList<>();
@@ -32,11 +32,27 @@ public class ScoreConstraintTest {
 		
 		List<Task> taskList = new ArrayList<>();
 		Task task = new Task("t01", Duration.ofMinutes(90L), LocalTime.parse("10:00"), 1, 1, skills);
+		task.getTaskParts()[0].setPreviousTaskPartOrEmployee(employee);
 		task.getTaskParts()[0].setEmployee(employee);
 		taskList.add(task);
 		solution.setTaskList(taskList);
         // Uninitialized
         scoreVerifier.assertHardWeight("Skill requirements", 0, 0, solution);
+        
+        // No skill
+        employee.setSkillSet(new HashSet<>());
+        scoreVerifier.assertHardWeight("Skill requirements", 0, -1, solution);
+        employee.setSkillSet(skills);
+        
+        //High priority task must be accomplished on time
+        scoreVerifier.assertHardWeight("High priority task must be accomplished on time", 1, 0, solution);
+        
+        // Break: High priority task must be accomplished on time
+        employee.setStartTime(LocalTime.parse("09:30"));
+        task.getTaskParts()[0].setPreviousTaskPartOrEmployee(employee);
+        scoreVerifier.assertHardWeight("High priority task must be accomplished on time", 1, -60, solution);
+        
+        
     }
 
 }
