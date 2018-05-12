@@ -18,7 +18,7 @@ public class Main {
 		SolverFactory<TaskAssagnmentSolution> solverFactory = SolverFactory.createFromXmlResource("solver/taskAssignmentSolverConfig.xml");
 		Solver<TaskAssagnmentSolution> solver = solverFactory.buildSolver();
 
-		TaskAssagnmentSolution unsolved = ProblemBuilder.readProblemFacts("data/employees-10.txt", "data/tasks-100.txt");
+		TaskAssagnmentSolution unsolved = ProblemBuilder.readProblemFacts("data/employees-3.txt", "data/tasks-8.txt");
 		TaskAssagnmentSolution solved = solver.solve(unsolved);
 		printSolution(solved);
 	}

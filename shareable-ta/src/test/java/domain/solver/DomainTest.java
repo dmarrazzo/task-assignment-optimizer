@@ -6,27 +6,29 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 import org.junit.Assert.*;
+import org.junit.Test;
 
 import domain.Employee;
 import domain.Skill;
 import domain.Task;
+import domain.TaskAssagnmentSolution;
 import domain.TaskPart;
 import domain.TaskPartOrEmployee;
 
 @SuppressWarnings("unused")
-public class Test {
+public class DomainTest {
 
-	@org.junit.Test
+	@Test
 	public void difficultyComparator() {
 		TaskPartDifficultyComparator comparator = new TaskPartDifficultyComparator();
 
 		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("aaa")));
 		Task task1 = new Task("1", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 2, reqS );
 		Task task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("09:30"), 3, 2, reqS );
-		
 		
 		TaskPart part1 = task1.getTaskParts()[0];
 		TaskPart part2 = task2.getTaskParts()[0];
@@ -51,7 +53,7 @@ public class Test {
 
 	}
 	
-	@org.junit.Test
+	@Test
 	public void strenghtComparator() {
 		PreviousTaskPartOrEmployeeStrengthComparator comparator = new PreviousTaskPartOrEmployeeStrengthComparator();
 
@@ -62,5 +64,19 @@ public class Test {
 		int compare = comparator.compare(a, b);
 		
 		assertTrue(compare>0);
+	}
+	
+	@Test
+	public void parts() {
+		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("aaa")));
+		Task task1 = new Task("1", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 1, reqS );
+		Task task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("09:30"), 3, 1, reqS );
+
+		TaskAssagnmentSolution solution = new TaskAssagnmentSolution();
+		solution.setTaskList(Arrays.asList(task1, task2));
+		
+		List<TaskPart> partList = solution.getTaskPartList();
+		System.out.println(partList);
+		assertTrue(partList.size()==2);
 	}
 }

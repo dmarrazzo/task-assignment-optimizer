@@ -2,8 +2,8 @@
 <solver>
 	<!-- <environmentMode>FULL_ASSERT</environmentMode> -->
 	<solutionClass>domain.TaskAssagnmentSolution</solutionClass>
-	<entityClass>domain.TaskOrEmployee</entityClass>
-	<entityClass>domain.Task</entityClass>
+	<entityClass>domain.TaskPartOrEmployee</entityClass>
+	<entityClass>domain.TaskPart</entityClass>
 
 	<scoreDirectorFactory>
 		<scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>

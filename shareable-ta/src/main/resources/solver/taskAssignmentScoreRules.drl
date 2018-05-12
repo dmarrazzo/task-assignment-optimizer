@@ -20,8 +20,8 @@ dialect "java"
 
 import org.optaplanner.core.api.score.buildin.bendable.BendableScoreHolder;
 import domain.Task;
+import domain.TaskPart;
 import domain.Employee;
-import domain.Priority;
 
 global BendableScoreHolder scoreHolder;
 
@@ -40,9 +40,9 @@ end
 // Soft constraints
 // ############################################################################
 
-rule "URGENT priority task must be accomplished on time"
+rule "High priority task must be accomplished on time"
     when
-        TaskPart(employee != null, priority == 1 , $outOfTime : outOfTime)
+        TaskPart(employee != null, task.priority == 1, $outOfTime : outOfTime)
     then
         scoreHolder.addSoftConstraintMatch(kcontext, 0, $outOfTime);
 end
@@ -50,16 +50,16 @@ end
 // Fairly distribute the workload among the employees
 rule "Minimze makespan (starting with the latest ending employee first)"
     when
-        TaskPart(employee != null, nextTask == null, $endTime : endTime)
+        TaskPart(employee != null, nextTask == null, $min : endTime.minute )
     then
         // Fairness and load balancing trick (see docs): squared to assure correctness in corner cases
         // eg. 3^2 + 3^2 + 3^2  = 27 < 4^2 + 2^2 + 3^2 = 29
-        scoreHolder.addSoftConstraintMatch(kcontext, 1, - ($endTime * $endTime));
+        scoreHolder.addSoftConstraintMatch(kcontext, 1, - ($min * $min));
 end
 
 rule "Other priorities"
     when
-        TaskPart(employee != null, $priority : priority > 1 , $outOfTime : outOfTime)
+        TaskPart(employee != null, $priority : task.priority  > 1 , $outOfTime : outOfTime)
     then
         scoreHolder.addSoftConstraintMatch(kcontext, 2, (7 - $priority)*$outOfTime);
 end

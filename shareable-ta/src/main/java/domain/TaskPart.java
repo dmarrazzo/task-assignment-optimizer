@@ -52,16 +52,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	public TaskPart() {
 	}
 
-	// @Override
-	// public String toString() {
-	// String previousId = "NA";
-	// if (previousTaskOrEmployee != null)
-	// previousId = previousTaskOrEmployee.getId();
-	// return String.format("Task [ %s, employee=%s, startTime=%s,
-	// previousTaskOrEmployee=%s]", taskType, employee,
-	// startTime, previousId);
-	// }
-
 	@Override
 	public LocalTime getEndTime() {
 		if (getTask().getStartTime() == null)
@@ -89,14 +79,20 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		return previousTaskPartOrEmployee.getEmployee();
 	}
 
-	public long getOutOfTime() {
-		long between = ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
+	public int getOutOfTime() {
+		int between = (int) ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
 		if (between < 0)
 			return between;
 		else
-			return 0L;
+			return 0;
 	}
 
+	@Override
+	public String toString() {
+		return "TaskPart [id=" + id + ", employee=" + employee + ", startTime=" + startTime + ", task=" + task
+		        + ", duration=" + duration + ", active=" + active + "]";
+	}
+	
 	// ************************************************************************
 	// Getters / Setters
 	// ************************************************************************
