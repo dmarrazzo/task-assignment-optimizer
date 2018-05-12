@@ -31,7 +31,7 @@ global BendableScoreHolder scoreHolder;
 
 rule "Skill requirements"
     when
-        Task(employee != null, missingSkillCount > 0, $missingSkillCount : missingSkillCount)
+        TaskPart(employee != null, missingSkillCount > 0, $missingSkillCount : missingSkillCount)
     then
         scoreHolder.addHardConstraintMatch(kcontext, 0, - $missingSkillCount);
 end
@@ -40,35 +40,28 @@ end
 // Soft constraints
 // ############################################################################
 
-rule "URGENT priority"
+rule "URGENT priority task must be accomplished on time"
     when
-        Task(employee != null, priority == Priority.URGENT, $endTime : endTime)
+        TaskPart(employee != null, priority == 1 , $outOfTime : outOfTime)
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, - $endTime);
+        scoreHolder.addSoftConstraintMatch(kcontext, 0, $outOfTime);
 end
 
 // Fairly distribute the workload among the employees
 rule "Minimze makespan (starting with the latest ending employee first)"
     when
-        Task(employee != null, nextTask == null, $endTime : endTime)
+        TaskPart(employee != null, nextTask == null, $endTime : endTime)
     then
         // Fairness and load balancing trick (see docs): squared to assure correctness in corner cases
         // eg. 3^2 + 3^2 + 3^2  = 27 < 4^2 + 2^2 + 3^2 = 29
         scoreHolder.addSoftConstraintMatch(kcontext, 1, - ($endTime * $endTime));
 end
 
-rule "NORMAL priority"
+rule "Other priorities"
     when
-        Task(employee != null, priority == Priority.NORMAL, $endTime : endTime)
+        TaskPart(employee != null, $priority : priority > 1 , $outOfTime : outOfTime)
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, 2, - $endTime);
-end
-
-rule "LOW priority"
-    when
-        Task(employee != null, priority == Priority.LOW, $endTime : endTime)
-    then
-        scoreHolder.addSoftConstraintMatch(kcontext, 3, - $endTime);
+        scoreHolder.addSoftConstraintMatch(kcontext, 2, (7 - $priority)*$outOfTime);
 end
 
 

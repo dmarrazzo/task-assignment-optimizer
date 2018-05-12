@@ -19,7 +19,7 @@ import com.thoughtworks.xstream.annotations.XStreamAlias;
 public class TaskAssagnmentSolution implements Serializable {
 	private static final long serialVersionUID = 7896839531154664433L;
 
-	@PlanningScore(bendableHardLevelsSize = 1, bendableSoftLevelsSize = 4)
+	@PlanningScore(bendableHardLevelsSize = 1, bendableSoftLevelsSize = 3)
 	private BendableScore score;
 
 	@ProblemFactCollectionProperty

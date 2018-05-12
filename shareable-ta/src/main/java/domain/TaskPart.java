@@ -3,6 +3,7 @@ package domain;
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalTime;
+import java.time.temporal.ChronoUnit;
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.AnchorShadowVariable;
@@ -37,7 +38,7 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	        // (but there is no need to be triggered by those)
 	        sources = { @PlanningVariableReference(variableName = "previousTaskPartOrEmployee") })
 	private LocalTime startTime;
-	
+
 	private String id;
 
 	private Task task;
@@ -86,6 +87,14 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	@Override
 	public Employee getEmployee() {
 		return previousTaskPartOrEmployee.getEmployee();
+	}
+
+	public long getOutOfTime() {
+		long between = ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
+		if (between < 0)
+			return between;
+		else
+			return 0L;
 	}
 
 	// ************************************************************************
