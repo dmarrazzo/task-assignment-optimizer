@@ -32,10 +32,13 @@ public class TaskAssagnmentSolution implements Serializable {
 
 	@PlanningEntityCollectionProperty
 	@ValueRangeProvider(id = "taskPartRange")
-	public List<TaskPart> getTaskPartList() {
-		return getTaskList().stream()
-		               .flatMap(t -> Stream.of(t.getTaskParts()))
-		               .collect(Collectors.toList());
+	private List<TaskPart> taskPartList;
+
+	public void setTaskList(List<Task> taskList) {
+		this.taskList = taskList;
+		this.setTaskPartList(taskList.stream()
+	               .flatMap(t -> Stream.of(t.getTaskParts()))
+	               .collect(Collectors.toList()));
 	}
 	
 	// ************************************************************************
@@ -62,8 +65,13 @@ public class TaskAssagnmentSolution implements Serializable {
 		return taskList;
 	}
 
-	public void setTaskList(List<Task> taskList) {
-		this.taskList = taskList;
+	public List<TaskPart> getTaskPartList() {
+		return taskPartList;
 	}
+
+	public void setTaskPartList(List<TaskPart> taskPartList) {
+		this.taskPartList = taskPartList;
+	}
+
 
 }

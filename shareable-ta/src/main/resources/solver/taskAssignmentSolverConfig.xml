@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <solver>
-	<!-- <environmentMode>FULL_ASSERT</environmentMode> -->
+	<environmentMode>FULL_ASSERT</environmentMode> 
 	<solutionClass>domain.TaskAssagnmentSolution</solutionClass>
 	<entityClass>domain.TaskPartOrEmployee</entityClass>
 	<entityClass>domain.TaskPart</entityClass>

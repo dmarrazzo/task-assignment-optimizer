@@ -63,13 +63,12 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		return count;
 	}
 
-	@Override
-	public Employee getEmployee() {
-		return previousTaskPartOrEmployee.getEmployee();
-	}
-
 	public int getOutOfTime() {
-		int between = (int) ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
+		int between = 0;
+
+		if (getEndTime()!= null && task.getCompletionTime()!=null)
+			between = (int) ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
+		
 		if (between < 0)
 			return between;
 		else
@@ -130,6 +129,10 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	public void setEmployee(Employee employee) {
 		this.employee = employee;
+	}
+
+	public Employee getEmployee() {
+		return employee;
 	}
 
 }
