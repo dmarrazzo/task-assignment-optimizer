@@ -50,9 +50,11 @@ public class ScoreConstraintTest {
         // Break: High priority task must be accomplished on time
         employee.setStartTime(LocalTime.parse("09:30"));
         task.getTaskParts()[0].setPreviousTaskPartOrEmployee(employee);
-        scoreVerifier.assertHardWeight("High priority task must be accomplished on time", 1, -60, solution);
-        
-        
+
+        //shadow start time
+		task.setStartTime(employee.getEndTime());
+		
+        scoreVerifier.assertHardWeight("High priority task must be accomplished on time", 1, -60, solution);    
     }
 	
 	@Test

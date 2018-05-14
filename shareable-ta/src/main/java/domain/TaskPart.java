@@ -122,7 +122,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	}
 
 	public void setPreviousTaskPartOrEmployee(TaskPartOrEmployee previousTaskPartOrEmployee) {
-		this.getTask().setStartTime(previousTaskPartOrEmployee.getEndTime());
 		this.previousTaskPartOrEmployee = previousTaskPartOrEmployee;
 	}
 
