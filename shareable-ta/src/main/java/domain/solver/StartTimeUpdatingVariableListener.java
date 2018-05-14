@@ -46,24 +46,24 @@ public class StartTimeUpdatingVariableListener implements VariableListener<TaskP
 	 * Update the start time of the tasks that follow the sourceTask in the chain
 	 * 
 	 * @param scoreDirector
-	 * @param sourceTask
+	 * @param sourceTaskPart
 	 */
-    protected void updateStartTime(ScoreDirector scoreDirector, TaskPart sourceTask) {
-        TaskPartOrEmployee previous = sourceTask.getPreviousTaskPartOrEmployee();
+    protected void updateStartTime(ScoreDirector scoreDirector, TaskPart sourceTaskPart) {
+        TaskPartOrEmployee previous = sourceTaskPart.getPreviousTaskPartOrEmployee();
         
         // get the end time of the previous Task 
         LocalTime previousEndTime = (previous == null ? null : previous.getEndTime());
         LocalTime startTime = previousEndTime;
         
-        TaskPart shadowTask = sourceTask;
+        TaskPart shadowTaskPart = sourceTaskPart;
         
-        // loop on the chain following nextTask relantionship
-        while (shadowTask != null && !Objects.equals(shadowTask.getTask().getStartTime(), startTime)) {
-            scoreDirector.beforeVariableChanged(shadowTask, "startTime");
-            shadowTask.getTask().setStartTime(startTime);
-            scoreDirector.afterVariableChanged(shadowTask, "startTime");
-            previousEndTime = shadowTask.getEndTime();
-            shadowTask = shadowTask.getNextTask();
+        // loop on the chain following nextTaskPart relantionship
+        while (shadowTaskPart != null && !Objects.equals(shadowTaskPart.getTask().getStartTime(), startTime)) {
+            scoreDirector.beforeVariableChanged(shadowTaskPart, "startTime");
+            shadowTaskPart.getTask().setStartTime(startTime);
+            scoreDirector.afterVariableChanged(shadowTaskPart, "startTime");
+            previousEndTime = shadowTaskPart.getEndTime();
+            shadowTaskPart = shadowTaskPart.getNextTaskPart();
             startTime = previousEndTime;
         }
     }

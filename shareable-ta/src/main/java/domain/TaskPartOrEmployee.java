@@ -12,7 +12,7 @@ public abstract class TaskPartOrEmployee implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	@InverseRelationShadowVariable(sourceVariableName = "previousTaskPartOrEmployee")
-	private TaskPart nextTask;
+	private TaskPart nextTaskPart;
 
 	public abstract String getId();
 
@@ -26,12 +26,12 @@ public abstract class TaskPartOrEmployee implements Serializable {
 	 */
 	public abstract Employee getEmployee();
 
-	public TaskPart getNextTask() {
-		return nextTask;
+	public TaskPart getNextTaskPart() {
+		return nextTaskPart;
 	}
 
-	public void setNextTask(TaskPart nextTask) {
-		this.nextTask = nextTask;
+	public void setNextTaskPart(TaskPart nextTaskPart) {
+		this.nextTaskPart = nextTaskPart;
 	}
 
 }

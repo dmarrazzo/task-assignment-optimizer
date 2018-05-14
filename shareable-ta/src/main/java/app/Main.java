@@ -28,7 +28,7 @@ public class Main {
 
 		for (Employee employee : employees) {
 			System.out.print(employee.getFullName() + " - ");
-			TaskPart taskPart = employee.getNextTask();
+			TaskPart taskPart = employee.getNextTaskPart();
 			while (taskPart != null) {
 				StringBuffer taskStr = new StringBuffer();
 
@@ -40,7 +40,7 @@ public class Main {
 				                                                     .toMinutes()));
 				taskStr.append(" ");
 				System.out.print(taskStr);
-				taskPart = taskPart.getNextTask();
+				taskPart = taskPart.getNextTaskPart();
 			}
 			System.out.println();
 		}

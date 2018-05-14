@@ -54,5 +54,36 @@ public class ScoreConstraintTest {
         
         
     }
+	
+	@Test
+	public void makeSpan () {
+		//Minimze makespan (starting with the latest ending employee first)
+		TaskAssagnmentSolution solution = new TaskAssagnmentSolution();
+
+		List<Employee> employeeList = new ArrayList<>();
+		Set<Skill> skills = new HashSet<>();
+		skills.add(new Skill("reading"));
+		Employee emp1 = new Employee("emp1", skills);
+		Employee emp2 = new Employee("emp2", skills);
+		employeeList.add(emp1);
+		employeeList.add(emp2);
+		solution.setEmployeeList(employeeList);
+		
+		List<Task> taskList = new ArrayList<>();
+		Task task = new Task("t01", Duration.ofMinutes(90L), LocalTime.parse("10:00"), 1, 1, skills);
+		
+		task.getTaskParts()[0].setPreviousTaskPartOrEmployee(emp1);
+		task.getTaskParts()[0].setEmployee(emp1);
+		taskList.add(task);
+
+		Task task2 = new Task("t02", Duration.ofMinutes(30L), LocalTime.parse("12:00"), 3, 1, skills);
+		task2.getTaskParts()[0].setPreviousTaskPartOrEmployee(task.getTaskParts()[0]);
+		taskList.add(task2);
+		
+		solution.setTaskList(taskList);
+		
+        scoreVerifier.assertSoftWeight("Minimze makespan (starting with the latest ending employee first)", 1, -120*120, solution);
+		
+	}
 
 }
