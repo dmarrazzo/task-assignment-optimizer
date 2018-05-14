@@ -70,19 +70,28 @@ public class ScoreConstraintTest {
 		solution.setEmployeeList(employeeList);
 		
 		List<Task> taskList = new ArrayList<>();
-		Task task = new Task("t01", Duration.ofMinutes(90L), LocalTime.parse("10:00"), 1, 1, skills);
+		Task task1 = new Task("t01", Duration.ofMinutes(90L), LocalTime.parse("10:00"), 1, 1, skills);
 		
-		task.getTaskParts()[0].setPreviousTaskPartOrEmployee(emp1);
-		task.getTaskParts()[0].setEmployee(emp1);
-		taskList.add(task);
+		task1.getTaskParts()[0].setPreviousTaskPartOrEmployee(emp1);
+		task1.getTaskParts()[0].setEmployee(emp1);
+		task1.setStartTime(emp1.getEndTime());
+		
+		taskList.add(task1);
 
 		Task task2 = new Task("t02", Duration.ofMinutes(30L), LocalTime.parse("12:00"), 3, 1, skills);
-		task2.getTaskParts()[0].setPreviousTaskPartOrEmployee(task.getTaskParts()[0]);
+		task2.getTaskParts()[0].setPreviousTaskPartOrEmployee(task1.getTaskParts()[0]);
+		//shadow anchor
+		task2.getTaskParts()[0].setEmployee(emp1);
+		//shadow start time
+		task2.setStartTime(task1.getTaskParts()[0].getEndTime());
+		//shadow nextTaskPart
+		task1.getTaskParts()[0].setNextTaskPart(task2.getTaskParts()[0]);
+		
 		taskList.add(task2);
 		
 		solution.setTaskList(taskList);
 		
-        scoreVerifier.assertSoftWeight("Minimze makespan (starting with the latest ending employee first)", 1, -120*120, solution);
+        scoreVerifier.assertSoftWeight("Minimze makespan (starting with the latest ending employee first)", 0, -120*120, solution);
 		
 	}
 

@@ -52,10 +52,11 @@ end
 // Fairly distribute the workload among the employees
 rule "Minimze makespan (starting with the latest ending employee first)"
     when
-        TaskPart(employee != null, nextTaskPart == null, $min : endTime!.minute )
+        TaskPart(employee != null, nextTaskPart == null, $min : elapsed )
     then
         // Fairness and load balancing trick (see docs): squared to assure correctness in corner cases
         // eg. 3^2 + 3^2 + 3^2  = 27 < 4^2 + 2^2 + 3^2 = 29
+        System.out.println(">"+$min);
         scoreHolder.addSoftConstraintMatch(kcontext, 0, - ($min * $min));
 end
 

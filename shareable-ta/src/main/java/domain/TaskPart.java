@@ -32,7 +32,7 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	private Task task;
 
-	// TODO Shadow
+	// TODO Shadow?
 	private Duration duration;
 
 	// TODO when active
@@ -48,6 +48,26 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		return getTask().getStartTime()
 		                .plus(getDuration());
 	}
+	
+	public int getElapsed() {
+		int between = 0;
+
+		if (employee != null && getEndTime()!=null)
+			between = (int) ChronoUnit.MINUTES.between(employee.getStartTime(), getEndTime());
+		return between;
+	}
+
+	public int getOutOfTime() {
+		int between = 0;
+
+		if (getEndTime()!= null && task.getCompletionTime()!=null)
+			between = (int) ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
+		
+		if (between < 0)
+			return between;
+		else
+			return 0;
+	}
 
 	public int getMissingSkillCount() {
 		if (employee == null) {
@@ -61,18 +81,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 			}
 		}
 		return count;
-	}
-
-	public int getOutOfTime() {
-		int between = 0;
-
-		if (getEndTime()!= null && task.getCompletionTime()!=null)
-			between = (int) ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
-		
-		if (between < 0)
-			return between;
-		else
-			return 0;
 	}
 
 	@Override
