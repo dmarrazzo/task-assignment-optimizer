@@ -5,12 +5,14 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Set;
 
+import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
 import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
 
 import domain.solver.StartTimeUpdatingVariableListener;
 
-// @PlanningEntity
+//Shadow entity
+@PlanningEntity
 public class Task implements Serializable {
 
 	private static final long serialVersionUID = 7195728232431116103L;
