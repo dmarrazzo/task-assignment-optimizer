@@ -32,8 +32,14 @@ public class Main {
 			while (taskPart != null) {
 				StringBuffer taskStr = new StringBuffer();
 
+				taskStr.append(taskPart.getId());
+
+				
 				taskStr.append("!" + taskPart.getTask()
 				                             .getPriority());
+				
+				taskStr.append(">" + taskPart.getEndTime());
+				
 				taskStr.append(StringUtils.repeat("#", (int) taskPart.getTask()
 				                                                     .getEffort()
 				                                                     .dividedBy(15)
