@@ -26,10 +26,6 @@ public class Task implements Serializable {
 	private int priority;
 	
 	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
-	        // Arguable, to adhere to API specs (although this works), nextTask
-	        // and employee should also be a source,
-	        // because this shadow must be triggered after nextTask and employee
-	        // (but there is no need to be triggered by those)
 	        sources = { @PlanningVariableReference(entityClass=TaskPart.class, variableName = "previousTaskPartOrEmployee") })
 	private LocalTime startTime; // e.g. 08:20
 	private TaskPart[] taskParts;

@@ -7,12 +7,15 @@ import java.time.temporal.ChronoUnit;
 
 import org.optaplanner.core.api.domain.entity.PlanningEntity;
 import org.optaplanner.core.api.domain.variable.AnchorShadowVariable;
+import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
 import org.optaplanner.core.api.domain.variable.PlanningVariable;
 import org.optaplanner.core.api.domain.variable.PlanningVariableGraphType;
+import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
 
 import com.thoughtworks.xstream.annotations.XStreamAlias;
 
 import domain.solver.PreviousTaskPartOrEmployeeStrengthComparator;
+import domain.solver.StartTimeUpdatingVariableListener;
 import domain.solver.TaskPartDifficultyComparator;
 
 @XStreamAlias("TaTaskPart")
@@ -61,6 +64,16 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		return between;
 	}
 
+	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
+	        sources = { @PlanningVariableReference(variableName = "previousTaskPartOrEmployee") })
+	public LocalTime getStartTime() {
+		return task.getStartTime();
+	}
+
+	public void setStartTime(LocalTime startTime) {
+		task.setStartTime(startTime);
+	}
+	
 	/**
 	 * If the task part is performed on time it return 0.
 	 * Otherwise it returns the number of minutes between the end time of the task part ant the completion time. 
