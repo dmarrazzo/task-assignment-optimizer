@@ -49,6 +49,10 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		                .plus(getDuration());
 	}
 	
+	/**
+	 * it returns the minutes worked by the employee when he finish the task part
+	 * @return
+	 */
 	public int getElapsed() {
 		int between = 0;
 
@@ -57,6 +61,11 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		return between;
 	}
 
+	/**
+	 * If the task part is performed on time it return 0.
+	 * Otherwise it returns the number of minutes between the end time of the task part ant the completion time. 
+	 * @return minutes of out of time (negative value)
+	 */
 	public int getOutOfTime() {
 		int between = 0;
 

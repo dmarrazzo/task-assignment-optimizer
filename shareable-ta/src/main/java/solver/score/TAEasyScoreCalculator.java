@@ -34,16 +34,15 @@ public class TAEasyScoreCalculator implements EasyScoreCalculator<TaskAssagnment
 
 				//High priority task must be accomplished on time
 				if (taskPart.getTask().getPriority() == 1)
-					hardScores[1] -= taskPart.getOutOfTime();
+					hardScores[1] += taskPart.getOutOfTime(); // outOfTime is negative number
 
 				//Minimze makespan (starting with the latest ending employee first)
 				if (taskPart.getNextTaskPart() == null)
-					softScores[0] -= taskPart.getElapsed() ^ 2;
+					softScores[0] -= taskPart.getElapsed() * taskPart.getElapsed();
 
-				
 				//Meet complention time for other priorities
 				if (taskPart.getTask().getPriority() > 1)
-					softScores[1] -= (7 - taskPart.getTask().getPriority()) * taskPart.getOutOfTime();
+					softScores[1] += (7 - taskPart.getTask().getPriority()) * taskPart.getOutOfTime();
 			}
 		}		
 
