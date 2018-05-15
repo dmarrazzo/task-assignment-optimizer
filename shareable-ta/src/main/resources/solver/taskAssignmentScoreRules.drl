@@ -48,6 +48,20 @@ end
 // Soft constraints
 // ############################################################################
 
+rule "Meet complention time for other priorities"
+when
+        TaskPart(employee != null, $priority : task.priority  > 1 , $outOfTime : outOfTime)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, 0, $outOfTime );
+end
+					
+rule "Priority order (max priority is 6)"
+    when
+        TaskPart(employee != null, $priority : task.priority , $outOfTime : outOfTime)
+    then
+    	int priorityFactor = (int) Math.pow(10, (7-$priority)) * $outOfTime/15;
+        scoreHolder.addSoftConstraintMatch(kcontext, 1, priorityFactor );
+end
 
 // Fairly distribute the workload among the employees
 rule "Minimze makespan (starting with the latest ending employee first)"
@@ -56,15 +70,5 @@ rule "Minimze makespan (starting with the latest ending employee first)"
     then
         // Fairness and load balancing trick (see docs): squared to assure correctness in corner cases
         // eg. 3^2 + 3^2 + 3^2  = 27 < 4^2 + 2^2 + 3^2 = 29
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, - ($min * $min));
+        scoreHolder.addSoftConstraintMatch(kcontext, 2, - ($min * $min));
 end
-
-rule "Other priorities"
-    when
-        TaskPart(employee != null, $priority : task.priority  > 1 , $outOfTime : outOfTime)
-    then
-        scoreHolder.addSoftConstraintMatch(kcontext, 1, (7 - $priority)*$outOfTime);
-end
-
-
-

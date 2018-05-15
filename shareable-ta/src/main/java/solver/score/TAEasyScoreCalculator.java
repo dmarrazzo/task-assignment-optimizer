@@ -37,17 +37,18 @@ public class TAEasyScoreCalculator implements EasyScoreCalculator<TaskAssagnment
 				if (taskPart.getTask().getPriority() == 1)
 					hardScores[1] += taskPart.getOutOfTime(); // outOfTime is negative number
 
-				//Minimze makespan (starting with the latest ending employee first)
-				if (taskPart.getNextTaskPart() == null)
-					softScores[0] -= taskPart.getElapsed() * taskPart.getElapsed();
-
 				//Meet complention time for other priorities
 				if (taskPart.getTask().getPriority() > 1)
-					softScores[1] += taskPart.getOutOfTime();
+					softScores[0] += taskPart.getOutOfTime();
 				
 				//Priority order (max priority is 6)
 				// TODO the math stresses the int limits... it would be better to switch on BendableLongScore
-				softScores[2] -= Math.pow(10, (7-taskPart.getTask().getPriority())) * taskPart.getElapsed()/15;
+				softScores[1] -= Math.pow(10, (7-taskPart.getTask().getPriority())) * taskPart.getElapsed()/15;
+
+				//Minimze makespan (starting with the latest ending employee first)
+				if (taskPart.getNextTaskPart() == null)
+					softScores[2] -= taskPart.getElapsed() * taskPart.getElapsed();
+
 			}
 		}		
 
