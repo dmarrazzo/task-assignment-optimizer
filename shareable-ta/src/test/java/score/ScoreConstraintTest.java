@@ -96,5 +96,45 @@ public class ScoreConstraintTest {
         scoreVerifier.assertSoftWeight("Minimze makespan (starting with the latest ending employee first)", 0, -120*120, solution);
 		
 	}
+	
+	@Test
+	public void checkOtherPriorities() {
+		//Minimze makespan (starting with the latest ending employee first)/[TaskPart [id=8-0, employee=Employee [fullName=emp3, startTime=05:00, skillSet=[reading]], task=domain.Task@538cd0f2, duration=PT30M, active=true]]=[0/0]hard/[-44100/0]soft
+		// solver/Other priorities/[TaskPart [id=8-0, employee=Employee [fullName=emp3, startTime=05:00, skillSet=[reading]], task=domain.Task@538cd0f2, duration=PT30M, active=true]]=[0/0]hard/[0/-360]soft
+		TaskAssagnmentSolution solution = new TaskAssagnmentSolution();
 
+		List<Employee> employeeList = new ArrayList<>();
+		Set<Skill> skills = new HashSet<>();
+		skills.add(new Skill("reading"));
+		Employee emp1 = new Employee("emp1", skills);
+		Employee emp2 = new Employee("emp2", skills);
+		employeeList.add(emp1);
+		employeeList.add(emp2);
+		solution.setEmployeeList(employeeList);
+		
+		List<Task> taskList = new ArrayList<>();
+		Task task1 = new Task("t01", Duration.ofMinutes(90L), LocalTime.parse("10:00"), 1, 1, skills);
+		
+		task1.getTaskParts()[0].setPreviousTaskPartOrEmployee(emp1);
+		task1.getTaskParts()[0].setEmployee(emp1);
+		task1.setStartTime(emp1.getEndTime());
+		
+		taskList.add(task1);
+
+		Task task2 = new Task("t02", Duration.ofMinutes(30L), LocalTime.parse("05:30"), 3, 1, skills);
+		task2.getTaskParts()[0].setPreviousTaskPartOrEmployee(task1.getTaskParts()[0]);
+		//shadow anchor
+		task2.getTaskParts()[0].setEmployee(emp1);
+		//shadow start time
+		task2.setStartTime(task1.getTaskParts()[0].getEndTime());
+		//shadow nextTaskPart
+		task1.getTaskParts()[0].setNextTaskPart(task2.getTaskParts()[0]);
+		
+		taskList.add(task2);
+		
+		solution.setTaskList(taskList);
+		
+        scoreVerifier.assertSoftWeight("Other priorities", 1, -4*90, solution);
+
+	}
 }
