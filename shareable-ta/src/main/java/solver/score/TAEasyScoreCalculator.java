@@ -13,13 +13,14 @@ public class TAEasyScoreCalculator implements EasyScoreCalculator<TaskAssagnment
 	@Override
 	public BendableScore calculateScore(TaskAssagnmentSolution solution) {
 		int[] hardScores = new int[2];
-		int[] softScores = new int[2];
+		int[] softScores = new int[3];
 
 		// init scores
 		hardScores[0] = 0;
 		hardScores[1] = 0;
 		softScores[0] = 0;
 		softScores[1] = 0;
+		softScores[2] = 0;
 		
 		List<TaskPart> taskPartList = solution.getTaskPartList();
 		
@@ -42,7 +43,11 @@ public class TAEasyScoreCalculator implements EasyScoreCalculator<TaskAssagnment
 
 				//Meet complention time for other priorities
 				if (taskPart.getTask().getPriority() > 1)
-					softScores[1] += (7 - taskPart.getTask().getPriority()) * taskPart.getOutOfTime();
+					softScores[1] += taskPart.getOutOfTime();
+				
+				//Priority order (max priority is 6)
+				// TODO the math stresses the int limits... it would be better to switch on BendableLongScore
+				softScores[2] -= Math.pow(10, (7-taskPart.getTask().getPriority())) * taskPart.getElapsed()/15;
 			}
 		}		
 
