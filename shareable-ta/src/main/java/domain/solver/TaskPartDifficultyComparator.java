@@ -15,12 +15,13 @@ public class TaskPartDifficultyComparator implements Comparator<TaskPart>, Seria
 	public int compare(TaskPart a, TaskPart b) {
 
 		return new CompareToBuilder().append(b.getTask()
+		                                      .getPriority(), a.getTask()
+		                                                       .getPriority())
+		                             .append(b.getTask()
 		                                      .getCompletionTime(), a.getTask()
 		                                                             .getCompletionTime())
 		                             .append(a.getDuration(), b.getDuration())
-		                             .append(b.getTask()
-		                                      .getPriority(), a.getTask()
-		                                                       .getPriority())
+
 		                             .append(a.getId(), b.getId())
 		                             .toComparison();
 	}

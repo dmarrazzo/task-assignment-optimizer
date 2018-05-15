@@ -25,30 +25,41 @@ public class DomainTest {
 	@Test
 	public void difficultyComparator() {
 		TaskPartDifficultyComparator comparator = new TaskPartDifficultyComparator();
-
-		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("aaa")));
-		Task task1 = new Task("1", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 2, reqS );
-		Task task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("09:30"), 3, 2, reqS );
+		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("skill")));
+		Task task1, task2;
+		TaskPart part1, part2;
+		int compare;
 		
-		TaskPart part1 = task1.getTaskParts()[0];
-		TaskPart part2 = task2.getTaskParts()[0];
-		int compare = comparator.compare(part1, part2);
+		
+		// priority first
+		task1 = new Task("1", Duration.ofMinutes(30), LocalTime.parse("09:30"), 1, 2, reqS );
+		task2 = new Task("2", Duration.ofMinutes(90), LocalTime.parse("08:30"), 3, 2, reqS );		
+		
+		part1 = task1.getTaskParts()[0];
+		part2 = task2.getTaskParts()[0];
+		compare = comparator.compare(part1, part2);
+		
+		// the first argument is greater than the second
 		assertTrue(compare>0);
 
+		// earlier completion time
+		task1 = new Task("1", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 2, reqS );
+		task2 = new Task("2", Duration.ofMinutes(30), LocalTime.parse("09:30"), 3, 2, reqS );
+		
+		part1 = task1.getTaskParts()[0];
+		part2 = task2.getTaskParts()[0];
+		compare = comparator.compare(part1, part2);
+		// the first argument is greater than the second
+		assertTrue(compare>0);
+
+		// longer duration
 		task1 = new Task("1", Duration.ofMinutes(30), LocalTime.parse("08:30"), 3, 2, reqS );
 		task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 2, reqS );		
 		
 		part1 = task1.getTaskParts()[0];
 		part2 = task2.getTaskParts()[0];
 		compare = comparator.compare(part1, part2);
-		assertTrue(compare>0);
-
-		task1 = new Task("1", Duration.ofMinutes(20), LocalTime.parse("08:30"), 2, 2, reqS );
-		task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 2, reqS );		
-		
-		part1 = task1.getTaskParts()[0];
-		part2 = task2.getTaskParts()[0];
-		compare = comparator.compare(part1, part2);
+		// the first argument is greater than the second
 		assertTrue(compare>0);
 
 	}
@@ -68,6 +79,7 @@ public class DomainTest {
 	
 	@Test
 	public void parts() {
+		// check the partList creation
 		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("aaa")));
 		Task task1 = new Task("1", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 1, reqS );
 		Task task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("09:30"), 3, 1, reqS );
@@ -76,7 +88,6 @@ public class DomainTest {
 		solution.setTaskList(Arrays.asList(task1, task2));
 		
 		List<TaskPart> partList = solution.getTaskPartList();
-		System.out.println(partList);
 		assertTrue(partList.size()==2);
 	}
 }
