@@ -3,6 +3,7 @@ package domain;
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalTime;
+import java.util.Arrays;
 import java.util.Set;
 
 public class Task implements Serializable {
@@ -10,8 +11,7 @@ public class Task implements Serializable {
 	private static final long serialVersionUID = 7195728232431116103L;
 
 	private String id;
-	// effort estimation expressed in minutes and refers to the time spent by one
-	// employee to perform the task.
+	// effort estimation refers to the time spent by one employee to perform the task.
 	private Duration effort;
 	private LocalTime completionTime;
 	private Set<Skill> requiredSkillList;
@@ -19,19 +19,11 @@ public class Task implements Serializable {
 	private TaskPart[] taskParts;
 	private int maxParts;
 
-	// @PlanningVariable(valueRangeProviderRefs="partsRange")
-	private int parts;
-
-	// @ValueRangeProvider(id = "partsRange")
-	// public CountableValueRange<Integer> getStockAmountRange() {
-	// // Range: 0..maxparts
-	// return ValueRangeFactory.createIntValueRange(1, getMaxParts());
-	// }
-
 	public Task() {
 	}
 
-	public Task(String id, Duration effort, LocalTime completionTime, int priority, int maxParts, Set<Skill> requiredSkillList) {
+	public Task(String id, Duration effort, LocalTime completionTime, int priority, int maxParts,
+	        Set<Skill> requiredSkillList) {
 		super();
 		this.id = id;
 		this.effort = effort;
@@ -43,13 +35,15 @@ public class Task implements Serializable {
 		taskParts = new TaskPart[maxParts];
 		for (int i = 0; i < maxParts; i++) {
 			taskParts[i] = new TaskPart();
-			taskParts[i].setId(id+ "-"+ i);
+			taskParts[i].setId(id + "-" + i);
 			taskParts[i].setTask(this);
 			taskParts[i].setDuration(effort.dividedBy(maxParts));
-			taskParts[i].setActive(true);
 		}
-//		taskParts[0].setDuration(effort);
-//		taskParts[0].setActive(true);
+	}
+
+	@Override
+	public String toString() {
+		return String.format("Task [%s, eff=%s, cT=%s, pr=%s, maxP=%s]", id, effort, completionTime, priority, maxParts);
 	}
 
 	// ************************************************************************
@@ -96,14 +90,6 @@ public class Task implements Serializable {
 		this.maxParts = maxParts;
 	}
 
-	public int getParts() {
-		return parts;
-	}
-
-	public void setParts(int parts) {
-		this.parts = parts;
-	}
-
 	public Duration getEffort() {
 		return effort;
 	}
@@ -119,4 +105,5 @@ public class Task implements Serializable {
 	public void setCompletionTime(LocalTime completionTime) {
 		this.completionTime = completionTime;
 	}
+
 }

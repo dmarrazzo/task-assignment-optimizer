@@ -68,7 +68,7 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 
 	@Override
 	public String getId() {
-		return "emp "+getFullName();
+		return getFullName();
 	}
 
 	public LocalTime getStartTime() {

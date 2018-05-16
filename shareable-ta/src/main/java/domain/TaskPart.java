@@ -31,19 +31,15 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	@AnchorShadowVariable(sourceVariableName = "previousTaskPartOrEmployee")
 	private Employee employee;
 
-	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
-	        sources = { @PlanningVariableReference(variableName = "previousTaskPartOrEmployee") })
+	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class, sources = {
+	        @PlanningVariableReference(variableName = "previousTaskPartOrEmployee") })
 	private LocalTime startTime; // e.g. 08:20
 
 	private String id;
 
 	private Task task;
 
-	// TODO Shadow?
 	private Duration duration;
-
-	// TODO when active
-	private boolean active;
 
 	public TaskPart() {
 	}
@@ -52,33 +48,35 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	public LocalTime getEndTime() {
 		if (getStartTime() == null)
 			return null;
-		return getStartTime()
-		                .plus(getDuration());
+		return getStartTime().plus(getDuration());
 	}
-	
+
 	/**
 	 * it returns the minutes worked by the employee when he finish the task part
+	 * 
 	 * @return
 	 */
 	public int getElapsed() {
 		int between = 0;
 
-		if (employee != null && getEndTime()!=null)
+		if (employee != null && getEndTime() != null)
 			between = (int) ChronoUnit.MINUTES.between(employee.getStartTime(), getEndTime());
 		return between;
 	}
-	
+
 	/**
-	 * If the task part is performed on time it return 0.
-	 * Otherwise it returns the number of minutes between the end time of the task part ant the completion time. 
+	 * If the task part is performed on time it return 0. Otherwise it returns the
+	 * number of minutes between the end time of the task part ant the completion
+	 * time.
+	 * 
 	 * @return minutes of out of time (negative value)
 	 */
 	public int getOutOfTime() {
 		int between = 0;
 
-		if (getEndTime()!= null && task.getCompletionTime()!=null)
+		if (getEndTime() != null && task.getCompletionTime() != null)
 			between = (int) ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
-		
+
 		if (between < 0)
 			return between;
 		else
@@ -101,10 +99,9 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TaskPart [id=" + id + ", employee=" + employee + ", task=" + task
-		        + ", duration=" + duration + ", active=" + active + "]";
+		return "TaskPart [" + id + ", prev=" + getPreviousTaskPartOrEmployee().getId() +", d=" + duration + ", task=" + task + "]";
 	}
-	
+
 	// ************************************************************************
 	// Getters / Setters
 	// ************************************************************************
@@ -115,14 +112,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	public void setTask(Task task) {
 		this.task = task;
-	}
-
-	public boolean getActive() {
-		return active;
-	}
-
-	public void setActive(boolean active) {
-		this.active = active;
 	}
 
 	public Duration getDuration() {

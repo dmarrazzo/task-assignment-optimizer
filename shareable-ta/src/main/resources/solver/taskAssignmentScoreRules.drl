@@ -29,12 +29,14 @@ global BendableScoreHolder scoreHolder;
 // Hard constraints
 // ############################################################################
 
-rule "Parts of a task mush have the same start time"
+rule "Same employee - Keep parts together"
     when
-        TaskPart(employee != null, $task: task, $startTime: startTime)
-        TaskPart(employee != null, task==$task, startTime != $startTime)
+        $other : TaskPart($e : employee != null, $task: task)
+        $taskPart : TaskPart(employee == $e, $other != this, task==$task, previousTaskPartOrEmployee != $other)
     then
-        scoreHolder.addHardConstraintMatch(kcontext, 0, -1 );
+    	// if the other part is neither the previous nor the next 
+    	if ( $taskPart.getNextTaskPart() != $other )
+        	scoreHolder.addHardConstraintMatch(kcontext, 0, -1 );
 end
 
 rule "Skill requirements"
@@ -53,9 +55,16 @@ end
 
 
 // ############################################################################
-// Soft constraints
+// Soft constraints level 1 - near 0
 // ############################################################################
 
+rule "Different employees - Keep parts aligned"
+    when
+        TaskPart($e1 : employee != null, $task: task, $startTime: startTime)
+        TaskPart($e2 : employee != null, $e2 != $e1, task==$task, startTime != $startTime)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, 0, -1 );
+end
 
 rule "Meet complention time for other priorities"
 when
@@ -63,6 +72,11 @@ when
     then
         scoreHolder.addSoftConstraintMatch(kcontext, 0, $outOfTime );
 end
+
+// ############################################################################
+// Soft constraints level 2
+// ############################################################################
+
 					
 rule "Priority order (max priority is 6)"
     when
@@ -72,12 +86,15 @@ rule "Priority order (max priority is 6)"
         scoreHolder.addSoftConstraintMatch(kcontext, 1, priorityFactor );
 end
 
-// Fairly distribute the workload among the employees
-rule "Minimze makespan (starting with the latest ending employee first)"
+// ############################################################################
+// Soft constraints level 3
+// ############################################################################
+
+
+rule "Minimize the number of employees"
     when
-        TaskPart(employee != null, nextTaskPart == null, $min : elapsed )
+        TaskPart ( $e1 : employee != null )
+        TaskPart ( $e2 : employee != null , $e1 != $e2)
     then
-        // Fairness and load balancing trick (see docs): squared to assure correctness in corner cases
-        // eg. 3^2 + 3^2 + 3^2  = 27 < 4^2 + 2^2 + 3^2 = 29
-        scoreHolder.addSoftConstraintMatch(kcontext, 2, - ($min * $min));
+        scoreHolder.addSoftConstraintMatch(kcontext, 2, -1);
 end
