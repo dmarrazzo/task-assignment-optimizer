@@ -38,12 +38,11 @@ public class Main {
 				taskStr.append("!" + taskPart.getTask()
 				                             .getPriority());
 				
-				taskStr.append(">" + taskPart.getEndTime());
-				
-				taskStr.append(StringUtils.repeat("#", (int) taskPart.getTask()
-				                                                     .getEffort()
+				taskStr.append(StringUtils.repeat("#", (int) taskPart.getDuration()
 				                                                     .dividedBy(15)
 				                                                     .toMinutes()));
+				taskStr.append(">" + taskPart.getEndTime());
+
 				taskStr.append(" ");
 				System.out.print(taskStr);
 				taskPart = taskPart.getNextTaskPart();
