@@ -48,11 +48,19 @@ end
 // Soft constraints
 // ############################################################################
 
+rule "Parts of a task mush have the same start time"
+    when
+        TaskPart(employee != null, $task: task, $startTime: startTime)
+        TaskPart(employee != null, task==$task, startTime != $startTime)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, 0, -1 );
+end
+
 rule "Meet complention time for other priorities"
 when
         TaskPart(employee != null, $priority : task.priority  > 1 , $outOfTime : outOfTime)
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, $outOfTime );
+        scoreHolder.addSoftConstraintMatch(kcontext, 1, $outOfTime );
 end
 					
 rule "Priority order (max priority is 6)"
@@ -60,7 +68,7 @@ rule "Priority order (max priority is 6)"
         TaskPart(employee != null, $priority : task.priority , $outOfTime : outOfTime)
     then
     	int priorityFactor = (int) Math.pow(10, (7-$priority)) * $outOfTime/15;
-        scoreHolder.addSoftConstraintMatch(kcontext, 1, priorityFactor );
+        scoreHolder.addSoftConstraintMatch(kcontext, 2, priorityFactor );
 end
 
 // Fairly distribute the workload among the employees

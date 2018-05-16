@@ -31,12 +31,13 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	@AnchorShadowVariable(sourceVariableName = "previousTaskPartOrEmployee")
 	private Employee employee;
 
-	private String id;
-
-	private Task task;
 	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
 	        sources = { @PlanningVariableReference(variableName = "previousTaskPartOrEmployee") })
 	private LocalTime startTime; // e.g. 08:20
+
+	private String id;
+
+	private Task task;
 
 	// TODO Shadow?
 	private Duration duration;
