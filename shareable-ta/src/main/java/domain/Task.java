@@ -5,14 +5,6 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Set;
 
-import org.optaplanner.core.api.domain.entity.PlanningEntity;
-import org.optaplanner.core.api.domain.variable.CustomShadowVariable;
-import org.optaplanner.core.api.domain.variable.PlanningVariableReference;
-
-import domain.solver.StartTimeUpdatingVariableListener;
-
-//Shadow entity
-@PlanningEntity
 public class Task implements Serializable {
 
 	private static final long serialVersionUID = 7195728232431116103L;
@@ -24,10 +16,6 @@ public class Task implements Serializable {
 	private LocalTime completionTime;
 	private Set<Skill> requiredSkillList;
 	private int priority;
-	
-	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
-	        sources = { @PlanningVariableReference(entityClass=TaskPart.class, variableName = "previousTaskPartOrEmployee") })
-	private LocalTime startTime; // e.g. 08:20
 	private TaskPart[] taskParts;
 	private int maxParts;
 
@@ -114,14 +102,6 @@ public class Task implements Serializable {
 
 	public void setParts(int parts) {
 		this.parts = parts;
-	}
-
-	public LocalTime getStartTime() {
-		return startTime;
-	}
-
-	public void setStartTime(LocalTime startTime) {
-		this.startTime = startTime;
 	}
 
 	public Duration getEffort() {

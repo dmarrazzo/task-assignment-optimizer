@@ -97,7 +97,7 @@ public class DomainTest {
 		// check out of time implementation
 		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("a_skill")));
 		Task task1 = new Task("1", Duration.ofMinutes(90), LocalTime.parse("08:30"), 3, 1, reqS);
-		task1.setStartTime(LocalTime.parse("08:30"));
+		task1.getTaskParts()[0].setStartTime(LocalTime.parse("08:30"));
 		
 		assertEquals( -90, task1.getTaskParts()[0].getOutOfTime());
 	}
@@ -111,7 +111,7 @@ public class DomainTest {
 		
 		Employee employee = new Employee("emp1",LocalTime.parse("05:00"), skills);
 		taskPart10.setEmployee(employee);
-		task1.setStartTime(employee.getEndTime());
+		task1.getTaskParts()[0].setStartTime(employee.getEndTime());
 		
 		assertEquals( 90, task1.getTaskParts()[0].getElapsed());
 	}

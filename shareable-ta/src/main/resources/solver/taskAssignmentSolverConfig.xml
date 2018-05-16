@@ -4,7 +4,6 @@
 	<solutionClass>domain.TaskAssagnmentSolution</solutionClass>
 	<entityClass>domain.TaskPartOrEmployee</entityClass>
 	<entityClass>domain.TaskPart</entityClass>
-	<entityClass>domain.Task</entityClass>
 
 	<scoreDirectorFactory>
 		<scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>

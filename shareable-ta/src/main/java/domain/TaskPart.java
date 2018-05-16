@@ -34,6 +34,9 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	private String id;
 
 	private Task task;
+	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
+	        sources = { @PlanningVariableReference(variableName = "previousTaskPartOrEmployee") })
+	private LocalTime startTime; // e.g. 08:20
 
 	// TODO Shadow?
 	private Duration duration;
@@ -46,9 +49,9 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	@Override
 	public LocalTime getEndTime() {
-		if (getTask().getStartTime() == null)
+		if (getStartTime() == null)
 			return null;
-		return getTask().getStartTime()
+		return getStartTime()
 		                .plus(getDuration());
 	}
 	
@@ -62,16 +65,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		if (employee != null && getEndTime()!=null)
 			between = (int) ChronoUnit.MINUTES.between(employee.getStartTime(), getEndTime());
 		return between;
-	}
-
-	@CustomShadowVariable(variableListenerClass = StartTimeUpdatingVariableListener.class,
-	        sources = { @PlanningVariableReference(variableName = "previousTaskPartOrEmployee") })
-	public LocalTime getStartTime() {
-		return task.getStartTime();
-	}
-
-	public void setStartTime(LocalTime startTime) {
-		task.setStartTime(startTime);
 	}
 	
 	/**
@@ -162,6 +155,14 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	public Employee getEmployee() {
 		return employee;
+	}
+
+	public LocalTime getStartTime() {
+		return startTime;
+	}
+
+	public void setStartTime(LocalTime startTime) {
+		this.startTime = startTime;
 	}
 
 }
