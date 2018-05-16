@@ -83,6 +83,15 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 			return 0;
 	}
 
+	/**
+	 * 
+	 * @param taskPart
+	 * @return the difference in minutes between task part <code>taskPart</code> and <code>this</code>
+	 */
+	public int offSet(TaskPart taskPart) {
+		return (int) Math.abs(ChronoUnit.MINUTES.between(startTime, taskPart.getStartTime()));
+	}
+	
 	public int getMissingSkillCount() {
 		if (employee == null) {
 			return 0;

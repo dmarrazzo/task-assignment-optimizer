@@ -60,10 +60,10 @@ end
 
 rule "Different employees - Keep parts aligned"
     when
-        TaskPart($e1 : employee != null, $task: task, $startTime: startTime)
-        TaskPart($e2 : employee != null, $e2 != $e1, task==$task, startTime != $startTime)
+        $tp1 : TaskPart($e1 : employee != null, $task: task, $startTime: startTime)
+        $tp2 : TaskPart($e2 : employee != null, $e2 != $e1, task==$task, startTime != $startTime)
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, -1 );
+        scoreHolder.addSoftConstraintMatch(kcontext, 0, -$tp1.offSet($tp2));
 end
 
 rule "Meet complention time for other priorities"
