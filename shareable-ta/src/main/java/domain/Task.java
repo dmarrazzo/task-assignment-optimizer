@@ -3,7 +3,6 @@ package domain;
 import java.io.Serializable;
 import java.time.Duration;
 import java.time.LocalTime;
-import java.util.Arrays;
 import java.util.Set;
 
 public class Task implements Serializable {
