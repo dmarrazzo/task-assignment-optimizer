@@ -2,6 +2,7 @@ package domain;
 
 import java.io.Serializable;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -33,6 +34,8 @@ public class TaskAssagnmentSolution implements Serializable {
 	@PlanningEntityCollectionProperty
 	@ValueRangeProvider(id = "taskPartRange")
 	private List<TaskPart> taskPartList;
+	
+	private Set<Interval> gaps;
 
 	public void setTaskList(List<Task> taskList) {
 		this.taskList = taskList;
@@ -73,5 +76,12 @@ public class TaskAssagnmentSolution implements Serializable {
 		this.taskPartList = taskPartList;
 	}
 
+	public Set<Interval> getGaps() {
+		return gaps;
+	}
+
+	public void setGaps(Set<Interval> gaps) {
+		this.gaps = gaps;
+	}
 
 }

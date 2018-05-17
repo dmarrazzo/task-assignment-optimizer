@@ -1,7 +1,10 @@
 package app;
 
 import java.io.File;
+import java.time.LocalTime;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.commons.lang3.StringUtils;
 import org.optaplanner.core.api.solver.Solver;
@@ -10,8 +13,9 @@ import org.optaplanner.persistence.common.api.domain.solution.SolutionFileIO;
 import org.optaplanner.persistence.xstream.impl.domain.solution.XStreamSolutionFileIO;
 
 import domain.Employee;
-import domain.TaskPart;
+import domain.Interval;
 import domain.TaskAssagnmentSolution;
+import domain.TaskPart;
 
 public class Main {
 	public void solve() {
@@ -19,6 +23,12 @@ public class Main {
 		Solver<TaskAssagnmentSolution> solver = solverFactory.buildSolver();
 
 		TaskAssagnmentSolution unsolved = ProblemBuilder.readProblemFacts("data/employees-3.txt", "data/tasks-8.txt");
+		
+		Set<Interval> gaps = new HashSet<>();
+		Interval brief = new Interval(LocalTime.parse("06:30"), LocalTime.parse("07:00"));
+		gaps.add(brief);
+		unsolved.setGaps(gaps);
+		
 		TaskAssagnmentSolution solved = solver.solve(unsolved);
 		printSolution(solved);
 	}
@@ -33,7 +43,6 @@ public class Main {
 				StringBuffer taskStr = new StringBuffer();
 
 				taskStr.append(taskPart.getId());
-
 				
 				taskStr.append("!" + taskPart.getTask()
 				                             .getPriority());
@@ -41,9 +50,11 @@ public class Main {
 				taskStr.append(StringUtils.repeat("#", (int) taskPart.getDuration()
 				                                                     .dividedBy(15)
 				                                                     .toMinutes()));
-				taskStr.append(">" + taskPart.getEndTime());
+				taskStr.append("[" + taskPart.getStartTime());
 
-				taskStr.append(" ");
+				taskStr.append("," + taskPart.getEndTime());
+
+				taskStr.append("] ");
 				System.out.print(taskStr);
 				taskPart = taskPart.getNextTaskPart();
 			}
