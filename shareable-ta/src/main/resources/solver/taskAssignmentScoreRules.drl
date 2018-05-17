@@ -77,24 +77,26 @@ end
 // Soft constraints level 2
 // ############################################################################
 
-					
-rule "Priority order (max priority is 6)"
+rule "Minimize the number of employees"
     when
-        TaskPart(employee != null, $priority : task.priority , $outOfTime : outOfTime)
+        TaskPart ( $e1 : employee != null )
+        TaskPart ( $e2 : employee != null , $e1 != $e2)
     then
-    	int priorityFactor = (int) Math.pow(10, (7-$priority)) * $outOfTime/15;
-        scoreHolder.addSoftConstraintMatch(kcontext, 1, priorityFactor );
+        scoreHolder.addSoftConstraintMatch(kcontext, 1, -1);
 end
 
 // ############################################################################
 // Soft constraints level 3
 // ############################################################################
 
-
-rule "Minimize the number of employees"
+rule "Priority order (max priority is 6)"
     when
-        TaskPart ( $e1 : employee != null )
-        TaskPart ( $e2 : employee != null , $e1 != $e2)
+        TaskPart(employee != null, $priority : task.priority , $order : order)
     then
-        scoreHolder.addSoftConstraintMatch(kcontext, 2, -1);
+    	// the following formula works for chain of task <= 10 
+    	// Over that there could be corner case where order is not respected
+    	int priorityFactor = (int) Math.pow(10, (6-$priority)) * $order;
+        scoreHolder.addSoftConstraintMatch(kcontext, 2, -priorityFactor );
 end
+
+

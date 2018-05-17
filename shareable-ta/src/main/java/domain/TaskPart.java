@@ -92,6 +92,19 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		return (int) Math.abs(ChronoUnit.MINUTES.between(startTime, taskPart.getStartTime()));
 	}
 	
+	public int getOrder() {
+		int count=1;
+		TaskPartOrEmployee prev = getPreviousTaskPartOrEmployee();
+		
+		while (prev instanceof TaskPart) {
+			count++;
+			
+			prev = ((TaskPart )prev).getPreviousTaskPartOrEmployee();
+		}
+		
+		return count;
+	}
+	
 	public int getMissingSkillCount() {
 		if (employee == null) {
 			return 0;
