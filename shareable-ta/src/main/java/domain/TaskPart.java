@@ -121,7 +121,7 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 
 	@Override
 	public String toString() {
-		return "TaskPart [" + id + ", prev=" + getPreviousTaskPartOrEmployee().getId() +", d=" + duration + ", task=" + task + "]";
+		return String.format("TaskPart [id=%s, employee=%s, startTime=%s, task=%s, duration=%s]", id, employee, startTime, task, duration);
 	}
 
 	// ************************************************************************
