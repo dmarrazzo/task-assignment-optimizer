@@ -5,6 +5,9 @@ import java.time.Duration;
 import java.time.LocalTime;
 import java.util.Set;
 
+import com.thoughtworks.xstream.annotations.XStreamAlias;
+
+@XStreamAlias("TaTask")
 public class Task implements Serializable {
 
 	private static final long serialVersionUID = 7195728232431116103L;
