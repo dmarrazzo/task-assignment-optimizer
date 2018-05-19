@@ -64,7 +64,14 @@ rule "Same employee - Keep parts together"
                          previousTaskPartOrEmployee not memberOf $parts,
                          nextTaskPart not memberOf $parts )
     then
-//    	System.out.println("> "+$nc);
+       	scoreHolder.addSoftConstraintMatch(kcontext, 0, -1 );
+end
+
+rule "Same employee - Avoid gaps between parts"
+    when
+    	$tp : TaskPart (task.maxParts > 1, $t : task, $startTime : startTime)
+        $otp : TaskPart ( task == $t, nextTaskPart == $tp, endTime != $startTime )
+    then
        	scoreHolder.addSoftConstraintMatch(kcontext, 0, -1 );
 end
 
