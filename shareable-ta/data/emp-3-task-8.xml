@@ -1,0 +1,500 @@
+<domain.TaskAssagnmentSolution id="1">
+  <score id="2">
+    <initScore>0</initScore>
+    <hardScores id="3">
+      <int>0</int>
+    </hardScores>
+    <softScores id="4">
+      <int>0</int>
+      <int>-208</int>
+      <int>-913010</int>
+    </softScores>
+  </score>
+  <taskList id="5">
+    <domain.Task id="6">
+      <id>01</id>
+      <effort>PT30M</effort>
+      <completionTime>06:00:00</completionTime>
+      <requiredSkillList id="7">
+        <domain.Skill id="8">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>1</priority>
+      <taskParts id="9">
+        <domain.TaskPart id="10">
+          <id>01-0</id>
+          <task reference="6"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+    <domain.Task id="11">
+      <id>02</id>
+      <effort>PT1H30M</effort>
+      <completionTime>06:30:00</completionTime>
+      <requiredSkillList id="12">
+        <domain.Skill id="13">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>2</priority>
+      <taskParts id="14">
+        <domain.TaskPart id="15">
+          <id>02-0</id>
+          <task reference="11"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+        <domain.TaskPart id="16">
+          <id>02-1</id>
+          <task reference="11"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+        <domain.TaskPart id="17">
+          <id>02-2</id>
+          <task reference="11"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>3</maxParts>
+    </domain.Task>
+    <domain.Task id="18">
+      <id>03</id>
+      <effort>PT1H</effort>
+      <completionTime>07:00:00</completionTime>
+      <requiredSkillList id="19">
+        <domain.Skill id="20">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>3</priority>
+      <taskParts id="21">
+        <domain.TaskPart id="22">
+          <id>03-0</id>
+          <task reference="18"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+        <domain.TaskPart id="23">
+          <id>03-1</id>
+          <task reference="18"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>2</maxParts>
+    </domain.Task>
+    <domain.Task id="24">
+      <id>04</id>
+      <effort>PT1H30M</effort>
+      <completionTime>13:00:00</completionTime>
+      <requiredSkillList id="25">
+        <domain.Skill id="26">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>4</priority>
+      <taskParts id="27">
+        <domain.TaskPart id="28">
+          <id>04-0</id>
+          <task reference="24"/>
+          <duration>PT1H30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+    <domain.Task id="29">
+      <id>05</id>
+      <effort>PT45M</effort>
+      <completionTime>16:00:00</completionTime>
+      <requiredSkillList id="30">
+        <domain.Skill id="31">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>5</priority>
+      <taskParts id="32">
+        <domain.TaskPart id="33">
+          <id>05-0</id>
+          <task reference="29"/>
+          <duration>PT45M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+    <domain.Task id="34">
+      <id>06</id>
+      <effort>PT1H</effort>
+      <completionTime>08:00:00</completionTime>
+      <requiredSkillList id="35">
+        <domain.Skill id="36">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>1</priority>
+      <taskParts id="37">
+        <domain.TaskPart id="38">
+          <id>06-0</id>
+          <task reference="34"/>
+          <duration>PT1H</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+    <domain.Task id="39">
+      <id>07</id>
+      <effort>PT1H30M</effort>
+      <completionTime>11:00:00</completionTime>
+      <requiredSkillList id="40">
+        <domain.Skill id="41">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>2</priority>
+      <taskParts id="42">
+        <domain.TaskPart id="43">
+          <id>07-0</id>
+          <task reference="39"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+        <domain.TaskPart id="44">
+          <id>07-1</id>
+          <task reference="39"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+        <domain.TaskPart id="45">
+          <id>07-2</id>
+          <task reference="39"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>3</maxParts>
+    </domain.Task>
+    <domain.Task id="46">
+      <id>08</id>
+      <effort>PT1H</effort>
+      <completionTime>11:00:00</completionTime>
+      <requiredSkillList id="47">
+        <domain.Skill id="48">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>3</priority>
+      <taskParts id="49">
+        <domain.TaskPart id="50">
+          <id>08-0</id>
+          <task reference="46"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+        <domain.TaskPart id="51">
+          <id>08-1</id>
+          <task reference="46"/>
+          <duration>PT30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>2</maxParts>
+    </domain.Task>
+    <domain.Task id="52">
+      <id>09</id>
+      <effort>PT1H30M</effort>
+      <completionTime>13:00:00</completionTime>
+      <requiredSkillList id="53">
+        <domain.Skill id="54">
+          <name>writing</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>4</priority>
+      <taskParts id="55">
+        <domain.TaskPart id="56">
+          <id>09-0</id>
+          <task reference="52"/>
+          <duration>PT1H30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+    <domain.Task id="57">
+      <id>10</id>
+      <effort>PT1H30M</effort>
+      <completionTime>10:30:00</completionTime>
+      <requiredSkillList id="58">
+        <domain.Skill id="59">
+          <name>reading</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>1</priority>
+      <taskParts id="60">
+        <domain.TaskPart id="61">
+          <id>10-0</id>
+          <task reference="57"/>
+          <duration>PT1H30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+    <domain.Task id="62">
+      <id>11</id>
+      <effort>PT45M</effort>
+      <completionTime>13:00:00</completionTime>
+      <requiredSkillList id="63">
+        <domain.Skill id="64">
+          <name>reading</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>2</priority>
+      <taskParts id="65">
+        <domain.TaskPart id="66">
+          <id>11-0</id>
+          <task reference="62"/>
+          <duration>PT45M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+    <domain.Task id="67">
+      <id>12</id>
+      <effort>PT1H</effort>
+      <completionTime>10:00:00</completionTime>
+      <requiredSkillList id="68">
+        <domain.Skill id="69">
+          <name>reading</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>3</priority>
+      <taskParts id="70">
+        <domain.TaskPart id="71">
+          <id>12-0</id>
+          <task reference="67"/>
+          <duration>PT1H</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+    <domain.Task id="72">
+      <id>13</id>
+      <effort>PT1H30M</effort>
+      <completionTime>10:30:00</completionTime>
+      <requiredSkillList id="73">
+        <domain.Skill id="74">
+          <name>reading</name>
+        </domain.Skill>
+      </requiredSkillList>
+      <priority>2</priority>
+      <taskParts id="75">
+        <domain.TaskPart id="76">
+          <id>13-0</id>
+          <task reference="72"/>
+          <duration>PT1H30M</duration>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+    </domain.Task>
+  </taskList>
+  <employeeList id="77">
+    <domain.Employee id="78">
+      <nextTaskPart id="79">
+        <nextTaskPart id="80">
+          <nextTaskPart id="81">
+            <nextTaskPart id="82">
+              <previousTaskPartOrEmployee class="domain.TaskPart" reference="81"/>
+              <employee reference="78"/>
+              <startTime>06:30:00</startTime>
+              <id>06-0</id>
+              <task reference="34"/>
+              <duration>PT1H</duration>
+            </nextTaskPart>
+            <previousTaskPartOrEmployee class="domain.TaskPart" reference="80"/>
+            <employee reference="78"/>
+            <startTime>06:00:00</startTime>
+            <id>03-0</id>
+            <task reference="18"/>
+            <duration>PT30M</duration>
+          </nextTaskPart>
+          <previousTaskPartOrEmployee class="domain.TaskPart" reference="79"/>
+          <employee reference="78"/>
+          <startTime>05:30:00</startTime>
+          <id>03-1</id>
+          <task reference="18"/>
+          <duration>PT30M</duration>
+        </nextTaskPart>
+        <previousTaskPartOrEmployee class="domain.Employee" reference="78"/>
+        <employee reference="78"/>
+        <startTime>05:00:00</startTime>
+        <id>01-0</id>
+        <task reference="6"/>
+        <duration>PT30M</duration>
+      </nextTaskPart>
+      <fullName>emp1</fullName>
+      <startTime>05:00:00</startTime>
+      <skillSet id="83">
+        <domain.Skill id="84">
+          <name>writing</name>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="85">
+      <nextTaskPart id="86">
+        <nextTaskPart id="87">
+          <nextTaskPart id="88">
+            <nextTaskPart id="89">
+              <nextTaskPart id="90">
+                <nextTaskPart id="91">
+                  <nextTaskPart id="92">
+                    <nextTaskPart id="93">
+                      <nextTaskPart id="94">
+                        <nextTaskPart id="95">
+                          <nextTaskPart id="96">
+                            <previousTaskPartOrEmployee class="domain.TaskPart" reference="95"/>
+                            <employee reference="85"/>
+                            <startTime>12:30:00</startTime>
+                            <id>05-0</id>
+                            <task reference="29"/>
+                            <duration>PT45M</duration>
+                          </nextTaskPart>
+                          <previousTaskPartOrEmployee class="domain.TaskPart" reference="94"/>
+                          <employee reference="85"/>
+                          <startTime>11:00:00</startTime>
+                          <id>04-0</id>
+                          <task reference="24"/>
+                          <duration>PT1H30M</duration>
+                        </nextTaskPart>
+                        <previousTaskPartOrEmployee class="domain.TaskPart" reference="93"/>
+                        <employee reference="85"/>
+                        <startTime>09:30:00</startTime>
+                        <id>09-0</id>
+                        <task reference="52"/>
+                        <duration>PT1H30M</duration>
+                      </nextTaskPart>
+                      <previousTaskPartOrEmployee class="domain.TaskPart" reference="92"/>
+                      <employee reference="85"/>
+                      <startTime>09:00:00</startTime>
+                      <id>08-1</id>
+                      <task reference="46"/>
+                      <duration>PT30M</duration>
+                    </nextTaskPart>
+                    <previousTaskPartOrEmployee class="domain.TaskPart" reference="91"/>
+                    <employee reference="85"/>
+                    <startTime>08:30:00</startTime>
+                    <id>07-2</id>
+                    <task reference="39"/>
+                    <duration>PT30M</duration>
+                  </nextTaskPart>
+                  <previousTaskPartOrEmployee class="domain.TaskPart" reference="90"/>
+                  <employee reference="85"/>
+                  <startTime>07:30:00</startTime>
+                  <id>07-1</id>
+                  <task reference="39"/>
+                  <duration>PT30M</duration>
+                </nextTaskPart>
+                <previousTaskPartOrEmployee class="domain.TaskPart" reference="89"/>
+                <employee reference="85"/>
+                <startTime>07:00:00</startTime>
+                <id>08-0</id>
+                <task reference="46"/>
+                <duration>PT30M</duration>
+              </nextTaskPart>
+              <previousTaskPartOrEmployee class="domain.TaskPart" reference="88"/>
+              <employee reference="85"/>
+              <startTime>06:30:00</startTime>
+              <id>07-0</id>
+              <task reference="39"/>
+              <duration>PT30M</duration>
+            </nextTaskPart>
+            <previousTaskPartOrEmployee class="domain.TaskPart" reference="87"/>
+            <employee reference="85"/>
+            <startTime>06:00:00</startTime>
+            <id>02-2</id>
+            <task reference="11"/>
+            <duration>PT30M</duration>
+          </nextTaskPart>
+          <previousTaskPartOrEmployee class="domain.TaskPart" reference="86"/>
+          <employee reference="85"/>
+          <startTime>05:30:00</startTime>
+          <id>02-1</id>
+          <task reference="11"/>
+          <duration>PT30M</duration>
+        </nextTaskPart>
+        <previousTaskPartOrEmployee class="domain.Employee" reference="85"/>
+        <employee reference="85"/>
+        <startTime>05:00:00</startTime>
+        <id>02-0</id>
+        <task reference="11"/>
+        <duration>PT30M</duration>
+      </nextTaskPart>
+      <fullName>emp2</fullName>
+      <startTime>05:00:00</startTime>
+      <skillSet id="97">
+        <domain.Skill id="98">
+          <name>writing</name>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="99">
+      <nextTaskPart id="100">
+        <nextTaskPart id="101">
+          <nextTaskPart id="102">
+            <nextTaskPart id="103">
+              <previousTaskPartOrEmployee class="domain.TaskPart" reference="102"/>
+              <employee reference="99"/>
+              <startTime>09:30:00</startTime>
+              <id>11-0</id>
+              <task reference="62"/>
+              <duration>PT45M</duration>
+            </nextTaskPart>
+            <previousTaskPartOrEmployee class="domain.TaskPart" reference="101"/>
+            <employee reference="99"/>
+            <startTime>08:30:00</startTime>
+            <id>12-0</id>
+            <task reference="67"/>
+            <duration>PT1H</duration>
+          </nextTaskPart>
+          <previousTaskPartOrEmployee class="domain.TaskPart" reference="100"/>
+          <employee reference="99"/>
+          <startTime>06:30:00</startTime>
+          <id>13-0</id>
+          <task reference="72"/>
+          <duration>PT1H30M</duration>
+        </nextTaskPart>
+        <previousTaskPartOrEmployee class="domain.Employee" reference="99"/>
+        <employee reference="99"/>
+        <startTime>05:00:00</startTime>
+        <id>10-0</id>
+        <task reference="57"/>
+        <duration>PT1H30M</duration>
+      </nextTaskPart>
+      <fullName>emp3</fullName>
+      <startTime>05:00:00</startTime>
+      <skillSet id="104">
+        <domain.Skill id="105">
+          <name>reading</name>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+  </employeeList>
+  <taskPartList id="106">
+    <domain.TaskPart reference="79"/>
+    <domain.TaskPart reference="86"/>
+    <domain.TaskPart reference="87"/>
+    <domain.TaskPart reference="88"/>
+    <domain.TaskPart reference="81"/>
+    <domain.TaskPart reference="80"/>
+    <domain.TaskPart reference="95"/>
+    <domain.TaskPart reference="96"/>
+    <domain.TaskPart reference="82"/>
+    <domain.TaskPart reference="89"/>
+    <domain.TaskPart reference="91"/>
+    <domain.TaskPart reference="92"/>
+    <domain.TaskPart reference="90"/>
+    <domain.TaskPart reference="93"/>
+    <domain.TaskPart reference="94"/>
+    <domain.TaskPart reference="100"/>
+    <domain.TaskPart reference="103"/>
+    <domain.TaskPart reference="102"/>
+    <domain.TaskPart reference="101"/>
+  </taskPartList>
+  <gaps id="107">
+    <domain.Interval id="108">
+      <start>08:00:00</start>
+      <end>08:30:00</end>
+    </domain.Interval>
+  </gaps>
+</domain.TaskAssagnmentSolution>
