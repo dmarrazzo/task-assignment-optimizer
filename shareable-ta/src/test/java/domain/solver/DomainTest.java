@@ -53,7 +53,7 @@ public class DomainTest {
 		assertTrue(compare > 0);
 
 		// longer duration
-		task1 = new Task("1", Duration.ofMinutes(30), LocalTime.parse("08:30"), 3, 2, reqS);
+		task1 = new Task("1", Duration.ofMinutes(30), LocalTime.parse("08:30"), 3, 1, reqS);
 		task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 2, reqS);
 
 		part1 = task1.getTaskParts()[0];
@@ -62,6 +62,17 @@ public class DomainTest {
 		// the first argument is greater than the second
 		assertTrue(compare > 0);
 
+		// more parts
+
+		task1 = new Task("1", Duration.ofMinutes(90), LocalTime.parse("08:30"), 3, 3, reqS);
+		task2 = new Task("2", Duration.ofMinutes(60), LocalTime.parse("08:30"), 3, 2, reqS);
+
+		part1 = task1.getTaskParts()[0];
+		part2 = task2.getTaskParts()[0];
+		compare = comparator.compare(part1, part2);
+		// the first argument is greater than the second
+		assertTrue(compare > 0);
+		
 	}
 
 	@Test

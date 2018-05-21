@@ -21,7 +21,7 @@ public class TaskPartDifficultyComparator implements Comparator<TaskPart>, Seria
 		                                      .getCompletionTime(), a.getTask()
 		                                                             .getCompletionTime())
 		                             .append(a.getDuration(), b.getDuration())
-
+		                             .append(a.getTask().getMaxParts(), b.getTask().getMaxParts())
 		                             .append(a.getId(), b.getId())
 		                             .toComparison();
 	}
