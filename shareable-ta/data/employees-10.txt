@@ -1,0 +1,12 @@
+# Employees 
+# full name, skill1 [,skill2]*
+emp01,writing
+emp02,writing
+emp03,reading
+emp04,coding
+emp05,testing
+emp06,analyze,writing
+emp07,reading,writing
+emp08,testing
+emp09,analyze,reading
+emp09,coding,testing

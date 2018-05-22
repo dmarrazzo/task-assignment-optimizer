@@ -8,19 +8,21 @@
 
 		<problemBenchmarks>
 			<xStreamAnnotatedClass>domain.TaskAssagnmentSolution</xStreamAnnotatedClass>
-			<inputSolutionFile>data/emp-10-task-40.xml</inputSolutionFile>
-			<inputSolutionFile>data/emp-10-task-100.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-3-task-8.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-10-task-52.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-10-task-104.xml</inputSolutionFile>
 
 			<!-- Statistics -->
 			<problemStatisticEnabled>true</problemStatisticEnabled>
 			<problemStatisticType>BEST_SCORE</problemStatisticType>
 			<problemStatisticType>SCORE_CALCULATION_SPEED</problemStatisticType>
-
+ 			<singleStatisticType>PICKED_MOVE_TYPE_BEST_SCORE_DIFF</singleStatisticType>
+ 			<singleStatisticType>PICKED_MOVE_TYPE_STEP_SCORE_DIFF</singleStatisticType>
 		</problemBenchmarks>
 		<solver>
 			<solutionClass>domain.TaskAssagnmentSolution</solutionClass>
-			<entityClass>domain.TaskOrEmployee</entityClass>
-			<entityClass>domain.Task</entityClass>
+			<entityClass>domain.TaskPartOrEmployee</entityClass>
+			<entityClass>domain.TaskPart</entityClass>
 
 			<scoreDirectorFactory>
 				<scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>
@@ -44,6 +46,14 @@
 		<solver>
 			<localSearch>
 				<localSearchType>TABU_SEARCH</localSearchType>
+				<unionMoveSelector>
+					<changeMoveSelector/>
+					<swapMoveSelector/>
+					<tailChainSwapMoveSelector/>
+					<subChainChangeMoveSelector/>
+					<subChainSwapMoveSelector/>
+				</unionMoveSelector>
+
 			</localSearch>
 		</solver>
 	</solverBenchmark>
@@ -68,7 +78,7 @@
 		<solver>
 			<localSearch>
 				<acceptor>
-					<simulatedAnnealingStartingTemperature>[1]hard/[1000/1000/1000/1000]soft</simulatedAnnealingStartingTemperature>
+					<simulatedAnnealingStartingTemperature>[2]hard/[60/200/1000000]soft</simulatedAnnealingStartingTemperature>
 				</acceptor>
 			</localSearch>
 		</solver>

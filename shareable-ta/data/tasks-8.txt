@@ -2,9 +2,9 @@
 # id, effort, completionTime, priority, maxParts,  skill1 [,skill2]*
 01,30,06:00,1,1,writing
 # Task 02 is splitted because of completion time = 6:00, try 6:30
-02,90,06:00,2,3,writing
-03,60,07:00,3,2,writing
-04,90,13:00,4,1,writing
+02,45,06:30,2,3,writing
+03,90,07:30,3,3,writing
+04,90,13:00,4,2,writing
 05,45,16:00,5,1,writing
 06,60,08:00,1,1,writing
 07,90,11:00,2,3,writing
