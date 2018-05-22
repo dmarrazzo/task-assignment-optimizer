@@ -19,7 +19,7 @@ public class ScoreCompareMain {
 		SolverFactory<TaskAssagnmentSolution> solverFactory = SolverFactory.createFromXmlResource("solver/taskAssignmentSolverConfig.xml");
 		Solver<TaskAssagnmentSolution> solver = solverFactory.buildSolver();
 
-		TaskAssagnmentSolution orig = ProblemBuilder.load("data/emp-3-task-8.xml");
+		TaskAssagnmentSolution orig = ProblemBuilder.load("data/emp-3-task-8-solved.xml");
 		TaskAssagnmentSolution mod; // = ProblemBuilder.load("data/emp-3-task-8-mod.xml");
 
 		ScoreDirectorFactory<TaskAssagnmentSolution> scoreDirectorFactory = solver.getScoreDirectorFactory();
