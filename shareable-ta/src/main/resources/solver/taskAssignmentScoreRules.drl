@@ -30,12 +30,14 @@ global BendableScoreHolder scoreHolder;
 // Hard constraints
 // ############################################################################
 
+/*
 rule "Skill requirements"
     when
         TaskPart(employee != null, missingSkillCount > 0, $missingSkillCount : missingSkillCount)
     then
         scoreHolder.addHardConstraintMatch(kcontext, 0, - $missingSkillCount);
 end
+*/
 
 rule "High priority task must be accomplished on time"
     when

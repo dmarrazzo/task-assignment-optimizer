@@ -1,498 +1,4181 @@
 <domain.TaskAssagnmentSolution id="1">
-  <score id="2">
-    <initScore>0</initScore>
-    <hardScores id="3">
-      <int>0</int>
-    </hardScores>
-    <softScores id="4">
-      <int>0</int>
-      <int>-208</int>
-      <int>-913010</int>
-    </softScores>
-  </score>
-  <taskList id="5">
-    <domain.Task id="6">
-      <id>01</id>
-      <effort>PT30M</effort>
-      <completionTime>06:00:00</completionTime>
-      <requiredSkillList id="7">
-        <domain.Skill id="8">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
+  <taskList id="2">
+    <domain.Task id="3">
+      <effort>PT2H</effort>
+      <requiredSkill id="4">
+        <category>GAZEIFIE - </category>
+        <priority>1</priority>
+      </requiredSkill>
       <priority>1</priority>
+      <taskParts id="5">
+        <domain.TaskPart id="6">
+          <task reference="3"/>
+          <duration>PT2H</duration>
+          <category>GAZEIFIE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>GAZEIFIE - </category>
+    </domain.Task>
+    <domain.Task id="7">
+      <effort>PT3H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="8">
+        <category>NON GAZEIFIE &amp;SIROP - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
       <taskParts id="9">
         <domain.TaskPart id="10">
-          <id>01-0</id>
-          <task reference="6"/>
-          <duration>PT30M</duration>
+          <task reference="7"/>
+          <duration>PT3H</duration>
+          <category>NON GAZEIFIE &amp;SIROP - -0</category>
         </domain.TaskPart>
       </taskParts>
       <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>NON GAZEIFIE &amp;SIROP - </category>
     </domain.Task>
     <domain.Task id="11">
-      <id>02</id>
-      <effort>PT1H30M</effort>
-      <completionTime>06:30:00</completionTime>
-      <requiredSkillList id="12">
-        <domain.Skill id="13">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>2</priority>
-      <taskParts id="14">
-        <domain.TaskPart id="15">
-          <id>02-0</id>
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="12">
+        <category>BIERES ET PANACHES - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="13">
+        <domain.TaskPart id="14">
           <task reference="11"/>
-          <duration>PT30M</duration>
-        </domain.TaskPart>
-        <domain.TaskPart id="16">
-          <id>02-1</id>
-          <task reference="11"/>
-          <duration>PT30M</duration>
-        </domain.TaskPart>
-        <domain.TaskPart id="17">
-          <id>02-2</id>
-          <task reference="11"/>
-          <duration>PT30M</duration>
+          <duration>PT1H</duration>
+          <category>BIERES ET PANACHES - -0</category>
         </domain.TaskPart>
       </taskParts>
-      <maxParts>3</maxParts>
+      <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>BIERES ET PANACHES - </category>
     </domain.Task>
-    <domain.Task id="18">
-      <id>03</id>
-      <effort>PT1H</effort>
-      <completionTime>07:00:00</completionTime>
-      <requiredSkillList id="19">
-        <domain.Skill id="20">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>3</priority>
+    <domain.Task id="15">
+      <effort>PT0S</effort>
+      <requiredSkill id="16">
+        <category>CIDRES - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="17">
+        <domain.TaskPart id="18">
+          <task reference="15"/>
+          <duration>PT0S</duration>
+          <category>CIDRES - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>CIDRES - </category>
+    </domain.Task>
+    <domain.Task id="19">
+      <effort>PT3H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="20">
+        <category>EAUX - </category>
+        <priority>4</priority>
+      </requiredSkill>
+      <priority>4</priority>
       <taskParts id="21">
         <domain.TaskPart id="22">
-          <id>03-0</id>
-          <task reference="18"/>
-          <duration>PT30M</duration>
-        </domain.TaskPart>
-        <domain.TaskPart id="23">
-          <id>03-1</id>
-          <task reference="18"/>
-          <duration>PT30M</duration>
-        </domain.TaskPart>
-      </taskParts>
-      <maxParts>2</maxParts>
-    </domain.Task>
-    <domain.Task id="24">
-      <id>04</id>
-      <effort>PT1H30M</effort>
-      <completionTime>13:00:00</completionTime>
-      <requiredSkillList id="25">
-        <domain.Skill id="26">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>4</priority>
-      <taskParts id="27">
-        <domain.TaskPart id="28">
-          <id>04-0</id>
-          <task reference="24"/>
-          <duration>PT1H30M</duration>
+          <task reference="19"/>
+          <duration>PT3H</duration>
+          <category>EAUX - -0</category>
         </domain.TaskPart>
       </taskParts>
       <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>EAUX - </category>
     </domain.Task>
-    <domain.Task id="29">
-      <id>05</id>
-      <effort>PT45M</effort>
-      <completionTime>16:00:00</completionTime>
-      <requiredSkillList id="30">
-        <domain.Skill id="31">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>5</priority>
-      <taskParts id="32">
-        <domain.TaskPart id="33">
-          <id>05-0</id>
-          <task reference="29"/>
-          <duration>PT45M</duration>
-        </domain.TaskPart>
-      </taskParts>
-      <maxParts>1</maxParts>
-    </domain.Task>
-    <domain.Task id="34">
-      <id>06</id>
+    <domain.Task id="23">
       <effort>PT1H</effort>
-      <completionTime>08:00:00</completionTime>
-      <requiredSkillList id="35">
-        <domain.Skill id="36">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
+      <completionTime>12:00:00</completionTime>
+      <requiredSkill id="24">
+        <category>VINS DE TABLE ET DE PAYS - </category>
+        <priority>1</priority>
+      </requiredSkill>
       <priority>1</priority>
+      <taskParts id="25">
+        <domain.TaskPart id="26">
+          <task reference="23"/>
+          <duration>PT1H</duration>
+          <category>VINS DE TABLE ET DE PAYS - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>VINS DE TABLE ET DE PAYS - </category>
+    </domain.Task>
+    <domain.Task id="27">
+      <effort>PT1H</effort>
+      <completionTime>12:00:00</completionTime>
+      <requiredSkill id="28">
+        <category>VINS - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="29">
+        <domain.TaskPart id="30">
+          <task reference="27"/>
+          <duration>PT1H</duration>
+          <category>VINS - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>VINS - </category>
+    </domain.Task>
+    <domain.Task id="31">
+      <effort>PT0S</effort>
+      <requiredSkill id="32">
+        <category>CHAMPAGNE - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="33">
+        <domain.TaskPart id="34">
+          <task reference="31"/>
+          <duration>PT0S</duration>
+          <category>CHAMPAGNE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>CHAMPAGNE - </category>
+    </domain.Task>
+    <domain.Task id="35">
+      <effort>PT0S</effort>
+      <requiredSkill id="36">
+        <category>MOUSSEUX - </category>
+        <priority>3</priority>
+      </requiredSkill>
+      <priority>3</priority>
       <taskParts id="37">
         <domain.TaskPart id="38">
-          <id>06-0</id>
-          <task reference="34"/>
-          <duration>PT1H</duration>
+          <task reference="35"/>
+          <duration>PT0S</duration>
+          <category>MOUSSEUX - -0</category>
         </domain.TaskPart>
       </taskParts>
       <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>MOUSSEUX - </category>
     </domain.Task>
     <domain.Task id="39">
-      <id>07</id>
-      <effort>PT1H30M</effort>
-      <completionTime>11:00:00</completionTime>
-      <requiredSkillList id="40">
-        <domain.Skill id="41">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>2</priority>
-      <taskParts id="42">
-        <domain.TaskPart id="43">
-          <id>07-0</id>
+      <effort>PT0S</effort>
+      <completionTime>12:00:00</completionTime>
+      <requiredSkill id="40">
+        <category>ALCOOLS - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="41">
+        <domain.TaskPart id="42">
           <task reference="39"/>
-          <duration>PT30M</duration>
-        </domain.TaskPart>
-        <domain.TaskPart id="44">
-          <id>07-1</id>
-          <task reference="39"/>
-          <duration>PT30M</duration>
-        </domain.TaskPart>
-        <domain.TaskPart id="45">
-          <id>07-2</id>
-          <task reference="39"/>
-          <duration>PT30M</duration>
+          <duration>PT0S</duration>
+          <category>ALCOOLS - -0</category>
         </domain.TaskPart>
       </taskParts>
-      <maxParts>3</maxParts>
+      <maxParts>1</maxParts>
+      <aisle>R10</aisle>
+      <category>ALCOOLS - </category>
     </domain.Task>
-    <domain.Task id="46">
-      <id>08</id>
+    <domain.Task id="43">
       <effort>PT1H</effort>
-      <completionTime>11:00:00</completionTime>
-      <requiredSkillList id="47">
-        <domain.Skill id="48">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>3</priority>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="44">
+        <category>SOIN DE LA MAISON - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="45">
+        <domain.TaskPart id="46">
+          <task reference="43"/>
+          <duration>PT1H</duration>
+          <category>SOIN DE LA MAISON - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R11</aisle>
+      <category>SOIN DE LA MAISON - </category>
+    </domain.Task>
+    <domain.Task id="47">
+      <effort>PT0S</effort>
+      <requiredSkill id="48">
+        <category>PAPIER MENAGE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
       <taskParts id="49">
         <domain.TaskPart id="50">
-          <id>08-0</id>
-          <task reference="46"/>
-          <duration>PT30M</duration>
-        </domain.TaskPart>
-        <domain.TaskPart id="51">
-          <id>08-1</id>
-          <task reference="46"/>
-          <duration>PT30M</duration>
-        </domain.TaskPart>
-      </taskParts>
-      <maxParts>2</maxParts>
-    </domain.Task>
-    <domain.Task id="52">
-      <id>09</id>
-      <effort>PT1H30M</effort>
-      <completionTime>13:00:00</completionTime>
-      <requiredSkillList id="53">
-        <domain.Skill id="54">
-          <name>writing</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>4</priority>
-      <taskParts id="55">
-        <domain.TaskPart id="56">
-          <id>09-0</id>
-          <task reference="52"/>
-          <duration>PT1H30M</duration>
+          <task reference="47"/>
+          <duration>PT0S</duration>
+          <category>PAPIER MENAGE - -0</category>
         </domain.TaskPart>
       </taskParts>
       <maxParts>1</maxParts>
+      <aisle>R11</aisle>
+      <category>PAPIER MENAGE - </category>
     </domain.Task>
-    <domain.Task id="57">
-      <id>10</id>
-      <effort>PT1H30M</effort>
-      <completionTime>10:30:00</completionTime>
-      <requiredSkillList id="58">
-        <domain.Skill id="59">
-          <name>reading</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>1</priority>
-      <taskParts id="60">
-        <domain.TaskPart id="61">
-          <id>10-0</id>
-          <task reference="57"/>
-          <duration>PT1H30M</duration>
-        </domain.TaskPart>
-      </taskParts>
-      <maxParts>1</maxParts>
-    </domain.Task>
-    <domain.Task id="62">
-      <id>11</id>
-      <effort>PT45M</effort>
-      <completionTime>13:00:00</completionTime>
-      <requiredSkillList id="63">
-        <domain.Skill id="64">
-          <name>reading</name>
-        </domain.Skill>
-      </requiredSkillList>
+    <domain.Task id="51">
+      <effort>PT0S</effort>
+      <requiredSkill id="52">
+        <category>PETITE DROGUERIE - </category>
+        <priority>2</priority>
+      </requiredSkill>
       <priority>2</priority>
+      <taskParts id="53">
+        <domain.TaskPart id="54">
+          <task reference="51"/>
+          <duration>PT0S</duration>
+          <category>PETITE DROGUERIE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R11</aisle>
+      <category>PETITE DROGUERIE - </category>
+    </domain.Task>
+    <domain.Task id="55">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="56">
+        <category>SOIN DU LINGE - </category>
+        <priority>3</priority>
+      </requiredSkill>
+      <priority>3</priority>
+      <taskParts id="57">
+        <domain.TaskPart id="58">
+          <task reference="55"/>
+          <duration>PT0S</duration>
+          <category>SOIN DU LINGE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R11</aisle>
+      <category>SOIN DU LINGE - </category>
+    </domain.Task>
+    <domain.Task id="59">
+      <effort>PT0S</effort>
+      <requiredSkill id="60">
+        <category>DEO MAISON - </category>
+        <priority>3</priority>
+      </requiredSkill>
+      <priority>3</priority>
+      <taskParts id="61">
+        <domain.TaskPart id="62">
+          <task reference="59"/>
+          <duration>PT0S</duration>
+          <category>DEO MAISON - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R11</aisle>
+      <category>DEO MAISON - </category>
+    </domain.Task>
+    <domain.Task id="63">
+      <effort>PT0S</effort>
+      <requiredSkill id="64">
+        <category>PAPIER HYGIENE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
       <taskParts id="65">
         <domain.TaskPart id="66">
-          <id>11-0</id>
-          <task reference="62"/>
-          <duration>PT45M</duration>
+          <task reference="63"/>
+          <duration>PT0S</duration>
+          <category>PAPIER HYGIENE - -0</category>
         </domain.TaskPart>
       </taskParts>
       <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>PAPIER HYGIENE - </category>
     </domain.Task>
     <domain.Task id="67">
-      <id>12</id>
-      <effort>PT1H</effort>
-      <completionTime>10:00:00</completionTime>
-      <requiredSkillList id="68">
-        <domain.Skill id="69">
-          <name>reading</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>3</priority>
-      <taskParts id="70">
-        <domain.TaskPart id="71">
-          <id>12-0</id>
+      <effort>PT2H</effort>
+      <requiredSkill id="68">
+        <category>MOUCHOIRS ET COTON - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="69">
+        <domain.TaskPart id="70">
           <task reference="67"/>
-          <duration>PT1H</duration>
+          <duration>PT2H</duration>
+          <category>MOUCHOIRS ET COTON - -0</category>
         </domain.TaskPart>
       </taskParts>
       <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>MOUCHOIRS ET COTON - </category>
     </domain.Task>
-    <domain.Task id="72">
-      <id>13</id>
-      <effort>PT1H30M</effort>
-      <completionTime>10:30:00</completionTime>
-      <requiredSkillList id="73">
-        <domain.Skill id="74">
-          <name>reading</name>
-        </domain.Skill>
-      </requiredSkillList>
-      <priority>2</priority>
-      <taskParts id="75">
-        <domain.TaskPart id="76">
-          <id>13-0</id>
-          <task reference="72"/>
-          <duration>PT1H30M</duration>
+    <domain.Task id="71">
+      <effort>PT0S</effort>
+      <requiredSkill id="72">
+        <category>COUCHES  - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="73">
+        <domain.TaskPart id="74">
+          <task reference="71"/>
+          <duration>PT0S</duration>
+          <category>COUCHES  - -0</category>
         </domain.TaskPart>
       </taskParts>
       <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>COUCHES  - </category>
+    </domain.Task>
+    <domain.Task id="75">
+      <effort>PT1H</effort>
+      <requiredSkill id="76">
+        <category>HYGIENE FEMININE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="77">
+        <domain.TaskPart id="78">
+          <task reference="75"/>
+          <duration>PT1H</duration>
+          <category>HYGIENE FEMININE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>HYGIENE FEMININE - </category>
+    </domain.Task>
+    <domain.Task id="79">
+      <effort>PT0S</effort>
+      <requiredSkill id="80">
+        <category>BEBE - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="81">
+        <domain.TaskPart id="82">
+          <task reference="79"/>
+          <duration>PT0S</duration>
+          <category>BEBE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>BEBE - </category>
+    </domain.Task>
+    <domain.Task id="83">
+      <effort>PT0S</effort>
+      <requiredSkill id="84">
+        <category>SAVON BAIN DOUCHE - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="85">
+        <domain.TaskPart id="86">
+          <task reference="83"/>
+          <duration>PT0S</duration>
+          <category>SAVON BAIN DOUCHE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>SAVON BAIN DOUCHE - </category>
+    </domain.Task>
+    <domain.Task id="87">
+      <effort>PT1H</effort>
+      <requiredSkill id="88">
+        <category>DENTAIRE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="89">
+        <domain.TaskPart id="90">
+          <task reference="87"/>
+          <duration>PT1H</duration>
+          <category>DENTAIRE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>DENTAIRE - </category>
+    </domain.Task>
+    <domain.Task id="91">
+      <effort>PT0S</effort>
+      <requiredSkill id="92">
+        <category>CAPILLAIRE - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="93">
+        <domain.TaskPart id="94">
+          <task reference="91"/>
+          <duration>PT0S</duration>
+          <category>CAPILLAIRE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>CAPILLAIRE - </category>
+    </domain.Task>
+    <domain.Task id="95">
+      <effort>PT0S</effort>
+      <requiredSkill id="96">
+        <category>COLORATION - </category>
+        <priority>3</priority>
+      </requiredSkill>
+      <priority>3</priority>
+      <taskParts id="97">
+        <domain.TaskPart id="98">
+          <task reference="95"/>
+          <duration>PT0S</duration>
+          <category>COLORATION - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>COLORATION - </category>
+    </domain.Task>
+    <domain.Task id="99">
+      <effort>PT0S</effort>
+      <requiredSkill id="100">
+        <category>BEAUTE FEMININE - </category>
+        <priority>3</priority>
+      </requiredSkill>
+      <priority>3</priority>
+      <taskParts id="101">
+        <domain.TaskPart id="102">
+          <task reference="99"/>
+          <duration>PT0S</duration>
+          <category>BEAUTE FEMININE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>BEAUTE FEMININE - </category>
+    </domain.Task>
+    <domain.Task id="103">
+      <effort>PT0S</effort>
+      <requiredSkill id="104">
+        <category>MAQUILLAGE - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="105">
+        <domain.TaskPart id="106">
+          <task reference="103"/>
+          <duration>PT0S</duration>
+          <category>MAQUILLAGE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>MAQUILLAGE - </category>
+    </domain.Task>
+    <domain.Task id="107">
+      <effort>PT0S</effort>
+      <requiredSkill id="108">
+        <category>DEODORANT - </category>
+        <priority>3</priority>
+      </requiredSkill>
+      <priority>3</priority>
+      <taskParts id="109">
+        <domain.TaskPart id="110">
+          <task reference="107"/>
+          <duration>PT0S</duration>
+          <category>DEODORANT - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>DEODORANT - </category>
+    </domain.Task>
+    <domain.Task id="111">
+      <effort>PT0S</effort>
+      <requiredSkill id="112">
+        <category>BROSSERIE - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="113">
+        <domain.TaskPart id="114">
+          <task reference="111"/>
+          <duration>PT0S</duration>
+          <category>BROSSERIE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>BROSSERIE - </category>
+    </domain.Task>
+    <domain.Task id="115">
+      <effort>PT0S</effort>
+      <requiredSkill id="116">
+        <category>SANTE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="117">
+        <domain.TaskPart id="118">
+          <task reference="115"/>
+          <duration>PT0S</duration>
+          <category>SANTE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>SANTE - </category>
+    </domain.Task>
+    <domain.Task id="119">
+      <effort>PT0S</effort>
+      <requiredSkill id="120">
+        <category>SOIN HOMME ET RASAGE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="121">
+        <domain.TaskPart id="122">
+          <task reference="119"/>
+          <duration>PT0S</duration>
+          <category>SOIN HOMME ET RASAGE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R12</aisle>
+      <category>SOIN HOMME ET RASAGE - </category>
+    </domain.Task>
+    <domain.Task id="123">
+      <effort>PT1H</effort>
+      <requiredSkill id="124">
+        <category>BISCOTTE  - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="125">
+        <domain.TaskPart id="126">
+          <task reference="123"/>
+          <duration>PT1H</duration>
+          <category>BISCOTTE  - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>BISCOTTE  - </category>
+    </domain.Task>
+    <domain.Task id="127">
+      <effort>PT0S</effort>
+      <requiredSkill id="128">
+        <category>CEREALE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="129">
+        <domain.TaskPart id="130">
+          <task reference="127"/>
+          <duration>PT0S</duration>
+          <category>CEREALE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CEREALE - </category>
+    </domain.Task>
+    <domain.Task id="131">
+      <effort>PT0S</effort>
+      <requiredSkill id="132">
+        <category>MIEL, CONFITURE - </category>
+        <priority>3</priority>
+      </requiredSkill>
+      <priority>3</priority>
+      <taskParts id="133">
+        <domain.TaskPart id="134">
+          <task reference="131"/>
+          <duration>PT0S</duration>
+          <category>MIEL, CONFITURE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>MIEL, CONFITURE - </category>
+    </domain.Task>
+    <domain.Task id="135">
+      <effort>PT0S</effort>
+      <requiredSkill id="136">
+        <category> PATE A TARTINER - </category>
+        <priority>5</priority>
+      </requiredSkill>
+      <priority>5</priority>
+      <taskParts id="137">
+        <domain.TaskPart id="138">
+          <task reference="135"/>
+          <duration>PT0S</duration>
+          <category> PATE A TARTINER - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category> PATE A TARTINER - </category>
+    </domain.Task>
+    <domain.Task id="139">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="140">
+        <category>CAFE  ET PETIT DEJ - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="141">
+        <domain.TaskPart id="142">
+          <task reference="139"/>
+          <duration>PT1H</duration>
+          <category>CAFE  ET PETIT DEJ - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CAFE  ET PETIT DEJ - </category>
+    </domain.Task>
+    <domain.Task id="143">
+      <effort>PT0S</effort>
+      <requiredSkill id="144">
+        <category>THE - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="145">
+        <domain.TaskPart id="146">
+          <task reference="143"/>
+          <duration>PT0S</duration>
+          <category>THE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>THE - </category>
+    </domain.Task>
+    <domain.Task id="147">
+      <effort>PT0S</effort>
+      <requiredSkill id="148">
+        <category>LAIT - </category>
+        <priority>4</priority>
+      </requiredSkill>
+      <priority>4</priority>
+      <taskParts id="149">
+        <domain.TaskPart id="150">
+          <task reference="147"/>
+          <duration>PT0S</duration>
+          <category>LAIT - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>LAIT - </category>
+    </domain.Task>
+    <domain.Task id="151">
+      <effort>PT2H</effort>
+      <requiredSkill id="152">
+        <category>GATEAU - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="153">
+        <domain.TaskPart id="154">
+          <task reference="151"/>
+          <duration>PT2H</duration>
+          <category>GATEAU - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>GATEAU - </category>
+    </domain.Task>
+    <domain.Task id="155">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="156">
+        <category>CONFISERIE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="157">
+        <domain.TaskPart id="158">
+          <task reference="155"/>
+          <duration>PT2H</duration>
+          <category>CONFISERIE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CONFISERIE - </category>
+    </domain.Task>
+    <domain.Task id="159">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="160">
+        <category>DESSERT ET AIDE PATISSIER - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="161">
+        <domain.TaskPart id="162">
+          <task reference="159"/>
+          <duration>PT1H</duration>
+          <category>DESSERT ET AIDE PATISSIER - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>DESSERT ET AIDE PATISSIER - </category>
+    </domain.Task>
+    <domain.Task id="163">
+      <effort>PT0S</effort>
+      <requiredSkill id="164">
+        <category>SUCRE  - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="165">
+        <domain.TaskPart id="166">
+          <task reference="163"/>
+          <duration>PT0S</duration>
+          <category>SUCRE  - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>SUCRE  - </category>
+    </domain.Task>
+    <domain.Task id="167">
+      <effort>PT0S</effort>
+      <requiredSkill id="168">
+        <category>FARINE - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="169">
+        <domain.TaskPart id="170">
+          <task reference="167"/>
+          <duration>PT0S</duration>
+          <category>FARINE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>FARINE - </category>
+    </domain.Task>
+    <domain.Task id="171">
+      <effort>PT2H</effort>
+      <requiredSkill id="172">
+        <category>DIETETIQUE  - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="173">
+        <domain.TaskPart id="174">
+          <task reference="171"/>
+          <duration>PT2H</duration>
+          <category>DIETETIQUE  - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>DIETETIQUE  - </category>
+    </domain.Task>
+    <domain.Task id="175">
+      <effort>PT1H</effort>
+      <requiredSkill id="176">
+        <category>ALIMENT INFANTILE - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="177">
+        <domain.TaskPart id="178">
+          <task reference="175"/>
+          <duration>PT1H</duration>
+          <category>ALIMENT INFANTILE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>ALIMENT INFANTILE - </category>
+    </domain.Task>
+    <domain.Task id="179">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="180">
+        <category>POTAGE - </category>
+        <priority>6</priority>
+      </requiredSkill>
+      <priority>6</priority>
+      <taskParts id="181">
+        <domain.TaskPart id="182">
+          <task reference="179"/>
+          <duration>PT1H</duration>
+          <category>POTAGE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>POTAGE - </category>
+    </domain.Task>
+    <domain.Task id="183">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="184">
+        <category>PATES - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="185">
+        <domain.TaskPart id="186">
+          <task reference="183"/>
+          <duration>PT2H</duration>
+          <category>PATES - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>PATES - </category>
+    </domain.Task>
+    <domain.Task id="187">
+      <effort>PT1H</effort>
+      <requiredSkill id="188">
+        <category>RIZ - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="189">
+        <domain.TaskPart id="190">
+          <task reference="187"/>
+          <duration>PT1H</duration>
+          <category>RIZ - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>RIZ - </category>
+    </domain.Task>
+    <domain.Task id="191">
+      <effort>PT0S</effort>
+      <requiredSkill id="192">
+        <category>PUREE  - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="193">
+        <domain.TaskPart id="194">
+          <task reference="191"/>
+          <duration>PT0S</duration>
+          <category>PUREE  - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>PUREE  - </category>
+    </domain.Task>
+    <domain.Task id="195">
+      <effort>PT0S</effort>
+      <requiredSkill id="196">
+        <category>CHIPS - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="197">
+        <domain.TaskPart id="198">
+          <task reference="195"/>
+          <duration>PT0S</duration>
+          <category>CHIPS - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CHIPS - </category>
+    </domain.Task>
+    <domain.Task id="199">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="200">
+        <category>CONSERVE  - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="201">
+        <domain.TaskPart id="202">
+          <task reference="199"/>
+          <duration>PT2H</duration>
+          <category>CONSERVE  - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CONSERVE  - </category>
+    </domain.Task>
+    <domain.Task id="203">
+      <effort>PT0S</effort>
+      <requiredSkill id="204">
+        <category>CONSERVE DE POISSON - </category>
+        <priority>3</priority>
+      </requiredSkill>
+      <priority>3</priority>
+      <taskParts id="205">
+        <domain.TaskPart id="206">
+          <task reference="203"/>
+          <duration>PT0S</duration>
+          <category>CONSERVE DE POISSON - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CONSERVE DE POISSON - </category>
+    </domain.Task>
+    <domain.Task id="207">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="208">
+        <category>PLAT CUISINER - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="209">
+        <domain.TaskPart id="210">
+          <task reference="207"/>
+          <duration>PT0S</duration>
+          <category>PLAT CUISINER - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>PLAT CUISINER - </category>
+    </domain.Task>
+    <domain.Task id="211">
+      <effort>PT3H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="212">
+        <category>CONDIMENT - </category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="213">
+        <domain.TaskPart id="214">
+          <task reference="211"/>
+          <duration>PT3H</duration>
+          <category>CONDIMENT - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CONDIMENT - </category>
+    </domain.Task>
+    <domain.Task id="215">
+      <effort>PT0S</effort>
+      <requiredSkill id="216">
+        <category>SAUCES CHAUDES - </category>
+        <priority>4</priority>
+      </requiredSkill>
+      <priority>4</priority>
+      <taskParts id="217">
+        <domain.TaskPart id="218">
+          <task reference="215"/>
+          <duration>PT0S</duration>
+          <category>SAUCES CHAUDES - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>SAUCES CHAUDES - </category>
+    </domain.Task>
+    <domain.Task id="219">
+      <effort>PT1H</effort>
+      <requiredSkill id="220">
+        <category>HUILE ET VINAIGRE - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="221">
+        <domain.TaskPart id="222">
+          <task reference="219"/>
+          <duration>PT1H</duration>
+          <category>HUILE ET VINAIGRE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>HUILE ET VINAIGRE - </category>
+    </domain.Task>
+    <domain.Task id="223">
+      <effort>PT2H</effort>
+      <requiredSkill id="224">
+        <category>APERITIF - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="225">
+        <domain.TaskPart id="226">
+          <task reference="223"/>
+          <duration>PT2H</duration>
+          <category>APERITIF - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>APERITIF - </category>
+    </domain.Task>
+    <domain.Task id="227">
+      <effort>PT2H</effort>
+      <requiredSkill id="228">
+        <category>CHIEN CHAT - </category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="229">
+        <domain.TaskPart id="230">
+          <task reference="227"/>
+          <duration>PT2H</duration>
+          <category>CHIEN CHAT - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CHIEN CHAT - </category>
+    </domain.Task>
+    <domain.Task id="231">
+      <effort>PT0S</effort>
+      <requiredSkill id="232">
+        <category>BOUILLON - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="233">
+        <domain.TaskPart id="234">
+          <task reference="231"/>
+          <duration>PT0S</duration>
+          <category>BOUILLON - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>BOUILLON - </category>
+    </domain.Task>
+    <domain.Task id="235">
+      <effort>PT0S</effort>
+      <requiredSkill id="236">
+        <category>CONFISERIE DE CAISSE - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="237">
+        <domain.TaskPart id="238">
+          <task reference="235"/>
+          <duration>PT0S</duration>
+          <category>CONFISERIE DE CAISSE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CONFISERIE DE CAISSE - </category>
+    </domain.Task>
+    <domain.Task id="239">
+      <effort>PT1H</effort>
+      <requiredSkill id="240">
+        <category>PRODUITS DU MONDE - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="241">
+        <domain.TaskPart id="242">
+          <task reference="239"/>
+          <duration>PT1H</duration>
+          <category>PRODUITS DU MONDE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>PRODUITS DU MONDE - </category>
+    </domain.Task>
+    <domain.Task id="243">
+      <effort>PT0S</effort>
+      <requiredSkill id="244">
+        <category>PATISSERIE INDUSTRIELLE - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="245">
+        <domain.TaskPart id="246">
+          <task reference="243"/>
+          <duration>PT0S</duration>
+          <category>PATISSERIE INDUSTRIELLE - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>PATISSERIE INDUSTRIELLE - </category>
+    </domain.Task>
+    <domain.Task id="247">
+      <effort>PT0S</effort>
+      <requiredSkill id="248">
+        <category>CHOCOLATS Pâques - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="249">
+        <domain.TaskPart id="250">
+          <task reference="247"/>
+          <duration>PT0S</duration>
+          <category>CHOCOLATS Pâques - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CHOCOLATS Pâques - </category>
+    </domain.Task>
+    <domain.Task id="251">
+      <effort>PT0S</effort>
+      <requiredSkill id="252">
+        <category>CHOCOLATS NOEL - </category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="253">
+        <domain.TaskPart id="254">
+          <task reference="251"/>
+          <duration>PT0S</duration>
+          <category>CHOCOLATS NOEL - -0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R14</aisle>
+      <category>CHOCOLATS NOEL - </category>
+    </domain.Task>
+    <domain.Task id="255">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="256">
+        <category>Fromage - PATES MOLLES</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="257">
+        <domain.TaskPart id="258">
+          <task reference="255"/>
+          <duration>PT2H</duration>
+          <category>Fromage - PATES MOLLES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Fromage - PATES MOLLES</category>
+    </domain.Task>
+    <domain.Task id="259">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="260">
+        <category>Fromage - PERSILLES</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="261">
+        <domain.TaskPart id="262">
+          <task reference="259"/>
+          <duration>PT0S</duration>
+          <category>Fromage - PERSILLES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Fromage - PERSILLES</category>
+    </domain.Task>
+    <domain.Task id="263">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="264">
+        <category>Fromage - CHEVRES ET BREBIS</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="265">
+        <domain.TaskPart id="266">
+          <task reference="263"/>
+          <duration>PT0S</duration>
+          <category>Fromage - CHEVRES ET BREBIS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Fromage - CHEVRES ET BREBIS</category>
+    </domain.Task>
+    <domain.Task id="267">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="268">
+        <category>Fromage - PATES FRAICHES</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="269">
+        <domain.TaskPart id="270">
+          <task reference="267"/>
+          <duration>PT1H</duration>
+          <category>Fromage - PATES FRAICHES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Fromage - PATES FRAICHES</category>
+    </domain.Task>
+    <domain.Task id="271">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="272">
+        <category>Fromage - PATE PRES.CUITE &amp; NON CUI</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="273">
+        <domain.TaskPart id="274">
+          <task reference="271"/>
+          <duration>PT2H</duration>
+          <category>Fromage - PATE PRES.CUITE &amp; NON CUI-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Fromage - PATE PRES.CUITE &amp; NON CUI</category>
+    </domain.Task>
+    <domain.Task id="275">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="276">
+        <category>Fromage - FROMAGES A CUIRE ET FONDU</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="277">
+        <domain.TaskPart id="278">
+          <task reference="275"/>
+          <duration>PT2H</duration>
+          <category>Fromage - FROMAGES A CUIRE ET FONDU-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Fromage - FROMAGES A CUIRE ET FONDU</category>
+    </domain.Task>
+    <domain.Task id="279">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="280">
+        <category>Fromage - PRE EMBALLES</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="281">
+        <domain.TaskPart id="282">
+          <task reference="279"/>
+          <duration>PT0S</duration>
+          <category>Fromage - PRE EMBALLES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Fromage - PRE EMBALLES</category>
+    </domain.Task>
+    <domain.Task id="283">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="284">
+        <category>Fromage - FROMAGES ALLEGES</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="285">
+        <domain.TaskPart id="286">
+          <task reference="283"/>
+          <duration>PT0S</duration>
+          <category>Fromage - FROMAGES ALLEGES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Fromage - FROMAGES ALLEGES</category>
+    </domain.Task>
+    <domain.Task id="287">
+      <effort>PT7H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="288">
+        <category>Ultra Frais - DESSERTS</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="289">
+        <domain.TaskPart id="290">
+          <task reference="287"/>
+          <duration>PT7H</duration>
+          <category>Ultra Frais - DESSERTS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Ultra Frais - DESSERTS</category>
+    </domain.Task>
+    <domain.Task id="291">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="292">
+        <category>Ultra Frais - LAIT ENTIER ET SPECIALITE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="293">
+        <domain.TaskPart id="294">
+          <task reference="291"/>
+          <duration>PT2H</duration>
+          <category>Ultra Frais - LAIT ENTIER ET SPECIALITE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Ultra Frais - LAIT ENTIER ET SPECIALITE</category>
+    </domain.Task>
+    <domain.Task id="295">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="296">
+        <category>Ultra Frais - NON BLANCS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="297">
+        <domain.TaskPart id="298">
+          <task reference="295"/>
+          <duration>PT2H</duration>
+          <category>Ultra Frais - NON BLANCS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Ultra Frais - NON BLANCS</category>
+    </domain.Task>
+    <domain.Task id="299">
+      <effort>PT6H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="300">
+        <category>Ultra Frais - SANTE ACTIVE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="301">
+        <domain.TaskPart id="302">
+          <task reference="299"/>
+          <duration>PT6H</duration>
+          <category>Ultra Frais - SANTE ACTIVE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Ultra Frais - SANTE ACTIVE</category>
+    </domain.Task>
+    <domain.Task id="303">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="304">
+        <category>Ultra Frais - BLANCS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="305">
+        <domain.TaskPart id="306">
+          <task reference="303"/>
+          <duration>PT1H</duration>
+          <category>Ultra Frais - BLANCS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Ultra Frais - BLANCS</category>
+    </domain.Task>
+    <domain.Task id="307">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="308">
+        <category>Ultra Frais - CROISSANCE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="309">
+        <domain.TaskPart id="310">
+          <task reference="307"/>
+          <duration>PT2H</duration>
+          <category>Ultra Frais - CROISSANCE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Ultra Frais - CROISSANCE</category>
+    </domain.Task>
+    <domain.Task id="311">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="312">
+        <category>Ultra Frais - BOISSONS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="313">
+        <domain.TaskPart id="314">
+          <task reference="311"/>
+          <duration>PT1H</duration>
+          <category>Ultra Frais - BOISSONS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Ultra Frais - BOISSONS</category>
+    </domain.Task>
+    <domain.Task id="315">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="316">
+        <category>Ultra Frais - COMPOTES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="317">
+        <domain.TaskPart id="318">
+          <task reference="315"/>
+          <duration>PT1H</duration>
+          <category>Ultra Frais - COMPOTES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Ultra Frais - COMPOTES</category>
+    </domain.Task>
+    <domain.Task id="319">
+      <effort>PT1H</effort>
+      <requiredSkill id="320">
+        <category>Cremerie - CREMES ET SAUCES</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="321">
+        <domain.TaskPart id="322">
+          <task reference="319"/>
+          <duration>PT1H</duration>
+          <category>Cremerie - CREMES ET SAUCES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Cremerie - CREMES ET SAUCES</category>
+    </domain.Task>
+    <domain.Task id="323">
+      <effort>PT1H</effort>
+      <requiredSkill id="324">
+        <category>Cremerie - BEURRE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="325">
+        <domain.TaskPart id="326">
+          <task reference="323"/>
+          <duration>PT1H</duration>
+          <category>Cremerie - BEURRE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Cremerie - BEURRE</category>
+    </domain.Task>
+    <domain.Task id="327">
+      <effort>PT0S</effort>
+      <requiredSkill id="328">
+        <category>Cremerie - CORPS GRAS VEGETAL/MIXTE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="329">
+        <domain.TaskPart id="330">
+          <task reference="327"/>
+          <duration>PT0S</duration>
+          <category>Cremerie - CORPS GRAS VEGETAL/MIXTE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Cremerie - CORPS GRAS VEGETAL/MIXTE</category>
+    </domain.Task>
+    <domain.Task id="331">
+      <effort>PT0S</effort>
+      <requiredSkill id="332">
+        <category>Cremerie - OEUFS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="333">
+        <domain.TaskPart id="334">
+          <task reference="331"/>
+          <duration>PT0S</duration>
+          <category>Cremerie - OEUFS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Cremerie - OEUFS</category>
+    </domain.Task>
+    <domain.Task id="335">
+      <effort>PT4H</effort>
+      <requiredSkill id="336">
+        <category>Cremerie - LAIT</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="337">
+        <domain.TaskPart id="338">
+          <task reference="335"/>
+          <duration>PT4H</duration>
+          <category>Cremerie - LAIT-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Cremerie - LAIT</category>
+    </domain.Task>
+    <domain.Task id="339">
+      <effort>PT0S</effort>
+      <requiredSkill id="340">
+        <category>Volaille - VOLAILLES ENTIERES</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="341">
+        <domain.TaskPart id="342">
+          <task reference="339"/>
+          <duration>PT0S</duration>
+          <category>Volaille - VOLAILLES ENTIERES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Volaille - VOLAILLES ENTIERES</category>
+    </domain.Task>
+    <domain.Task id="343">
+      <effort>PT2H</effort>
+      <requiredSkill id="344">
+        <category>Volaille - DECOUPE DE VOLAILLES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="345">
+        <domain.TaskPart id="346">
+          <task reference="343"/>
+          <duration>PT2H</duration>
+          <category>Volaille - DECOUPE DE VOLAILLES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Volaille - DECOUPE DE VOLAILLES</category>
+    </domain.Task>
+    <domain.Task id="347">
+      <effort>PT0S</effort>
+      <requiredSkill id="348">
+        <category>Volaille - PRODUITS PREPARES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="349">
+        <domain.TaskPart id="350">
+          <task reference="347"/>
+          <duration>PT0S</duration>
+          <category>Volaille - PRODUITS PREPARES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Volaille - PRODUITS PREPARES</category>
+    </domain.Task>
+    <domain.Task id="351">
+      <effort>PT0S</effort>
+      <requiredSkill id="352">
+        <category>Volaille - VOLAILLE HALAL ET CASHER</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="353">
+        <domain.TaskPart id="354">
+          <task reference="351"/>
+          <duration>PT0S</duration>
+          <category>Volaille - VOLAILLE HALAL ET CASHER-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Volaille - VOLAILLE HALAL ET CASHER</category>
+    </domain.Task>
+    <domain.Task id="355">
+      <effort>PT0S</effort>
+      <requiredSkill id="356">
+        <category>Volaille - ALIMENTS POUR ANIMAUX</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="357">
+        <domain.TaskPart id="358">
+          <task reference="355"/>
+          <duration>PT0S</duration>
+          <category>Volaille - ALIMENTS POUR ANIMAUX-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Volaille - ALIMENTS POUR ANIMAUX</category>
+    </domain.Task>
+    <domain.Task id="359">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="360">
+        <category>Charcuterie - JAMBON CUIT</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="361">
+        <domain.TaskPart id="362">
+          <task reference="359"/>
+          <duration>PT2H</duration>
+          <category>Charcuterie - JAMBON CUIT-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Charcuterie - JAMBON CUIT</category>
+    </domain.Task>
+    <domain.Task id="363">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="364">
+        <category>Charcuterie - JAMBON CRU,SEC ET TRANCHA</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="365">
+        <domain.TaskPart id="366">
+          <task reference="363"/>
+          <duration>PT0S</duration>
+          <category>Charcuterie - JAMBON CRU,SEC ET TRANCHA-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Charcuterie - JAMBON CRU,SEC ET TRANCHA</category>
+    </domain.Task>
+    <domain.Task id="367">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="368">
+        <category>Charcuterie - SAUCISSON/PATES/RILLETTES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="369">
+        <domain.TaskPart id="370">
+          <task reference="367"/>
+          <duration>PT0S</duration>
+          <category>Charcuterie - SAUCISSON/PATES/RILLETTES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Charcuterie - SAUCISSON/PATES/RILLETTES</category>
+    </domain.Task>
+    <domain.Task id="371">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="372">
+        <category>Charcuterie - SAUCISSERIE SECHE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="373">
+        <domain.TaskPart id="374">
+          <task reference="371"/>
+          <duration>PT0S</duration>
+          <category>Charcuterie - SAUCISSERIE SECHE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Charcuterie - SAUCISSERIE SECHE</category>
+    </domain.Task>
+    <domain.Task id="375">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="376">
+        <category>Charcuterie - CHARCUTERIE A CUIRE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="377">
+        <domain.TaskPart id="378">
+          <task reference="375"/>
+          <duration>PT2H</duration>
+          <category>Charcuterie - CHARCUTERIE A CUIRE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Charcuterie - CHARCUTERIE A CUIRE</category>
+    </domain.Task>
+    <domain.Task id="379">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="380">
+        <category>Charcuterie - HALAL &amp; CASHER</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="381">
+        <domain.TaskPart id="382">
+          <task reference="379"/>
+          <duration>PT0S</duration>
+          <category>Charcuterie - HALAL &amp; CASHER-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Charcuterie - HALAL &amp; CASHER</category>
+    </domain.Task>
+    <domain.Task id="383">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="384">
+        <category>Traiteur - ENTREES TRAITEUR</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="385">
+        <domain.TaskPart id="386">
+          <task reference="383"/>
+          <duration>PT2H</duration>
+          <category>Traiteur - ENTREES TRAITEUR-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Traiteur - ENTREES TRAITEUR</category>
+    </domain.Task>
+    <domain.Task id="387">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="388">
+        <category>Traiteur - TARTES SALEES TRAITEUR</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="389">
+        <domain.TaskPart id="390">
+          <task reference="387"/>
+          <duration>PT0S</duration>
+          <category>Traiteur - TARTES SALEES TRAITEUR-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Traiteur - TARTES SALEES TRAITEUR</category>
+    </domain.Task>
+    <domain.Task id="391">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="392">
+        <category>Traiteur - PANES FRAIS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="393">
+        <domain.TaskPart id="394">
+          <task reference="391"/>
+          <duration>PT0S</duration>
+          <category>Traiteur - PANES FRAIS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Traiteur - PANES FRAIS</category>
+    </domain.Task>
+    <domain.Task id="395">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="396">
+        <category>Traiteur - PLATS CUISINES FRAIS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="397">
+        <domain.TaskPart id="398">
+          <task reference="395"/>
+          <duration>PT1H</duration>
+          <category>Traiteur - PLATS CUISINES FRAIS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Traiteur - PLATS CUISINES FRAIS</category>
+    </domain.Task>
+    <domain.Task id="399">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="400">
+        <category>Traiteur - PATES FRAICHES ET QUENELL</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="401">
+        <domain.TaskPart id="402">
+          <task reference="399"/>
+          <duration>PT0S</duration>
+          <category>Traiteur - PATES FRAICHES ET QUENELL-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Traiteur - PATES FRAICHES ET QUENELL</category>
+    </domain.Task>
+    <domain.Task id="403">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="404">
+        <category>Traiteur - PATES A TARTE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="405">
+        <domain.TaskPart id="406">
+          <task reference="403"/>
+          <duration>PT1H</duration>
+          <category>Traiteur - PATES A TARTE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Traiteur - PATES A TARTE</category>
+    </domain.Task>
+    <domain.Task id="407">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="408">
+        <category>Traiteur - HALAL &amp; CASHER</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="409">
+        <domain.TaskPart id="410">
+          <task reference="407"/>
+          <duration>PT0S</duration>
+          <category>Traiteur - HALAL &amp; CASHER-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Traiteur - HALAL &amp; CASHER</category>
+    </domain.Task>
+    <domain.Task id="411">
+      <effort>PT1H</effort>
+      <requiredSkill id="412">
+        <category>Produits de la mer - SAURISSERIE</category>
+        <priority>2</priority>
+      </requiredSkill>
+      <priority>2</priority>
+      <taskParts id="413">
+        <domain.TaskPart id="414">
+          <task reference="411"/>
+          <duration>PT1H</duration>
+          <category>Produits de la mer - SAURISSERIE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Produits de la mer - SAURISSERIE</category>
+    </domain.Task>
+    <domain.Task id="415">
+      <effort>PT0S</effort>
+      <requiredSkill id="416">
+        <category>Produits de la mer - TRAITEUR DE LA MER</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="417">
+        <domain.TaskPart id="418">
+          <task reference="415"/>
+          <duration>PT0S</duration>
+          <category>Produits de la mer - TRAITEUR DE LA MER-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Produits de la mer - TRAITEUR DE LA MER</category>
+    </domain.Task>
+    <domain.Task id="419">
+      <effort>PT0S</effort>
+      <requiredSkill id="420">
+        <category>Produits de la mer - CRUSTACES ET ANCHOIS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="421">
+        <domain.TaskPart id="422">
+          <task reference="419"/>
+          <duration>PT0S</duration>
+          <category>Produits de la mer - CRUSTACES ET ANCHOIS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Produits de la mer - CRUSTACES ET ANCHOIS</category>
+    </domain.Task>
+    <domain.Task id="423">
+      <effort>PT0S</effort>
+      <requiredSkill id="424">
+        <category>Produits de la mer - SURIMI</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="425">
+        <domain.TaskPart id="426">
+          <task reference="423"/>
+          <duration>PT0S</duration>
+          <category>Produits de la mer - SURIMI-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Produits de la mer - SURIMI</category>
+    </domain.Task>
+    <domain.Task id="427">
+      <effort>PT0S</effort>
+      <requiredSkill id="428">
+        <category>Produits de la mer - TARTINABLES ET BLINIS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="429">
+        <domain.TaskPart id="430">
+          <task reference="427"/>
+          <duration>PT0S</duration>
+          <category>Produits de la mer - TARTINABLES ET BLINIS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Produits de la mer - TARTINABLES ET BLINIS</category>
+    </domain.Task>
+    <domain.Task id="431">
+      <effort>PT1H</effort>
+      <requiredSkill id="432">
+        <category>Boulangerie patisserie - PAIN INDUSTRIEL</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="433">
+        <domain.TaskPart id="434">
+          <task reference="431"/>
+          <duration>PT1H</duration>
+          <category>Boulangerie patisserie - PAIN INDUSTRIEL-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Boulangerie patisserie - PAIN INDUSTRIEL</category>
+    </domain.Task>
+    <domain.Task id="435">
+      <effort>PT4H</effort>
+      <requiredSkill id="436">
+        <category>Boulangerie patisserie - VIENNOISERIE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="437">
+        <domain.TaskPart id="438">
+          <task reference="435"/>
+          <duration>PT4H</duration>
+          <category>Boulangerie patisserie - VIENNOISERIE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Boulangerie patisserie - VIENNOISERIE</category>
+    </domain.Task>
+    <domain.Task id="439">
+      <effort>PT2H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="440">
+        <category>Boulangerie patisserie - PATISSERIE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="441">
+        <domain.TaskPart id="442">
+          <task reference="439"/>
+          <duration>PT2H</duration>
+          <category>Boulangerie patisserie - PATISSERIE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Boulangerie patisserie - PATISSERIE</category>
+    </domain.Task>
+    <domain.Task id="443">
+      <effort>PT0S</effort>
+      <requiredSkill id="444">
+        <category>Surgelé - ENTREES SURGELEES</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="445">
+        <domain.TaskPart id="446">
+          <task reference="443"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - ENTREES SURGELEES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - ENTREES SURGELEES</category>
+    </domain.Task>
+    <domain.Task id="447">
+      <effort>PT0S</effort>
+      <requiredSkill id="448">
+        <category>Surgelé - TARTES SALEES SURGELEES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="449">
+        <domain.TaskPart id="450">
+          <task reference="447"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - TARTES SALEES SURGELEES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - TARTES SALEES SURGELEES</category>
+    </domain.Task>
+    <domain.Task id="451">
+      <effort>PT0S</effort>
+      <requiredSkill id="452">
+        <category>Surgelé - PLATS CUISINES SURGELES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="453">
+        <domain.TaskPart id="454">
+          <task reference="451"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - PLATS CUISINES SURGELES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - PLATS CUISINES SURGELES</category>
+    </domain.Task>
+    <domain.Task id="455">
+      <effort>PT0S</effort>
+      <completionTime>12:00:00</completionTime>
+      <requiredSkill id="456">
+        <category>Surgelé - POISSONS SURGELES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="457">
+        <domain.TaskPart id="458">
+          <task reference="455"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - POISSONS SURGELES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - POISSONS SURGELES</category>
+    </domain.Task>
+    <domain.Task id="459">
+      <effort>PT0S</effort>
+      <requiredSkill id="460">
+        <category>&quot;Surgelé - CRUSTACE - MOLLUSQUE SURGEL&quot;</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="461">
+        <domain.TaskPart id="462">
+          <task reference="459"/>
+          <duration>PT0S</duration>
+          <category>&quot;Surgelé - CRUSTACE - MOLLUSQUE SURGEL&quot;-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>&quot;Surgelé - CRUSTACE - MOLLUSQUE SURGEL&quot;</category>
+    </domain.Task>
+    <domain.Task id="463">
+      <effort>PT0S</effort>
+      <requiredSkill id="464">
+        <category>Surgelé - VIANDES SURGELEES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="465">
+        <domain.TaskPart id="466">
+          <task reference="463"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - VIANDES SURGELEES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - VIANDES SURGELEES</category>
+    </domain.Task>
+    <domain.Task id="467">
+      <effort>PT1H</effort>
+      <requiredSkill id="468">
+        <category>Surgelé - LEGUMES SURGELES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="469">
+        <domain.TaskPart id="470">
+          <task reference="467"/>
+          <duration>PT1H</duration>
+          <category>Surgelé - LEGUMES SURGELES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - LEGUMES SURGELES</category>
+    </domain.Task>
+    <domain.Task id="471">
+      <effort>PT0S</effort>
+      <requiredSkill id="472">
+        <category>Surgelé - HALAL ET CASHER SURGELES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="473">
+        <domain.TaskPart id="474">
+          <task reference="471"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - HALAL ET CASHER SURGELES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - HALAL ET CASHER SURGELES</category>
+    </domain.Task>
+    <domain.Task id="475">
+      <effort>PT0S</effort>
+      <requiredSkill id="476">
+        <category>Surgelé - SNACKING/GRIGNOTAGE</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="477">
+        <domain.TaskPart id="478">
+          <task reference="475"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - SNACKING/GRIGNOTAGE-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - SNACKING/GRIGNOTAGE</category>
+    </domain.Task>
+    <domain.Task id="479">
+      <effort>PT0S</effort>
+      <requiredSkill id="480">
+        <category>Surgelé - GLACES ENFANTS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="481">
+        <domain.TaskPart id="482">
+          <task reference="479"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - GLACES ENFANTS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - GLACES ENFANTS</category>
+    </domain.Task>
+    <domain.Task id="483">
+      <effort>PT0S</effort>
+      <requiredSkill id="484">
+        <category>Surgelé - DESSERTS INDIVIDUELS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="485">
+        <domain.TaskPart id="486">
+          <task reference="483"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - DESSERTS INDIVIDUELS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - DESSERTS INDIVIDUELS</category>
+    </domain.Task>
+    <domain.Task id="487">
+      <effort>PT0S</effort>
+      <requiredSkill id="488">
+        <category>Surgelé - GLACES VRACS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="489">
+        <domain.TaskPart id="490">
+          <task reference="487"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - GLACES VRACS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - GLACES VRACS</category>
+    </domain.Task>
+    <domain.Task id="491">
+      <effort>PT0S</effort>
+      <requiredSkill id="492">
+        <category>Surgelé - SPECIALITES A PARTAGER</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="493">
+        <domain.TaskPart id="494">
+          <task reference="491"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - SPECIALITES A PARTAGER-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - SPECIALITES A PARTAGER</category>
+    </domain.Task>
+    <domain.Task id="495">
+      <effort>PT0S</effort>
+      <requiredSkill id="496">
+        <category>Surgelé - FRUITS ET PATES</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="497">
+        <domain.TaskPart id="498">
+          <task reference="495"/>
+          <duration>PT0S</duration>
+          <category>Surgelé - FRUITS ET PATES-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>R25</aisle>
+      <category>Surgelé - FRUITS ET PATES</category>
+    </domain.Task>
+    <domain.Task id="499">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="500">
+        <category>Anti-volage</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="501">
+        <domain.TaskPart id="502">
+          <task reference="499"/>
+          <duration>PT0S</duration>
+          <category>Anti-volage-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Anti-volage</category>
+    </domain.Task>
+    <domain.Task id="503">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="504">
+        <category>Tri caddie</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="505">
+        <domain.TaskPart id="506">
+          <task reference="503"/>
+          <duration>PT0S</duration>
+          <category>Tri caddie-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Tri caddie</category>
+    </domain.Task>
+    <domain.Task id="507">
+      <effort>PT5H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="508">
+        <category>Rangement</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="509">
+        <domain.TaskPart id="510">
+          <task reference="507"/>
+          <duration>PT5H</duration>
+          <category>Rangement-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Rangement</category>
+    </domain.Task>
+    <domain.Task id="511">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="512">
+        <category>Nettoyage 1</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="513">
+        <domain.TaskPart id="514">
+          <task reference="511"/>
+          <duration>PT0S</duration>
+          <category>Nettoyage 1-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Nettoyage 1</category>
+    </domain.Task>
+    <domain.Task id="515">
+      <effort>PT1H</effort>
+      <completionTime>06:15:00</completionTime>
+      <requiredSkill id="516">
+        <category>Pause étiquettes ruptures</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="517">
+        <domain.TaskPart id="518">
+          <task reference="515"/>
+          <duration>PT1H</duration>
+          <category>Pause étiquettes ruptures-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Pause étiquettes ruptures</category>
+    </domain.Task>
+    <domain.Task id="519">
+      <effort>PT4H</effort>
+      <completionTime>07:30:00</completionTime>
+      <requiredSkill id="520">
+        <category>Analyses TBO</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="521">
+        <domain.TaskPart id="522">
+          <task reference="519"/>
+          <duration>PT4H</duration>
+          <category>Analyses TBO-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Analyses TBO</category>
+    </domain.Task>
+    <domain.Task id="523">
+      <effort>PT3H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="524">
+        <category>Relevé ruptures</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="525">
+        <domain.TaskPart id="526">
+          <task reference="523"/>
+          <duration>PT3H</duration>
+          <category>Relevé ruptures-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Relevé ruptures</category>
+    </domain.Task>
+    <domain.Task id="527">
+      <effort>PT1H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="528">
+        <category>Casse 1</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="529">
+        <domain.TaskPart id="530">
+          <task reference="527"/>
+          <duration>PT1H</duration>
+          <category>Casse 1-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Casse 1</category>
+    </domain.Task>
+    <domain.Task id="531">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="532">
+        <category>Contrôles journaliers</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="533">
+        <domain.TaskPart id="534">
+          <task reference="531"/>
+          <duration>PT0S</duration>
+          <category>Contrôles journaliers-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Contrôles journaliers</category>
+    </domain.Task>
+    <domain.Task id="535">
+      <effort>PT3H</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="536">
+        <category>Contrôle balisage</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="537">
+        <domain.TaskPart id="538">
+          <task reference="535"/>
+          <duration>PT3H</duration>
+          <category>Contrôle balisage-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Contrôle balisage</category>
+    </domain.Task>
+    <domain.Task id="539">
+      <effort>PT0S</effort>
+      <completionTime>08:30:00</completionTime>
+      <requiredSkill id="540">
+        <category>Gestion SAC 1</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="541">
+        <domain.TaskPart id="542">
+          <task reference="539"/>
+          <duration>PT0S</duration>
+          <category>Gestion SAC 1-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Gestion SAC 1</category>
+    </domain.Task>
+    <domain.Task id="543">
+      <effort>PT0S</effort>
+      <completionTime>10:30:00</completionTime>
+      <requiredSkill id="544">
+        <category>Analyse ruptures</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="545">
+        <domain.TaskPart id="546">
+          <task reference="543"/>
+          <duration>PT0S</duration>
+          <category>Analyse ruptures-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Analyse ruptures</category>
+    </domain.Task>
+    <domain.Task id="547">
+      <effort>PT0S</effort>
+      <completionTime>13:15:00</completionTime>
+      <requiredSkill id="548">
+        <category>Commandes Volaille PLS</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="549">
+        <domain.TaskPart id="550">
+          <task reference="547"/>
+          <duration>PT0S</duration>
+          <category>Commandes Volaille PLS-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Commandes Volaille PLS</category>
+    </domain.Task>
+    <domain.Task id="551">
+      <effort>PT0S</effort>
+      <completionTime>11:00:00</completionTime>
+      <requiredSkill id="552">
+        <category>Contrôle sécurité</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="553">
+        <domain.TaskPart id="554">
+          <task reference="551"/>
+          <duration>PT0S</duration>
+          <category>Contrôle sécurité-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Contrôle sécurité</category>
+    </domain.Task>
+    <domain.Task id="555">
+      <effort>PT0S</effort>
+      <completionTime>12:15:00</completionTime>
+      <requiredSkill id="556">
+        <category>Commandes directes</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="557">
+        <domain.TaskPart id="558">
+          <task reference="555"/>
+          <duration>PT0S</duration>
+          <category>Commandes directes-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Commandes directes</category>
+    </domain.Task>
+    <domain.Task id="559">
+      <effort>PT0S</effort>
+      <completionTime>12:15:00</completionTime>
+      <requiredSkill id="560">
+        <category>Ventes Exceptionnelles</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="561">
+        <domain.TaskPart id="562">
+          <task reference="559"/>
+          <duration>PT0S</duration>
+          <category>Ventes Exceptionnelles-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Ventes Exceptionnelles</category>
+    </domain.Task>
+    <domain.Task id="563">
+      <effort>PT1H</effort>
+      <completionTime>18:45:00</completionTime>
+      <requiredSkill id="564">
+        <category>Reserre et  maintiens rayons</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="565">
+        <domain.TaskPart id="566">
+          <task reference="563"/>
+          <duration>PT1H</duration>
+          <category>Reserre et  maintiens rayons-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Reserre et  maintiens rayons</category>
+    </domain.Task>
+    <domain.Task id="567">
+      <effort>PT0S</effort>
+      <completionTime>20:00:00</completionTime>
+      <requiredSkill id="568">
+        <category>Gestion catalogues et collections</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="569">
+        <domain.TaskPart id="570">
+          <task reference="567"/>
+          <duration>PT0S</duration>
+          <category>Gestion catalogues et collections-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Gestion catalogues et collections</category>
+    </domain.Task>
+    <domain.Task id="571">
+      <effort>PT0S</effort>
+      <completionTime>18:45:00</completionTime>
+      <requiredSkill id="572">
+        <category>Planifications tâches</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="573">
+        <domain.TaskPart id="574">
+          <task reference="571"/>
+          <duration>PT0S</duration>
+          <category>Planifications tâches-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Planifications tâches</category>
+    </domain.Task>
+    <domain.Task id="575">
+      <effort>PT0S</effort>
+      <completionTime>17:15:00</completionTime>
+      <requiredSkill id="576">
+        <category>Consultation outils administratifs</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="577">
+        <domain.TaskPart id="578">
+          <task reference="575"/>
+          <duration>PT0S</duration>
+          <category>Consultation outils administratifs-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Consultation outils administratifs</category>
+    </domain.Task>
+    <domain.Task id="579">
+      <effort>PT2H</effort>
+      <completionTime>20:45:00</completionTime>
+      <requiredSkill id="580">
+        <category>MER des palettes homogènes</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="581">
+        <domain.TaskPart id="582">
+          <task reference="579"/>
+          <duration>PT2H</duration>
+          <category>MER des palettes homogènes-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>MER des palettes homogènes</category>
+    </domain.Task>
+    <domain.Task id="583">
+      <effort>PT3H</effort>
+      <completionTime>10:00:00</completionTime>
+      <requiredSkill id="584">
+        <category>Casse 2 (Tri palettes)</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="585">
+        <domain.TaskPart id="586">
+          <task reference="583"/>
+          <duration>PT3H</duration>
+          <category>Casse 2 (Tri palettes)-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Casse 2 (Tri palettes)</category>
+    </domain.Task>
+    <domain.Task id="587">
+      <effort>PT0S</effort>
+      <completionTime>18:30:00</completionTime>
+      <requiredSkill id="588">
+        <category>Nettoyage 2</category>
+        <priority>0</priority>
+      </requiredSkill>
+      <priority>0</priority>
+      <taskParts id="589">
+        <domain.TaskPart id="590">
+          <task reference="587"/>
+          <duration>PT0S</duration>
+          <category>Nettoyage 2-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Nettoyage 2</category>
+    </domain.Task>
+    <domain.Task id="591">
+      <effort>PT8H</effort>
+      <completionTime>18:30:00</completionTime>
+      <requiredSkill id="592">
+        <category>Rangement magasin + réserve</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="593">
+        <domain.TaskPart id="594">
+          <task reference="591"/>
+          <duration>PT8H</duration>
+          <category>Rangement magasin + réserve-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Rangement magasin + réserve</category>
+    </domain.Task>
+    <domain.Task id="595">
+      <effort>PT2H</effort>
+      <completionTime>20:00:00</completionTime>
+      <requiredSkill id="596">
+        <category>Casse 3 (Balisage Rayon)</category>
+        <priority>1</priority>
+      </requiredSkill>
+      <priority>1</priority>
+      <taskParts id="597">
+        <domain.TaskPart id="598">
+          <task reference="595"/>
+          <duration>PT2H</duration>
+          <category>Casse 3 (Balisage Rayon)-0</category>
+        </domain.TaskPart>
+      </taskParts>
+      <maxParts>1</maxParts>
+      <aisle>Autres</aisle>
+      <category>Casse 3 (Balisage Rayon)</category>
     </domain.Task>
   </taskList>
-  <employeeList id="77">
-    <domain.Employee id="78">
-      <nextTaskPart id="79">
-        <nextTaskPart id="80">
-          <nextTaskPart id="81">
-            <nextTaskPart id="82">
-              <previousTaskPartOrEmployee class="domain.TaskPart" reference="81"/>
-              <employee reference="78"/>
-              <startTime>06:30:00</startTime>
-              <id>06-0</id>
-              <task reference="34"/>
-              <duration>PT1H</duration>
-            </nextTaskPart>
-            <previousTaskPartOrEmployee class="domain.TaskPart" reference="80"/>
-            <employee reference="78"/>
-            <startTime>06:00:00</startTime>
-            <id>03-0</id>
-            <task reference="18"/>
-            <duration>PT30M</duration>
-          </nextTaskPart>
-          <previousTaskPartOrEmployee class="domain.TaskPart" reference="79"/>
-          <employee reference="78"/>
-          <startTime>05:30:00</startTime>
-          <id>03-1</id>
-          <task reference="18"/>
-          <duration>PT30M</duration>
-        </nextTaskPart>
-        <previousTaskPartOrEmployee class="domain.Employee" reference="78"/>
-        <employee reference="78"/>
-        <startTime>05:00:00</startTime>
-        <id>01-0</id>
-        <task reference="6"/>
-        <duration>PT30M</duration>
-      </nextTaskPart>
-      <fullName>emp1</fullName>
+  <employeeList id="599">
+    <domain.Employee id="600">
+      <fullName>AARON</fullName>
       <startTime>05:00:00</startTime>
-      <skillSet id="83">
-        <domain.Skill id="84">
-          <name>writing</name>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="601">
+        <domain.Skill id="602">
+          <category>GAZEIFIE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="603">
+          <category>NON GAZEIFIE &amp;SIROP - </category>
+          <priority>2</priority>
         </domain.Skill>
       </skillSet>
     </domain.Employee>
-    <domain.Employee id="85">
-      <nextTaskPart id="86">
-        <nextTaskPart id="87">
-          <nextTaskPart id="88">
-            <nextTaskPart id="89">
-              <nextTaskPart id="90">
-                <nextTaskPart id="91">
-                  <nextTaskPart id="92">
-                    <nextTaskPart id="93">
-                      <nextTaskPart id="94">
-                        <nextTaskPart id="95">
-                          <nextTaskPart id="96">
-                            <previousTaskPartOrEmployee class="domain.TaskPart" reference="95"/>
-                            <employee reference="85"/>
-                            <startTime>12:30:00</startTime>
-                            <id>05-0</id>
-                            <task reference="29"/>
-                            <duration>PT45M</duration>
-                          </nextTaskPart>
-                          <previousTaskPartOrEmployee class="domain.TaskPart" reference="94"/>
-                          <employee reference="85"/>
-                          <startTime>11:00:00</startTime>
-                          <id>04-0</id>
-                          <task reference="24"/>
-                          <duration>PT1H30M</duration>
-                        </nextTaskPart>
-                        <previousTaskPartOrEmployee class="domain.TaskPart" reference="93"/>
-                        <employee reference="85"/>
-                        <startTime>09:30:00</startTime>
-                        <id>09-0</id>
-                        <task reference="52"/>
-                        <duration>PT1H30M</duration>
-                      </nextTaskPart>
-                      <previousTaskPartOrEmployee class="domain.TaskPart" reference="92"/>
-                      <employee reference="85"/>
-                      <startTime>09:00:00</startTime>
-                      <id>08-1</id>
-                      <task reference="46"/>
-                      <duration>PT30M</duration>
-                    </nextTaskPart>
-                    <previousTaskPartOrEmployee class="domain.TaskPart" reference="91"/>
-                    <employee reference="85"/>
-                    <startTime>08:30:00</startTime>
-                    <id>07-2</id>
-                    <task reference="39"/>
-                    <duration>PT30M</duration>
-                  </nextTaskPart>
-                  <previousTaskPartOrEmployee class="domain.TaskPart" reference="90"/>
-                  <employee reference="85"/>
-                  <startTime>07:30:00</startTime>
-                  <id>07-1</id>
-                  <task reference="39"/>
-                  <duration>PT30M</duration>
-                </nextTaskPart>
-                <previousTaskPartOrEmployee class="domain.TaskPart" reference="89"/>
-                <employee reference="85"/>
-                <startTime>07:00:00</startTime>
-                <id>08-0</id>
-                <task reference="46"/>
-                <duration>PT30M</duration>
-              </nextTaskPart>
-              <previousTaskPartOrEmployee class="domain.TaskPart" reference="88"/>
-              <employee reference="85"/>
-              <startTime>06:30:00</startTime>
-              <id>07-0</id>
-              <task reference="39"/>
-              <duration>PT30M</duration>
-            </nextTaskPart>
-            <previousTaskPartOrEmployee class="domain.TaskPart" reference="87"/>
-            <employee reference="85"/>
-            <startTime>06:00:00</startTime>
-            <id>02-2</id>
-            <task reference="11"/>
-            <duration>PT30M</duration>
-          </nextTaskPart>
-          <previousTaskPartOrEmployee class="domain.TaskPart" reference="86"/>
-          <employee reference="85"/>
-          <startTime>05:30:00</startTime>
-          <id>02-1</id>
-          <task reference="11"/>
-          <duration>PT30M</duration>
-        </nextTaskPart>
-        <previousTaskPartOrEmployee class="domain.Employee" reference="85"/>
-        <employee reference="85"/>
-        <startTime>05:00:00</startTime>
-        <id>02-0</id>
-        <task reference="11"/>
-        <duration>PT30M</duration>
-      </nextTaskPart>
-      <fullName>emp2</fullName>
+    <domain.Employee id="604">
+      <fullName>ADAM</fullName>
       <startTime>05:00:00</startTime>
-      <skillSet id="97">
-        <domain.Skill id="98">
-          <name>writing</name>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="605">
+        <domain.Skill id="606">
+          <category>BIERES ET PANACHES - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="607">
+          <category>CIDRES - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="608">
+          <category>NON GAZEIFIE &amp;SIROP - </category>
+          <priority>3</priority>
         </domain.Skill>
       </skillSet>
     </domain.Employee>
-    <domain.Employee id="99">
-      <nextTaskPart id="100">
-        <nextTaskPart id="101">
-          <nextTaskPart id="102">
-            <nextTaskPart id="103">
-              <previousTaskPartOrEmployee class="domain.TaskPart" reference="102"/>
-              <employee reference="99"/>
-              <startTime>09:30:00</startTime>
-              <id>11-0</id>
-              <task reference="62"/>
-              <duration>PT45M</duration>
-            </nextTaskPart>
-            <previousTaskPartOrEmployee class="domain.TaskPart" reference="101"/>
-            <employee reference="99"/>
-            <startTime>08:30:00</startTime>
-            <id>12-0</id>
-            <task reference="67"/>
-            <duration>PT1H</duration>
-          </nextTaskPart>
-          <previousTaskPartOrEmployee class="domain.TaskPart" reference="100"/>
-          <employee reference="99"/>
-          <startTime>06:30:00</startTime>
-          <id>13-0</id>
-          <task reference="72"/>
-          <duration>PT1H30M</duration>
-        </nextTaskPart>
-        <previousTaskPartOrEmployee class="domain.Employee" reference="99"/>
-        <employee reference="99"/>
-        <startTime>05:00:00</startTime>
-        <id>10-0</id>
-        <task reference="57"/>
-        <duration>PT1H30M</duration>
-      </nextTaskPart>
-      <fullName>emp3</fullName>
+    <domain.Employee id="609">
+      <fullName>ADÈLE</fullName>
       <startTime>05:00:00</startTime>
-      <skillSet id="104">
-        <domain.Skill id="105">
-          <name>reading</name>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="610">
+        <domain.Skill id="611">
+          <category>ALCOOLS - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="612">
+          <category>CHAMPAGNE - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="613">
+          <category>EAUX - </category>
+          <priority>4</priority>
+        </domain.Skill>
+        <domain.Skill id="614">
+          <category>MOUSSEUX - </category>
+          <priority>3</priority>
         </domain.Skill>
       </skillSet>
+    </domain.Employee>
+    <domain.Employee id="615">
+      <fullName>AGATHE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="616">
+        <domain.Skill id="617">
+          <category>VINS - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="618">
+          <category>VINS DE TABLE ET DE PAYS - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="619">
+      <fullName>ALEXANDRE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="620">
+        <domain.Skill id="621">
+          <category>PETITE DROGUERIE - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="622">
+          <category>SOIN DE LA MAISON - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="623">
+          <category>SOIN DU LINGE - </category>
+          <priority>3</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="624">
+      <fullName>ALICE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="625">
+        <domain.Skill id="626">
+          <category>DEO MAISON - </category>
+          <priority>3</priority>
+        </domain.Skill>
+        <domain.Skill id="627">
+          <category>PETITE DROGUERIE - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="628">
+          <category>SOIN DE LA MAISON - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="629">
+      <fullName>ALICIA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="630">
+        <domain.Skill id="631">
+          <category>PAPIER MENAGE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="632">
+      <fullName>AMBRE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="633">
+        <domain.Skill id="634">
+          <category>PAPIER HYGIENE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="635">
+      <fullName>ANDRÉA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="636"/>
+    </domain.Employee>
+    <domain.Employee id="637">
+      <fullName>ANNA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="638">
+        <domain.Skill id="639">
+          <category>BEAUTE FEMININE - </category>
+          <priority>3</priority>
+        </domain.Skill>
+        <domain.Skill id="640">
+          <category>BEBE - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="641">
+          <category>MOUCHOIRS ET COTON - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="642">
+      <fullName>ANTOINE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="643">
+        <domain.Skill id="644">
+          <category>CAPILLAIRE - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="645">
+          <category>COLORATION - </category>
+          <priority>3</priority>
+        </domain.Skill>
+        <domain.Skill id="646">
+          <category>COUCHES  - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="647">
+      <fullName>ARTHUR</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="648">
+        <domain.Skill id="649">
+          <category>HYGIENE FEMININE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="650">
+          <category>MAQUILLAGE - </category>
+          <priority>3</priority>
+        </domain.Skill>
+        <domain.Skill id="651">
+          <category>SAVON BAIN DOUCHE - </category>
+          <priority>2</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="652">
+      <fullName>AUGUSTIN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="653">
+        <domain.Skill id="654">
+          <category>DENTAIRE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="655">
+          <category>SANTE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="656">
+          <category>SOIN HOMME ET RASAGE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="657">
+      <fullName>AXEL</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="658">
+        <domain.Skill id="659">
+          <category>APERITIF - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="660">
+          <category>CHIPS - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="661">
+      <fullName>BAPTISTE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="662">
+        <domain.Skill id="663">
+          <category>CONSERVE DE POISSON - </category>
+          <priority>3</priority>
+        </domain.Skill>
+        <domain.Skill id="664">
+          <category>PATES - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="665">
+          <category>POTAGE - </category>
+          <priority>6</priority>
+        </domain.Skill>
+        <domain.Skill id="666">
+          <category>PUREE  - </category>
+          <priority>5</priority>
+        </domain.Skill>
+        <domain.Skill id="667">
+          <category>RIZ - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="668">
+          <category>SAUCES CHAUDES - </category>
+          <priority>4</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="669">
+      <fullName>BENJAMIN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="670">
+        <domain.Skill id="671">
+          <category>CONSERVE  - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="672">
+          <category>PLAT CUISINER - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="673">
+      <fullName>CAMILLE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="674">
+        <domain.Skill id="675">
+          <category>CHIEN CHAT - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="676">
+      <fullName>CAPUCINE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="677">
+        <domain.Skill id="678">
+          <category> PATE A TARTINER - </category>
+          <priority>5</priority>
+        </domain.Skill>
+        <domain.Skill id="679">
+          <category>CAFE  ET PETIT DEJ - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="680">
+          <category>LAIT - </category>
+          <priority>4</priority>
+        </domain.Skill>
+        <domain.Skill id="681">
+          <category>MIEL, CONFITURE - </category>
+          <priority>3</priority>
+        </domain.Skill>
+        <domain.Skill id="682">
+          <category>THE - </category>
+          <priority>2</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="683">
+      <fullName>CHARLIE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="684">
+        <domain.Skill id="685">
+          <category>BISCOTTE  - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="686">
+          <category>CEREALE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="687">
+      <fullName>CHARLINE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="688">
+        <domain.Skill id="689">
+          <category>CONFISERIE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="690">
+          <category>DIETETIQUE  - </category>
+          <priority>2</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="691">
+      <fullName>CHARLOTTE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="692">
+        <domain.Skill id="693">
+          <category>CONDIMENT - </category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="694">
+          <category>HUILE ET VINAIGRE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="695">
+      <fullName>CHLOÉ</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="696">
+        <domain.Skill id="697">
+          <category>GATEAU - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="698">
+      <fullName>CLARA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="699">
+        <domain.Skill id="700">
+          <category>ALIMENT INFANTILE - </category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="701">
+      <fullName>CLÉMENCE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="702">
+        <domain.Skill id="703">
+          <category>Fromage - CHEVRES ET BREBIS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="704">
+          <category>Fromage - FROMAGES A CUIRE ET FONDU</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="705">
+          <category>Fromage - FROMAGES ALLEGES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="706">
+          <category>Fromage - PATE PRES.CUITE &amp; NON CUI</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="707">
+          <category>Fromage - PATES FRAICHES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="708">
+          <category>Fromage - PATES MOLLES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="709">
+          <category>Fromage - PERSILLES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="710">
+          <category>Fromage - PRE EMBALLES</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="711">
+      <fullName>CLÉMENT</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="712">
+        <domain.Skill id="713">
+          <category>Ultra Frais - BLANCS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="714">
+          <category>Ultra Frais - BOISSONS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="715">
+          <category>Ultra Frais - COMPOTES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="716">
+          <category>Ultra Frais - CROISSANCE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="717">
+          <category>Ultra Frais - DESSERTS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="718">
+          <category>Ultra Frais - LAIT ENTIER ET SPECIALITE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="719">
+          <category>Ultra Frais - NON BLANCS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="720">
+          <category>Ultra Frais - SANTE ACTIVE</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="721">
+      <fullName>EDEN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="722">
+        <domain.Skill id="723">
+          <category>Ultra Frais - BLANCS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="724">
+          <category>Ultra Frais - BOISSONS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="725">
+          <category>Ultra Frais - COMPOTES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="726">
+          <category>Ultra Frais - CROISSANCE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="727">
+          <category>Ultra Frais - DESSERTS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="728">
+          <category>Ultra Frais - LAIT ENTIER ET SPECIALITE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="729">
+          <category>Ultra Frais - NON BLANCS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="730">
+          <category>Ultra Frais - SANTE ACTIVE</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="731">
+      <fullName>ÉLÉNA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="732">
+        <domain.Skill id="733">
+          <category>Ultra Frais - BLANCS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="734">
+          <category>Ultra Frais - BOISSONS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="735">
+          <category>Ultra Frais - COMPOTES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="736">
+          <category>Ultra Frais - CROISSANCE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="737">
+          <category>Ultra Frais - DESSERTS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="738">
+          <category>Ultra Frais - LAIT ENTIER ET SPECIALITE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="739">
+          <category>Ultra Frais - NON BLANCS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="740">
+          <category>Ultra Frais - SANTE ACTIVE</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="741">
+      <fullName>ÉLINA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="742">
+        <domain.Skill id="743">
+          <category>Cremerie - BEURRE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="744">
+          <category>Cremerie - CORPS GRAS VEGETAL/MIXTE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="745">
+          <category>Cremerie - CREMES ET SAUCES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="746">
+          <category>Cremerie - LAIT</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="747">
+          <category>Cremerie - OEUFS</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="748">
+      <fullName>ELIOTT</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="749">
+        <domain.Skill id="750">
+          <category>Produits de la mer - CRUSTACES ET ANCHOIS</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="751">
+          <category>Produits de la mer - SAURISSERIE</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="752">
+          <category>Produits de la mer - SURIMI</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="753">
+          <category>Produits de la mer - TARTINABLES ET BLINIS</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="754">
+          <category>Produits de la mer - TRAITEUR DE LA MER</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="755">
+          <category>Volaille - ALIMENTS POUR ANIMAUX</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="756">
+          <category>Volaille - DECOUPE DE VOLAILLES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="757">
+          <category>Volaille - PRODUITS PREPARES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="758">
+          <category>Volaille - VOLAILLE HALAL ET CASHER</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="759">
+          <category>Volaille - VOLAILLES ENTIERES</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="760">
+      <fullName>ÉLISE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="761"/>
+    </domain.Employee>
+    <domain.Employee id="762">
+      <fullName>EMMA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="763">
+        <domain.Skill id="764">
+          <category>Charcuterie - CHARCUTERIE A CUIRE</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="765">
+          <category>Charcuterie - HALAL &amp; CASHER</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="766">
+          <category>Charcuterie - JAMBON CRU,SEC ET TRANCHA</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="767">
+          <category>Charcuterie - JAMBON CUIT</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="768">
+          <category>Charcuterie - SAUCISSERIE SECHE</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="769">
+          <category>Charcuterie - SAUCISSON/PATES/RILLETTES</category>
+          <priority>2</priority>
+        </domain.Skill>
+        <domain.Skill id="770">
+          <category>Cremerie - BEURRE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="771">
+          <category>Cremerie - CORPS GRAS VEGETAL/MIXTE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="772">
+          <category>Cremerie - CREMES ET SAUCES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="773">
+          <category>Cremerie - LAIT</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="774">
+          <category>Cremerie - OEUFS</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="775">
+      <fullName>ENZO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="776">
+        <domain.Skill id="777">
+          <category>Traiteur - ENTREES TRAITEUR</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="778">
+          <category>Traiteur - HALAL &amp; CASHER</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="779">
+          <category>Traiteur - PANES FRAIS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="780">
+          <category>Traiteur - PATES A TARTE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="781">
+          <category>Traiteur - PATES FRAICHES ET QUENELL</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="782">
+          <category>Traiteur - PLATS CUISINES FRAIS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="783">
+          <category>Traiteur - TARTES SALEES TRAITEUR</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="784">
+      <fullName>ESTÉBAN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="785">
+        <domain.Skill id="786">
+          <category>Traiteur - ENTREES TRAITEUR</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="787">
+          <category>Traiteur - HALAL &amp; CASHER</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="788">
+          <category>Traiteur - PANES FRAIS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="789">
+          <category>Traiteur - PATES A TARTE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="790">
+          <category>Traiteur - PATES FRAICHES ET QUENELL</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="791">
+          <category>Traiteur - PLATS CUISINES FRAIS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="792">
+          <category>Traiteur - TARTES SALEES TRAITEUR</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="793">
+      <fullName>ETHAN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="794">
+        <domain.Skill id="795">
+          <category>Boulangerie patisserie - PAIN INDUSTRIEL</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="796">
+          <category>Boulangerie patisserie - PATISSERIE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="797">
+          <category>Boulangerie patisserie - VIENNOISERIE</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="798">
+      <fullName>EVA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="799">
+        <domain.Skill id="800">
+          <category>&quot;Surgelé - CRUSTACE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="801">
+          <category>MOLLUSQUE SURGEL&quot;</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="802">
+          <category>Surgelé - DESSERTS INDIVIDUELS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="803">
+          <category>Surgelé - ENTREES SURGELEES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="804">
+          <category>Surgelé - GLACES ENFANTS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="805">
+          <category>Surgelé - GLACES VRACS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="806">
+          <category>Surgelé - HALAL ET CASHER SURGELES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="807">
+          <category>Surgelé - LEGUMES SURGELES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="808">
+          <category>Surgelé - PLATS CUISINES SURGELES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="809">
+          <category>Surgelé - POISSONS SURGELES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="810">
+          <category>Surgelé - SNACKING/GRIGNOTAGE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="811">
+          <category>Surgelé - SPECIALITES A PARTAGER</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="812">
+          <category>Surgelé - TARTES SALEES SURGELEES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="813">
+          <category>Surgelé - VIANDES SURGELEES</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="814">
+      <fullName>ÉVAN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="815">
+        <domain.Skill id="816">
+          <category>&quot;Surgelé - CRUSTACE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="817">
+          <category>MOLLUSQUE SURGEL&quot;</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="818">
+          <category>Surgelé - DESSERTS INDIVIDUELS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="819">
+          <category>Surgelé - ENTREES SURGELEES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="820">
+          <category>Surgelé - GLACES ENFANTS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="821">
+          <category>Surgelé - GLACES VRACS</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="822">
+          <category>Surgelé - HALAL ET CASHER SURGELES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="823">
+          <category>Surgelé - LEGUMES SURGELES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="824">
+          <category>Surgelé - PLATS CUISINES SURGELES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="825">
+          <category>Surgelé - POISSONS SURGELES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="826">
+          <category>Surgelé - SNACKING/GRIGNOTAGE</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="827">
+          <category>Surgelé - SPECIALITES A PARTAGER</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="828">
+          <category>Surgelé - TARTES SALEES SURGELEES</category>
+          <priority>1</priority>
+        </domain.Skill>
+        <domain.Skill id="829">
+          <category>Surgelé - VIANDES SURGELEES</category>
+          <priority>1</priority>
+        </domain.Skill>
+      </skillSet>
+    </domain.Employee>
+    <domain.Employee id="830">
+      <fullName>GABIN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="831"/>
+    </domain.Employee>
+    <domain.Employee id="832">
+      <fullName>GABRIEL</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="833"/>
+    </domain.Employee>
+    <domain.Employee id="834">
+      <fullName>GIULIA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="835"/>
+    </domain.Employee>
+    <domain.Employee id="836">
+      <fullName>HUGO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="837"/>
+    </domain.Employee>
+    <domain.Employee id="838">
+      <fullName>INÈS</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="839"/>
+    </domain.Employee>
+    <domain.Employee id="840">
+      <fullName>IRIS</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="841"/>
+    </domain.Employee>
+    <domain.Employee id="842">
+      <fullName>JADE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="843"/>
+    </domain.Employee>
+    <domain.Employee id="844">
+      <fullName>JEANNE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="845"/>
+    </domain.Employee>
+    <domain.Employee id="846">
+      <fullName>JULES</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="847"/>
+    </domain.Employee>
+    <domain.Employee id="848">
+      <fullName>JULIA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="849"/>
+    </domain.Employee>
+    <domain.Employee id="850">
+      <fullName>JULIETTE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="851"/>
+    </domain.Employee>
+    <domain.Employee id="852">
+      <fullName>LÉA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="853"/>
+    </domain.Employee>
+    <domain.Employee id="854">
+      <fullName>LÉANA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="855"/>
+    </domain.Employee>
+    <domain.Employee id="856">
+      <fullName>LÉANDRO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="857"/>
+    </domain.Employee>
+    <domain.Employee id="858">
+      <fullName>LÉNA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="859"/>
+    </domain.Employee>
+    <domain.Employee id="860">
+      <fullName>LÉO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="861"/>
+    </domain.Employee>
+    <domain.Employee id="862">
+      <fullName>LÉON</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="863"/>
+    </domain.Employee>
+    <domain.Employee id="864">
+      <fullName>LÉONIE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="865"/>
+    </domain.Employee>
+    <domain.Employee id="866">
+      <fullName>LIAM</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="867"/>
+    </domain.Employee>
+    <domain.Employee id="868">
+      <fullName>LINA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="869"/>
+    </domain.Employee>
+    <domain.Employee id="870">
+      <fullName>LOLA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="871"/>
+    </domain.Employee>
+    <domain.Employee id="872">
+      <fullName>LOU</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="873"/>
+    </domain.Employee>
+    <domain.Employee id="874">
+      <fullName>LOUIS</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="875"/>
+    </domain.Employee>
+    <domain.Employee id="876">
+      <fullName>LOUISE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="877"/>
+    </domain.Employee>
+    <domain.Employee id="878">
+      <fullName>LOUNA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="879"/>
+    </domain.Employee>
+    <domain.Employee id="880">
+      <fullName>LUCAS</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="881"/>
+    </domain.Employee>
+    <domain.Employee id="882">
+      <fullName>LUCIE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="883"/>
+    </domain.Employee>
+    <domain.Employee id="884">
+      <fullName>MAËL</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="885"/>
+    </domain.Employee>
+    <domain.Employee id="886">
+      <fullName>MALO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="887"/>
+    </domain.Employee>
+    <domain.Employee id="888">
+      <fullName>MANON</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="889"/>
+    </domain.Employee>
+    <domain.Employee id="890">
+      <fullName>MARGAUX</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="891"/>
+    </domain.Employee>
+    <domain.Employee id="892">
+      <fullName>MARGOT</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="893"/>
+    </domain.Employee>
+    <domain.Employee id="894">
+      <fullName>MARIUS</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="895"/>
+    </domain.Employee>
+    <domain.Employee id="896">
+      <fullName>MARTIN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="897"/>
+    </domain.Employee>
+    <domain.Employee id="898">
+      <fullName>MATHÉO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="899"/>
+    </domain.Employee>
+    <domain.Employee id="900">
+      <fullName>MATHILDE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="901"/>
+    </domain.Employee>
+    <domain.Employee id="902">
+      <fullName>MATHIS</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="903"/>
+    </domain.Employee>
+    <domain.Employee id="904">
+      <fullName>MATHYS</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="905"/>
+    </domain.Employee>
+    <domain.Employee id="906">
+      <fullName>MAXENCE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="907"/>
+    </domain.Employee>
+    <domain.Employee id="908">
+      <fullName>MAXIME</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="909"/>
+    </domain.Employee>
+    <domain.Employee id="910">
+      <fullName>MIA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="911"/>
+    </domain.Employee>
+    <domain.Employee id="912">
+      <fullName>MILA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="913"/>
+    </domain.Employee>
+    <domain.Employee id="914">
+      <fullName>NATHAN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="915"/>
+    </domain.Employee>
+    <domain.Employee id="916">
+      <fullName>NINO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="917"/>
+    </domain.Employee>
+    <domain.Employee id="918">
+      <fullName>NOAH</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="919"/>
+    </domain.Employee>
+    <domain.Employee id="920">
+      <fullName>NOÉ</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="921"/>
+    </domain.Employee>
+    <domain.Employee id="922">
+      <fullName>NOÉMIE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="923"/>
+    </domain.Employee>
+    <domain.Employee id="924">
+      <fullName>NOLAN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="925"/>
+    </domain.Employee>
+    <domain.Employee id="926">
+      <fullName>OLIVIA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="927"/>
+    </domain.Employee>
+    <domain.Employee id="928">
+      <fullName>PAUL</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="929"/>
+    </domain.Employee>
+    <domain.Employee id="930">
+      <fullName>RAPHAËL</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="931"/>
+    </domain.Employee>
+    <domain.Employee id="932">
+      <fullName>ROBIN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="933"/>
+    </domain.Employee>
+    <domain.Employee id="934">
+      <fullName>ROMANE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="935"/>
+    </domain.Employee>
+    <domain.Employee id="936">
+      <fullName>ROSE</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="937"/>
+    </domain.Employee>
+    <domain.Employee id="938">
+      <fullName>SACHA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="939"/>
+    </domain.Employee>
+    <domain.Employee id="940">
+      <fullName>SIMON</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="941"/>
+    </domain.Employee>
+    <domain.Employee id="942">
+      <fullName>THÉO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="943"/>
+    </domain.Employee>
+    <domain.Employee id="944">
+      <fullName>TIMÉO</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="945"/>
+    </domain.Employee>
+    <domain.Employee id="946">
+      <fullName>TOM</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="947"/>
+    </domain.Employee>
+    <domain.Employee id="948">
+      <fullName>VALENTIN</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="949"/>
+    </domain.Employee>
+    <domain.Employee id="950">
+      <fullName>VICTOR</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="951"/>
+    </domain.Employee>
+    <domain.Employee id="952">
+      <fullName>VICTORIA</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="953"/>
+    </domain.Employee>
+    <domain.Employee id="954">
+      <fullName>WILLIAM</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="955"/>
+    </domain.Employee>
+    <domain.Employee id="956">
+      <fullName>ZOÉ</fullName>
+      <startTime>05:00:00</startTime>
+      <endTime>14:00:00</endTime>
+      <skillSet class="sorted-set" id="957"/>
     </domain.Employee>
   </employeeList>
-  <taskPartList id="106">
-    <domain.TaskPart reference="79"/>
-    <domain.TaskPart reference="86"/>
-    <domain.TaskPart reference="87"/>
-    <domain.TaskPart reference="88"/>
-    <domain.TaskPart reference="81"/>
-    <domain.TaskPart reference="80"/>
-    <domain.TaskPart reference="95"/>
-    <domain.TaskPart reference="96"/>
+  <taskPartList id="958">
+    <domain.TaskPart reference="6"/>
+    <domain.TaskPart reference="10"/>
+    <domain.TaskPart reference="14"/>
+    <domain.TaskPart reference="18"/>
+    <domain.TaskPart reference="22"/>
+    <domain.TaskPart reference="26"/>
+    <domain.TaskPart reference="30"/>
+    <domain.TaskPart reference="34"/>
+    <domain.TaskPart reference="38"/>
+    <domain.TaskPart reference="42"/>
+    <domain.TaskPart reference="46"/>
+    <domain.TaskPart reference="50"/>
+    <domain.TaskPart reference="54"/>
+    <domain.TaskPart reference="58"/>
+    <domain.TaskPart reference="62"/>
+    <domain.TaskPart reference="66"/>
+    <domain.TaskPart reference="70"/>
+    <domain.TaskPart reference="74"/>
+    <domain.TaskPart reference="78"/>
     <domain.TaskPart reference="82"/>
-    <domain.TaskPart reference="89"/>
-    <domain.TaskPart reference="91"/>
-    <domain.TaskPart reference="92"/>
+    <domain.TaskPart reference="86"/>
     <domain.TaskPart reference="90"/>
-    <domain.TaskPart reference="93"/>
     <domain.TaskPart reference="94"/>
-    <domain.TaskPart reference="100"/>
-    <domain.TaskPart reference="103"/>
+    <domain.TaskPart reference="98"/>
     <domain.TaskPart reference="102"/>
-    <domain.TaskPart reference="101"/>
+    <domain.TaskPart reference="106"/>
+    <domain.TaskPart reference="110"/>
+    <domain.TaskPart reference="114"/>
+    <domain.TaskPart reference="118"/>
+    <domain.TaskPart reference="122"/>
+    <domain.TaskPart reference="126"/>
+    <domain.TaskPart reference="130"/>
+    <domain.TaskPart reference="134"/>
+    <domain.TaskPart reference="138"/>
+    <domain.TaskPart reference="142"/>
+    <domain.TaskPart reference="146"/>
+    <domain.TaskPart reference="150"/>
+    <domain.TaskPart reference="154"/>
+    <domain.TaskPart reference="158"/>
+    <domain.TaskPart reference="162"/>
+    <domain.TaskPart reference="166"/>
+    <domain.TaskPart reference="170"/>
+    <domain.TaskPart reference="174"/>
+    <domain.TaskPart reference="178"/>
+    <domain.TaskPart reference="182"/>
+    <domain.TaskPart reference="186"/>
+    <domain.TaskPart reference="190"/>
+    <domain.TaskPart reference="194"/>
+    <domain.TaskPart reference="198"/>
+    <domain.TaskPart reference="202"/>
+    <domain.TaskPart reference="206"/>
+    <domain.TaskPart reference="210"/>
+    <domain.TaskPart reference="214"/>
+    <domain.TaskPart reference="218"/>
+    <domain.TaskPart reference="222"/>
+    <domain.TaskPart reference="226"/>
+    <domain.TaskPart reference="230"/>
+    <domain.TaskPart reference="234"/>
+    <domain.TaskPart reference="238"/>
+    <domain.TaskPart reference="242"/>
+    <domain.TaskPart reference="246"/>
+    <domain.TaskPart reference="250"/>
+    <domain.TaskPart reference="254"/>
+    <domain.TaskPart reference="258"/>
+    <domain.TaskPart reference="262"/>
+    <domain.TaskPart reference="266"/>
+    <domain.TaskPart reference="270"/>
+    <domain.TaskPart reference="274"/>
+    <domain.TaskPart reference="278"/>
+    <domain.TaskPart reference="282"/>
+    <domain.TaskPart reference="286"/>
+    <domain.TaskPart reference="290"/>
+    <domain.TaskPart reference="294"/>
+    <domain.TaskPart reference="298"/>
+    <domain.TaskPart reference="302"/>
+    <domain.TaskPart reference="306"/>
+    <domain.TaskPart reference="310"/>
+    <domain.TaskPart reference="314"/>
+    <domain.TaskPart reference="318"/>
+    <domain.TaskPart reference="322"/>
+    <domain.TaskPart reference="326"/>
+    <domain.TaskPart reference="330"/>
+    <domain.TaskPart reference="334"/>
+    <domain.TaskPart reference="338"/>
+    <domain.TaskPart reference="342"/>
+    <domain.TaskPart reference="346"/>
+    <domain.TaskPart reference="350"/>
+    <domain.TaskPart reference="354"/>
+    <domain.TaskPart reference="358"/>
+    <domain.TaskPart reference="362"/>
+    <domain.TaskPart reference="366"/>
+    <domain.TaskPart reference="370"/>
+    <domain.TaskPart reference="374"/>
+    <domain.TaskPart reference="378"/>
+    <domain.TaskPart reference="382"/>
+    <domain.TaskPart reference="386"/>
+    <domain.TaskPart reference="390"/>
+    <domain.TaskPart reference="394"/>
+    <domain.TaskPart reference="398"/>
+    <domain.TaskPart reference="402"/>
+    <domain.TaskPart reference="406"/>
+    <domain.TaskPart reference="410"/>
+    <domain.TaskPart reference="414"/>
+    <domain.TaskPart reference="418"/>
+    <domain.TaskPart reference="422"/>
+    <domain.TaskPart reference="426"/>
+    <domain.TaskPart reference="430"/>
+    <domain.TaskPart reference="434"/>
+    <domain.TaskPart reference="438"/>
+    <domain.TaskPart reference="442"/>
+    <domain.TaskPart reference="446"/>
+    <domain.TaskPart reference="450"/>
+    <domain.TaskPart reference="454"/>
+    <domain.TaskPart reference="458"/>
+    <domain.TaskPart reference="462"/>
+    <domain.TaskPart reference="466"/>
+    <domain.TaskPart reference="470"/>
+    <domain.TaskPart reference="474"/>
+    <domain.TaskPart reference="478"/>
+    <domain.TaskPart reference="482"/>
+    <domain.TaskPart reference="486"/>
+    <domain.TaskPart reference="490"/>
+    <domain.TaskPart reference="494"/>
+    <domain.TaskPart reference="498"/>
+    <domain.TaskPart reference="502"/>
+    <domain.TaskPart reference="506"/>
+    <domain.TaskPart reference="510"/>
+    <domain.TaskPart reference="514"/>
+    <domain.TaskPart reference="518"/>
+    <domain.TaskPart reference="522"/>
+    <domain.TaskPart reference="526"/>
+    <domain.TaskPart reference="530"/>
+    <domain.TaskPart reference="534"/>
+    <domain.TaskPart reference="538"/>
+    <domain.TaskPart reference="542"/>
+    <domain.TaskPart reference="546"/>
+    <domain.TaskPart reference="550"/>
+    <domain.TaskPart reference="554"/>
+    <domain.TaskPart reference="558"/>
+    <domain.TaskPart reference="562"/>
+    <domain.TaskPart reference="566"/>
+    <domain.TaskPart reference="570"/>
+    <domain.TaskPart reference="574"/>
+    <domain.TaskPart reference="578"/>
+    <domain.TaskPart reference="582"/>
+    <domain.TaskPart reference="586"/>
+    <domain.TaskPart reference="590"/>
+    <domain.TaskPart reference="594"/>
+    <domain.TaskPart reference="598"/>
   </taskPartList>
-  <gaps id="107">
-    <domain.Interval id="108">
+  <gaps id="959">
+    <domain.Interval id="960">
       <start>08:00:00</start>
       <end>08:30:00</end>
     </domain.Interval>

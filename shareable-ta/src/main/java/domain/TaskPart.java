@@ -40,6 +40,11 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	private Task task;
 
 	private Duration duration;
+	
+	/** The task category*/ 
+	private String category;
+
+	
 
 	public TaskPart() {
 	}
@@ -105,19 +110,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		return count;
 	}
 	
-	public int getMissingSkillCount() {
-		if (employee == null) {
-			return 0;
-		}
-		int count = 0;
-		for (Skill skill : getTask().getRequiredSkillList()) {
-			if (!employee.getSkillSet()
-			             .contains(skill)) {
-				count++;
-			}
-		}
-		return count;
-	}
 
 	@Override
 	public String toString() {
@@ -177,4 +169,12 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		this.startTime = startTime;
 	}
 
+	
+	public String getCategory() {
+		return category;
+	}
+
+	public void setCategory(String category) {
+		this.category = category;
+	}
 }

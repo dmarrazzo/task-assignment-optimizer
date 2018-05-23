@@ -48,9 +48,6 @@ public class TAEasyScoreCalculator implements EasyScoreCalculator<TaskAssagnment
 			// evaluate assigned task parts
 			if (taskPart.getEmployee() != null) {
 				
-				//Skill requirements
-				hardScores[1] -= taskPart.getMissingSkillCount();
-
 				//High priority task must be accomplished on time
 				if (taskPart.getTask().getPriority() == 1)
 					hardScores[2] += taskPart.getOutOfTime(); // outOfTime is negative number

@@ -12,22 +12,22 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 	private static final long serialVersionUID = -8397117902800537700L;
 
 	private String fullName;
+	/** The start time */
 	private LocalTime startTime;
+	
+	/** The end time. */
+    private LocalTime endTime;
+
 	
 	private Set<Skill> skillSet;
 	
 	public Employee() {
 	}
 	
-	public Employee(String fullName, Set<Skill> skillSet) {
-		this.fullName = fullName;
-		setStartTime(LocalTime.parse("05:00"));
-		this.skillSet = skillSet;
-	}
-
-	public Employee(String fullName, LocalTime startTime, Set<Skill> skillSet) {
+	public Employee(final String fullName, final LocalTime startTime,final LocalTime endTime, final Set<Skill> skillSet) {
 		this.fullName = fullName;
 		this.setStartTime(startTime);
+		this.setEndTime(endTime);
 		this.skillSet = skillSet;
 	}
 
@@ -56,9 +56,14 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 		this.skillSet = skillSet;
 	}
 
+	
+	public void setEndTime(LocalTime endTime) {
+		this.endTime = endTime;
+	}
+	
 	@Override
 	public LocalTime getEndTime() {
-		return getStartTime();
+		return this.endTime;
 	}
 
 	@Override

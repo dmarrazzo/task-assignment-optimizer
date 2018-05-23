@@ -1,6 +1,5 @@
 package score;
 
-import java.time.Duration;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -27,13 +26,14 @@ public class ScoreConstraintTest {
 
 		List<Employee> employeeList = new ArrayList<>();
 		Set<Skill> skills = new HashSet<>();
-		skills.add(new Skill("reading"));
-		Employee employee = new Employee("emp1", skills);
+		skills.add(new Skill("reading",0));
+		Employee employee = new Employee("emp1",LocalTime.parse("05:00"),LocalTime.parse("20:00"), skills);
 		employeeList.add(employee);
 		solution.setEmployeeList(employeeList);
 
 		List<Task> taskList = new ArrayList<>();
-		Task task = new Task("t01", Duration.ofMinutes(90L), LocalTime.parse("10:00"), 1, 2, skills);
+		Task task = new Task("aisle 1","cat 1", new Float(90),new Integer("0"), LocalTime.parse("10:00"), 1);
+		
 		TaskPart[] taskParts = task.getTaskParts();
 		taskParts[0].setPreviousTaskPartOrEmployee(employee);
 		taskParts[0].setEmployee(employee);
@@ -54,13 +54,13 @@ public class ScoreConstraintTest {
 
 		List<Employee> employeeList = new ArrayList<>();
 		Set<Skill> skills = new HashSet<>();
-		skills.add(new Skill("reading"));
-		Employee employee = new Employee("emp1", skills);
+		skills.add(new Skill("reading",0));
+		Employee employee = new Employee("emp1",LocalTime.parse("05:00"),LocalTime.parse("20:00"), skills);
 		employeeList.add(employee);
 		solution.setEmployeeList(employeeList);
 
 		List<Task> taskList = new ArrayList<>();
-		Task task = new Task("t01", Duration.ofMinutes(90L), LocalTime.parse("10:00"), 1, 1, skills);
+		Task task = new Task("aisle 1","cat 1", new Float(90),new Integer("0"), LocalTime.parse("10:00"), 3);
 		task.getTaskParts()[0].setPreviousTaskPartOrEmployee(employee);
 		task.getTaskParts()[0].setEmployee(employee);
 		taskList.add(task);
@@ -98,15 +98,15 @@ public class ScoreConstraintTest {
 
 		List<Employee> employeeList = new ArrayList<>();
 		Set<Skill> skills = new HashSet<>();
-		skills.add(new Skill("reading"));
-		Employee emp1 = new Employee("emp1", skills);
-		Employee emp2 = new Employee("emp2", skills);
+		skills.add(new Skill("reading",0));
+		Employee emp1 = new Employee("emp1",LocalTime.parse("05:00"),LocalTime.parse("20:00"), skills);
+		Employee emp2 = new Employee("emp2",LocalTime.parse("05:00"),LocalTime.parse("20:00"), skills);
 		employeeList.add(emp1);
 		employeeList.add(emp2);
 		solution.setEmployeeList(employeeList);
 
 		List<Task> taskList = new ArrayList<>();
-		Task task1 = new Task("t01", Duration.ofMinutes(90L), LocalTime.parse("10:00"), 1, 1, skills);
+		Task task1 = new Task("aisle 1","cat 1", new Float(90),new Integer("0"), LocalTime.parse("10:00"), 1);
 
 		task1.getTaskParts()[0].setPreviousTaskPartOrEmployee(emp1);
 		task1.getTaskParts()[0].setEmployee(emp1);
@@ -114,7 +114,7 @@ public class ScoreConstraintTest {
 
 		taskList.add(task1);
 
-		Task task2 = new Task("t02", Duration.ofMinutes(30L), LocalTime.parse("05:30"), 3, 1, skills);
+		Task task2 = new Task("aisle 2","cat 2", new Float(30),new Integer("0"), LocalTime.parse("05:30"), 3);
 		task2.getTaskParts()[0].setPreviousTaskPartOrEmployee(task1.getTaskParts()[0]);
 		// shadow anchor
 		task2.getTaskParts()[0].setEmployee(emp1);

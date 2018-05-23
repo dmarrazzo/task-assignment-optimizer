@@ -26,14 +26,14 @@ public class DomainTest {
 	@Test
 	public void difficultyComparator() {
 		TaskPartDifficultyComparator comparator = new TaskPartDifficultyComparator();
-		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("skill")));
+		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("skill",0)));
 		Task task1, task2;
 		TaskPart part1, part2;
 		int compare;
 
 		// priority first
-		task1 = new Task("1", Duration.ofMinutes(30), LocalTime.parse("09:30"), 1, 2, reqS);
-		task2 = new Task("2", Duration.ofMinutes(90), LocalTime.parse("08:30"), 3, 2, reqS);
+		task1 = new Task("aisle 1","cat 1", new Float(30),new Integer("0"), LocalTime.parse("09:30"), 3);
+		task2 = new Task("aisle 2","cat 2", new Float(90),new Integer("0"), LocalTime.parse("08:30"), 3);
 
 		part1 = task1.getTaskParts()[0];
 		part2 = task2.getTaskParts()[0];
@@ -43,8 +43,8 @@ public class DomainTest {
 		assertTrue(compare > 0);
 
 		// earlier completion time
-		task1 = new Task("1", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 2, reqS);
-		task2 = new Task("2", Duration.ofMinutes(30), LocalTime.parse("09:30"), 3, 2, reqS);
+		task1 = new Task("aisle 1","cat 1", new Float(20),new Integer("0"), LocalTime.parse("08:30"), 3);
+		task2 = new Task("aisle 2","cat 2", new Float(30),new Integer("0"), LocalTime.parse("09:30"), 3);
 
 		part1 = task1.getTaskParts()[0];
 		part2 = task2.getTaskParts()[0];
@@ -53,8 +53,8 @@ public class DomainTest {
 		assertTrue(compare > 0);
 
 		// longer duration
-		task1 = new Task("1", Duration.ofMinutes(30), LocalTime.parse("08:30"), 3, 1, reqS);
-		task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 2, reqS);
+		task1 = new Task("aisle 1","cat 1", new Float(30),new Integer("0"), LocalTime.parse("08:30"), 3);
+		task2 = new Task("aisle 2","cat 2", new Float(20),new Integer("0"), LocalTime.parse("08:30"), 3);
 
 		part1 = task1.getTaskParts()[0];
 		part2 = task2.getTaskParts()[0];
@@ -63,9 +63,8 @@ public class DomainTest {
 		assertTrue(compare > 0);
 
 		// more parts
-
-		task1 = new Task("1", Duration.ofMinutes(90), LocalTime.parse("08:30"), 3, 3, reqS);
-		task2 = new Task("2", Duration.ofMinutes(60), LocalTime.parse("08:30"), 3, 2, reqS);
+		task1 = new Task("aisle 1","cat 1", new Float(90),new Integer("0"), LocalTime.parse("08:30"), 3);
+		task2 = new Task("aisle 2","cat 2", new Float(60),new Integer("0"), LocalTime.parse("08:30"), 3);
 
 		part1 = task1.getTaskParts()[0];
 		part2 = task2.getTaskParts()[0];
@@ -79,10 +78,10 @@ public class DomainTest {
 	public void strenghtComparator() {
 		PreviousTaskPartOrEmployeeStrengthComparator comparator = new PreviousTaskPartOrEmployeeStrengthComparator();
 
-		Set<Skill> skills = new HashSet<>(Arrays.asList(new Skill("a_skill")));
+		Set<Skill> skills = new HashSet<>(Arrays.asList(new Skill("a_skill",0)));
 
-		TaskPartOrEmployee a = new Employee("1", LocalTime.parse("06:00"), skills);
-		TaskPartOrEmployee b = new Employee("2", LocalTime.parse("08:00"), skills);
+		TaskPartOrEmployee a = new Employee("1", LocalTime.parse("06:00"),LocalTime.parse("20:00"), skills);
+		TaskPartOrEmployee b = new Employee("2", LocalTime.parse("08:00"),LocalTime.parse("20:00"), skills);
 		;
 		int compare = comparator.compare(a, b);
 
@@ -92,9 +91,8 @@ public class DomainTest {
 	@Test
 	public void parts() {
 		// check the partList creation
-		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("a_skill")));
-		Task task1 = new Task("1", Duration.ofMinutes(20), LocalTime.parse("08:30"), 3, 1, reqS);
-		Task task2 = new Task("2", Duration.ofMinutes(20), LocalTime.parse("09:30"), 3, 1, reqS);
+		Task task1 = new Task("aisle 1","cat 1", new Float(20),new Integer("0"), LocalTime.parse("08:30"), 3);
+		Task task2 = new Task("aisle 2","cat 2", new Float(20),new Integer("0"), LocalTime.parse("09:30"), 3);
 
 		TaskAssagnmentSolution solution = new TaskAssagnmentSolution();
 		solution.setTaskList(Arrays.asList(task1, task2));
@@ -106,8 +104,8 @@ public class DomainTest {
 	@Test
 	public void outOfTime() {
 		// check out of time implementation
-		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("a_skill")));
-		Task task1 = new Task("1", Duration.ofMinutes(90), LocalTime.parse("08:30"), 3, 1, reqS);
+		Set<Skill> reqS = new HashSet<>(Arrays.asList(new Skill("a_skill",0)));
+		Task task1 = new Task("aisle 1","cat 1", new Float(90),new Integer("0"), LocalTime.parse("08:30"), 3);
 		task1.getTaskParts()[0].setStartTime(LocalTime.parse("08:30"));
 		
 		assertEquals( -90, task1.getTaskParts()[0].getOutOfTime());
@@ -116,11 +114,12 @@ public class DomainTest {
 	@Test
 	public void elapsed() {
 		// check out of time implementation
-		Set<Skill> skills = new HashSet<>(Arrays.asList(new Skill("a_skill")));
-		Task task1 = new Task("1", Duration.ofMinutes(90), LocalTime.parse("08:30"), 3, 1, skills);
+		Set<Skill> skills = new HashSet<>(Arrays.asList(new Skill("a_skill",0)));
+		Task task1 = new Task("aisle 1","cat 1", new Float(90),new Integer("0"), LocalTime.parse("08:30"), 3);
+		
 		TaskPart taskPart10 = task1.getTaskParts()[0];
 		
-		Employee employee = new Employee("emp1",LocalTime.parse("05:00"), skills);
+		Employee employee = new Employee("emp1",LocalTime.parse("05:00"),LocalTime.parse("20:00"), skills);
 		taskPart10.setEmployee(employee);
 		task1.getTaskParts()[0].setStartTime(employee.getEndTime());
 		

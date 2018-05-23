@@ -1,0 +1,78 @@
+package solver;
+
+dialect "java"
+
+import org.optaplanner.core.api.score.buildin.bendable.BendableScoreHolder;
+import domain.Task;
+import domain.TaskPart;
+import domain.Employee;
+
+global BendableScoreHolder scoreHolder;
+
+
+
+rule "Check affinity betwen tasks' skills and employee skills"
+	when
+		// We take a taskpart that is assigned to an employee
+		$taskPart : TaskPart( employee != null, $employe: employee )
+		// If the employee has NOT the required skill
+		$employee.skillSet not contains ($taskPart.task.requiredSkill)
+	then
+		//Lower the hard constaints score
+		scoreHolder.addHardConstraintMatch(kcontext, 1, -100);
+end
+
+
+rule "Assign first tasks to employees with the higher priorities"
+	when
+		// We take a taskpart that is assigned to an employee
+		$taskPart : TaskPart( employee != null, $employe: employee )
+		
+		
+	then
+		// We improve the soft score as much as the employee has a priority for this task
+		
+end
+
+//######################################################################################################################################################
+//########  Gwendal
+//######################################################################################################################################################
+/*rule "Gwendal Eviter que quelqu'un n'aie rien à faire"
+	when
+		$employee : Employee()
+		
+		
+		$tasksList : ArrayList(size == 0) from collect (
+        	TaskPart($employee == employee )
+    	)
+		
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, 0, -100);
+end*/
+
+/*
+rule "GwendalVerifierEmployeASkillsPourFaireTasks"
+	when
+		// On récuppère les TaskParts qui sont liées à un employé et dont au moins une compétence requise n'est pas posséedée par l'employé
+		// On note le nombre de compétences manquantes pour impacter plus tard le score
+		$taskPart : TaskPart( employee != null, , missingSkillCount > 0, $missingSkillCount : missingSkillCount)
+	then
+		// On baisse le score des hard constraints d'autant de points que l'employé manque de compétences
+		scoreHolder.addHardConstraintMatch(kcontext, 0, - $missingSkillCount);		
+end
+
+
+rule "Gwendal Verifier Que Les Taches Prioritaires Sont Assignées"
+	when
+		$taskPart : TaskPart (employee == null)
+	then
+		scoreHolder.addHardConstraintMatch(kcontext, 0, -100);
+end
+
+rule "Gwendal Verifier Que Les Taches Prioritaires Sont Assignées Le Plus Tot Possible"
+	when
+		
+	then
+		
+end
+*/
