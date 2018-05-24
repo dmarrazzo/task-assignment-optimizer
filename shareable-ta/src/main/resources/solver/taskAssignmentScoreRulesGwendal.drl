@@ -10,20 +10,7 @@ import domain.Employee;
 global BendableScoreHolder scoreHolder;
 
 
-
-rule "Check affinity betwen tasks' skills and employee skills"
-	when
-		// We take a taskpart that is assigned to an employee
-		$taskPart : TaskPart( employee != null, $employe: employee )
-		// If the employee has NOT the required skill
-		$employee.skillSet not contains ($taskPart.task.requiredSkill)
-	then
-		//Lower the hard constaints score
-		scoreHolder.addHardConstraintMatch(kcontext, 1, -100);
-end
-
-
-rule "Assign first tasks to employees with the higher priorities"
+rule ""
 	when
 		// We take a taskpart that is assigned to an employee
 		$taskPart : TaskPart( employee != null, $employe: employee )

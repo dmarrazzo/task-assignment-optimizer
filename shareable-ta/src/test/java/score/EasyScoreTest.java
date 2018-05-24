@@ -31,17 +31,17 @@ public class EasyScoreTest {
 
 		taskPart1.setPreviousTaskPartOrEmployee(emp1);
 		taskPart1.setEmployee(emp1);
-		taskPart1.setStartTime(emp1.getEndTime());
+		taskPart1.setStartTime(emp1.getReadyTime());
 		taskPart1.setNextTaskPart(taskPart5);
 		
 		taskPart5.setPreviousTaskPartOrEmployee(taskPart1);
 		taskPart5.setEmployee(emp1);
-		taskPart5.setStartTime(taskPart5.getPreviousTaskPartOrEmployee().getEndTime());
+		taskPart5.setStartTime(taskPart5.getPreviousTaskPartOrEmployee().getReadyTime());
 		taskPart5.setNextTaskPart(taskPart4);
 
 		taskPart4.setPreviousTaskPartOrEmployee(taskPart5);
 		taskPart4.setEmployee(emp1);
-		taskPart4.setStartTime(taskPart4.getPreviousTaskPartOrEmployee().getEndTime());
+		taskPart4.setStartTime(taskPart4.getPreviousTaskPartOrEmployee().getReadyTime());
 		taskPart4.setNextTaskPart(null);
 
 		score = calculator.calculateScore(solution);
@@ -51,17 +51,17 @@ public class EasyScoreTest {
 
 		taskPart1.setPreviousTaskPartOrEmployee(emp1);
 		taskPart1.setEmployee(emp1);
-		taskPart1.setStartTime(emp1.getEndTime());
+		taskPart1.setStartTime(emp1.getReadyTime());
 		taskPart1.setNextTaskPart(taskPart4);
 
 		taskPart4.setPreviousTaskPartOrEmployee(taskPart1);
 		taskPart4.setEmployee(emp1);
-		taskPart4.setStartTime(taskPart4.getPreviousTaskPartOrEmployee().getEndTime());
+		taskPart4.setStartTime(taskPart4.getPreviousTaskPartOrEmployee().getReadyTime());
 		taskPart4.setNextTaskPart(taskPart5);
 
 		taskPart5.setPreviousTaskPartOrEmployee(taskPart4);
 		taskPart5.setEmployee(emp1);
-		taskPart5.setStartTime(taskPart5.getPreviousTaskPartOrEmployee().getEndTime());
+		taskPart5.setStartTime(taskPart5.getPreviousTaskPartOrEmployee().getReadyTime());
 		taskPart5.setNextTaskPart(null);
 
 		score = calculator.calculateScore(solution);

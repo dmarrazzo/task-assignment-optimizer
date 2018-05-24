@@ -10,6 +10,15 @@ import domain.Task;
 import domain.TaskAssagnmentSolution;
 import domain.TaskPart;
 
+
+/*************************************************************************
+
+CAUTION, THIS CLASS IS NOT USED ANYMORE BY THE SOLVER
+
+
+*************************************************************************/
+
+
 public class TAEasyScoreCalculator implements EasyScoreCalculator<TaskAssagnmentSolution> {
 
 	@Override

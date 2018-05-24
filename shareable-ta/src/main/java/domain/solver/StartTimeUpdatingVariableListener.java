@@ -54,8 +54,8 @@ public class StartTimeUpdatingVariableListener implements VariableListener<TaskP
 		TaskPartOrEmployee previous = sourceTaskPart.getPreviousTaskPartOrEmployee();
 
 		// get the end time of the previous Task
-		LocalTime previousEndTime = (previous == null ? null : previous.getEndTime());
-		LocalTime startTime = previousEndTime;
+		LocalTime previousReadyTime = (previous == null ? null : previous.getReadyTime());
+		LocalTime startTime = previousReadyTime;
 
 		TaskPart shadowTaskPart = sourceTaskPart;
 
@@ -64,9 +64,9 @@ public class StartTimeUpdatingVariableListener implements VariableListener<TaskP
 			scoreDirector.beforeVariableChanged(shadowTaskPart, "startTime");
 			setGapsAwareStartTime(scoreDirector, shadowTaskPart, startTime);
 			scoreDirector.afterVariableChanged(shadowTaskPart, "startTime");
-			previousEndTime = shadowTaskPart.getEndTime();
+			previousReadyTime = shadowTaskPart.getReadyTime();
 			shadowTaskPart = shadowTaskPart.getNextTaskPart();
-			startTime = previousEndTime;
+			startTime = previousReadyTime;
 		}
 	}
 

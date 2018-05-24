@@ -21,8 +21,14 @@ public class Main {
 		SolverFactory<TaskAssagnmentSolution> solverFactory = SolverFactory.createFromXmlResource("solver/taskAssignmentSolverConfig.xml");
 		Solver<TaskAssagnmentSolution> solver = solverFactory.buildSolver();
 
-		//TaskAssagnmentSolution unsolved = ProblemBuilder.readProblemFacts(String.format("data/employees-%s.txt", employees), String.format("data/tasks-%s.txt", tasks));
 		TaskAssagnmentSolution unsolved = ProblemBuilder.readProblemFacts(String.format("data/employees.csv", employees), String.format("data/tasks.csv", tasks));
+		
+		
+		
+		
+		printEmployees(unsolved.getEmployeeList());
+		printTasks(unsolved.getTaskList());
+		
 
 		Set<Interval> gaps = new HashSet<>();
 		Interval brief = new Interval(LocalTime.parse("08:00"), LocalTime.parse("08:30"));
@@ -57,12 +63,12 @@ public class Main {
      * @param employees
      *            liste d'employés
      */
-    private void printEmployees(final List<Employee> employees) {
+    private static void printEmployees(final List<Employee> employees) {
         System.out.println("-----------------------------------------------------------------");
         System.out.println("--------------------------EMPLOYEES------------------------------");
         System.out.println("-----------------------------------------------------------------");
         for (final Employee employee : employees) {
-            System.out.print(employee.getFullName() + " | " + employee.getStartTime() + " | " + employee.getEndTime());
+            System.out.print(employee.getFullName() + " | " + employee.getStartTime() + " | " + employee.getReadyTime());
             final Set<Skill> skills = employee.getSkillSet();
             
             for (Skill skill : skills) {
@@ -80,13 +86,13 @@ public class Main {
      * @param tasks
      *            liste de tâches
      */
-    private void printTasks(final List<Task> tasks) {
+    private static void printTasks(final List<Task> tasks) {
         System.out.println("-----------------------------------------------------------------");
         System.out.println("-----------------------------TASKS-------------------------------");
         System.out.println("-----------------------------------------------------------------");
         for (final Task task : tasks) {
             System.out.println(task.getAisle() + " | " + task.getCategory() + " | " + task.getEffort() + " | " + task.getPriority() + " | "
-                    + task.getCompletionTime() );
+                    + task.getCompletionTime() + " | " + task.getMaxParts() );
         }
         System.out.println("-----------------------------------------------------------------");
     }

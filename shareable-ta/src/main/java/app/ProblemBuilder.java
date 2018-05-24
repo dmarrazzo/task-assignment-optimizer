@@ -42,7 +42,7 @@ public class ProblemBuilder {
 
 				taskStr.append("[" + taskPart.getStartTime());
 
-				taskStr.append("," + taskPart.getEndTime());
+				taskStr.append("," + taskPart.getReadyTime());
 
 				taskStr.append("] ");
 				System.out.print(taskStr);

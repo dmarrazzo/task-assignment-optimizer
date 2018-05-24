@@ -12,7 +12,7 @@
 	</scoreDirectorFactory>
 
 	<termination>
-		<secondsSpentLimit>10</secondsSpentLimit>
+		<secondsSpentLimit>60</secondsSpentLimit>
 	</termination>
 
 	<!-- 

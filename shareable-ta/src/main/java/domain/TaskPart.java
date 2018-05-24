@@ -40,9 +40,6 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	private Task task;
 
 	private Duration duration;
-	
-	/** The task category*/ 
-	private String category;
 
 	
 
@@ -50,7 +47,7 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	}
 
 	@Override
-	public LocalTime getEndTime() {
+	public LocalTime getReadyTime() {
 		if (getStartTime() == null)
 			return null;
 		return getStartTime().plus(getDuration());
@@ -64,8 +61,8 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	public int getElapsed() {
 		int between = 0;
 
-		if (employee != null && getEndTime() != null)
-			between = (int) ChronoUnit.MINUTES.between(employee.getStartTime(), getEndTime());
+		if (employee != null && getReadyTime() != null)
+			between = (int) ChronoUnit.MINUTES.between(employee.getStartTime(), getReadyTime());
 		return between;
 	}
 
@@ -79,8 +76,8 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 	public int getOutOfTime() {
 		int between = 0;
 
-		if (getEndTime() != null && task.getCompletionTime() != null)
-			between = (int) ChronoUnit.MINUTES.between(getEndTime(), task.getCompletionTime());
+		if (getReadyTime() != null && task.getCompletionTime() != null)
+			between = (int) ChronoUnit.MINUTES.between(getReadyTime(), task.getCompletionTime());
 
 		if (between < 0)
 			return between;
@@ -169,12 +166,4 @@ public class TaskPart extends TaskPartOrEmployee implements Serializable {
 		this.startTime = startTime;
 	}
 
-	
-	public String getCategory() {
-		return category;
-	}
-
-	public void setCategory(String category) {
-		this.category = category;
-	}
 }

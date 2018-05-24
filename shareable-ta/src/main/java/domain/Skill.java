@@ -1,7 +1,6 @@
 package domain;
 
 import java.io.Serializable;
-import java.util.Comparator;
 
 import org.optaplanner.core.api.domain.lookup.PlanningId;
 
@@ -12,6 +11,7 @@ public class Skill implements Serializable, Comparable<Skill> {
 
 	private static final long serialVersionUID = -6463704897223188538L;
 
+	/** The category of the task (~= its name) */
 	private String category;
 	
 	/**

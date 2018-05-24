@@ -19,10 +19,14 @@ package solver;
 dialect "java"
 
 import org.optaplanner.core.api.score.buildin.bendable.BendableScoreHolder;
+
 import domain.Task;
 import domain.TaskPart;
 import domain.Employee;
+import domain.Skill;
+
 import java.util.List;
+import java.util.ArrayList
 
 global BendableScoreHolder scoreHolder;
 
@@ -39,6 +43,24 @@ rule "Skill requirements"
 end
 */
 
+
+rule "Gwendal - Skill requirements "
+	when
+		//If there is an assigned taskPart
+		TaskPart(employee != null, $partEmployee : employee, $skill : task.requiredSkill)
+		//If there is an employee assigned to this taskPart that hasn't the required skill to do the taskPart
+		//TODO : Check if we can get en "Employee" object in this context. The rules is accepted at compilation time though
+		Employee($employee : employee, $partEmployee == $employee, $employee.skillSet not contains $skill) 
+	then
+		//Then we strongly lower the hard constrains score
+		scoreHolder.addHardConstraintMatch(kcontext, 0, - 500);
+end
+
+
+
+
+
+
 rule "High priority task must be accomplished on time"
     when
         TaskPart(employee != null, task.priority == 1, $outOfTime : outOfTime)
@@ -50,6 +72,7 @@ end
 // Soft constraints level 0 - near 0
 // ############################################################################
 
+//I think this rule is not used anymore, as is only used by 
 rule "Meet complention time for other priorities"
 when
         TaskPart(employee != null, $priority : task.priority  > 1 , $outOfTime : outOfTime)
@@ -72,10 +95,33 @@ end
 rule "Same employee - Avoid gaps between parts"
     when
     	$tp : TaskPart (task.maxParts > 1, $t : task, $startTime : startTime)
-        $otp : TaskPart ( task == $t, nextTaskPart == $tp, endTime != $startTime )
+        $otp : TaskPart ( task == $t, nextTaskPart == $tp, readyTime != $startTime )
     then
        	scoreHolder.addSoftConstraintMatch(kcontext, 0, -1 );
 end
+
+
+
+rule "Gwendal - Assign first tasks to employees with the higher priorities"
+	when
+		//If there is an assigned taskPart
+		TaskPart(employee != null, $partEmployee : employee, $skill : task.requiredSkill)
+		//The higher the priority property for the task required skill is, the more we lower the score
+		
+		$employeeSkills : ArrayList (size == 1)
+							from collect ( Skill(category == $skill.category)
+								from $partEmployee.skillSet)
+		
+	then
+	
+		
+		
+		// 1 is the "higher" priority value we can have, no penality for this case
+		// The penality starts at a priority value of 2
+		 scoreHolder.addSoftConstraintMatch(kcontext, 0, 1 - ((Skill)$employeeSkills.get(0)).getPriority() );
+		
+end
+
 
 // ############################################################################
 // Soft constraints level 1

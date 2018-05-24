@@ -42,7 +42,7 @@ public class Task implements Serializable {
 		
 		//Cast taskDuration to an actual Duration objet
 		long numberOfHours = taskDuration.longValue();
-		Float numberOfMinutes =  taskDuration - numberOfHours;
+		Float numberOfMinutes =  (taskDuration - numberOfHours) * 60;
 		this.effort = Duration.ofMinutes(numberOfHours*60 + numberOfMinutes.longValue());
 		
 		
@@ -57,7 +57,7 @@ public class Task implements Serializable {
 		taskParts = new TaskPart[maxParts];
 		for (int i = 0; i < maxParts; i++) {
 			taskParts[i] = new TaskPart();
-			taskParts[i].setCategory(category + "-" + i);
+			taskParts[i].setId(category + "-" + i);
 			taskParts[i].setTask(this);
 			taskParts[i].setDuration(effort.dividedBy(maxParts));
 		}

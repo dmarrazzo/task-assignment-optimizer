@@ -121,7 +121,7 @@ public class DomainTest {
 		
 		Employee employee = new Employee("emp1",LocalTime.parse("05:00"),LocalTime.parse("20:00"), skills);
 		taskPart10.setEmployee(employee);
-		task1.getTaskParts()[0].setStartTime(employee.getEndTime());
+		task1.getTaskParts()[0].setStartTime(employee.getReadyTime());
 		
 		assertEquals( 90, task1.getTaskParts()[0].getElapsed());
 	}

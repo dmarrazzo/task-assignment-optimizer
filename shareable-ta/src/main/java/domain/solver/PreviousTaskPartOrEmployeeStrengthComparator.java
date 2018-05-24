@@ -22,7 +22,7 @@ public class PreviousTaskPartOrEmployeeStrengthComparator implements Comparator<
 	public int compare(TaskPartOrEmployee a, TaskPartOrEmployee b) {
 		// a task is stroger if has a lower end time
 
-		return new CompareToBuilder().append(b.getEndTime(), a.getEndTime())
+		return new CompareToBuilder().append(b.getReadyTime(), a.getReadyTime())
 		                             .append(a.getId(), b.getId())
 		                             .toComparison();
 	}

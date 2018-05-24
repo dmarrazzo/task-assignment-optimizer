@@ -15,10 +15,13 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 	/** The start time */
 	private LocalTime startTime;
 	
-	/** The end time. */
+	/** The time the employee is ready to start a new task. Before assigning task, the startTime and the readyTime are equals. */
+    private LocalTime readyTime;
+    
+    /** The time the employee finishes its work day. */
     private LocalTime endTime;
 
-	
+
 	private Set<Skill> skillSet;
 	
 	public Employee() {
@@ -57,13 +60,13 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 	}
 
 	
-	public void setEndTime(LocalTime endTime) {
-		this.endTime = endTime;
-	}
+//	public void setReadyTime(LocalTime readyTime) {
+//		this.readyTime = readyTime;
+//	}
 	
 	@Override
-	public LocalTime getEndTime() {
-		return this.endTime;
+	public LocalTime getReadyTime() {
+		return getStartTime();
 	}
 
 	@Override
@@ -82,6 +85,14 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 
 	public void setStartTime(LocalTime startTime) {
 		this.startTime = startTime;
+	}
+	
+	public LocalTime getEndTime() {
+		return endTime;
+	}
+
+	public void setEndTime(LocalTime endTime) {
+		this.endTime = endTime;
 	}
 
 }

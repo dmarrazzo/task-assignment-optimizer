@@ -81,7 +81,7 @@ public class ScoreConstraintTest {
 		task.getTaskParts()[0].setPreviousTaskPartOrEmployee(employee);
 
 		// shadow start time
-		task.getTaskParts()[0].setStartTime(employee.getEndTime());
+		task.getTaskParts()[0].setStartTime(employee.getReadyTime());
 
 		scoreVerifier.assertHardWeight("High priority task must be accomplished on time", 1, -60, solution);
 	}
@@ -110,7 +110,7 @@ public class ScoreConstraintTest {
 
 		task1.getTaskParts()[0].setPreviousTaskPartOrEmployee(emp1);
 		task1.getTaskParts()[0].setEmployee(emp1);
-		task1.getTaskParts()[0].setStartTime(emp1.getEndTime());
+		task1.getTaskParts()[0].setStartTime(emp1.getReadyTime());
 
 		taskList.add(task1);
 
@@ -119,7 +119,7 @@ public class ScoreConstraintTest {
 		// shadow anchor
 		task2.getTaskParts()[0].setEmployee(emp1);
 		// shadow start time
-		task2.getTaskParts()[0].setStartTime(task1.getTaskParts()[0].getEndTime());
+		task2.getTaskParts()[0].setStartTime(task1.getTaskParts()[0].getReadyTime());
 		// shadow nextTaskPart
 		task1.getTaskParts()[0].setNextTaskPart(task2.getTaskParts()[0]);
 

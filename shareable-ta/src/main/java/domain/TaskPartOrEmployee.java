@@ -19,7 +19,7 @@ public abstract class TaskPartOrEmployee implements Serializable {
 	/**
 	 * @return sometimes null
 	 */
-	public abstract LocalTime getEndTime();
+	public abstract LocalTime getReadyTime();
 
 	/**
 	 * @return sometimes null
