@@ -121,8 +121,6 @@ public class CsvReaderBuilder {
 					Float taskDuration = null;
 					if (StringUtils.isNotBlank(tokens[3])) {
 						taskDuration = floatConverter(tokens[3]);
-					} else {
-						return null;
 					}
 
 					// Retrieving the priority value

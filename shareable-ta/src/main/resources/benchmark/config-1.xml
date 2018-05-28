@@ -25,8 +25,8 @@
 			<entityClass>domain.TaskPart</entityClass>
 
 			<scoreDirectorFactory>
-				<scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>
-				<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+				<scoreDrl>taskAssignmentScoreRules.drl</scoreDrl>
+				<!--<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>-->
 			</scoreDirectorFactory>
 
 			<constructionHeuristic>

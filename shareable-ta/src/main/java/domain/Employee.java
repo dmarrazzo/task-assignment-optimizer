@@ -14,9 +14,6 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 	private String fullName;
 	/** The start time */
 	private LocalTime startTime;
-	
-	/** The time the employee is ready to start a new task. Before assigning task, the startTime and the readyTime are equals. */
-    private LocalTime readyTime;
     
     /** The time the employee finishes its work day. */
     private LocalTime endTime;
@@ -59,10 +56,6 @@ public class Employee extends TaskPartOrEmployee implements Serializable {
 		this.skillSet = skillSet;
 	}
 
-	
-//	public void setReadyTime(LocalTime readyTime) {
-//		this.readyTime = readyTime;
-//	}
 	
 	@Override
 	public LocalTime getReadyTime() {

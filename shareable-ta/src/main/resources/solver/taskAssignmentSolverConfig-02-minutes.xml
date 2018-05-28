@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<solver>
+	<!-- <environmentMode>FULL_ASSERT</environmentMode> -->
+	<solutionClass>domain.TaskAssagnmentSolution</solutionClass>
+	<entityClass>domain.TaskPartOrEmployee</entityClass>
+	<entityClass>domain.TaskPart</entityClass>
+
+	<scoreDirectorFactory>
+		<scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>
+		 <!--<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>-->
+		<!-- <easyScoreCalculatorClass>solver.score.TAEasyScoreCalculator</easyScoreCalculatorClass> --> 
+	</scoreDirectorFactory>
+
+	<termination>
+		<secondsSpentLimit>120</secondsSpentLimit>
+	</termination>
+
+<!--
+	<constructionHeuristic>
+		<constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
+	</constructionHeuristic>
+	<localSearch>
+		<localSearchType>TABU_SEARCH</localSearchType>
+	</localSearch>
+	-->
+
+</solver>

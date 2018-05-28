@@ -7,21 +7,20 @@
 
 	<scoreDirectorFactory>
 		<scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>
-		<!-- <initializingScoreTrend>ONLY_DOWN</initializingScoreTrend> -->
+		<!--<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>-->
 		<!-- <easyScoreCalculatorClass>solver.score.TAEasyScoreCalculator</easyScoreCalculatorClass> --> 
 	</scoreDirectorFactory>
 
 	<termination>
-		<secondsSpentLimit>60</secondsSpentLimit>
+		<secondsSpentLimit>30</secondsSpentLimit>
 	</termination>
 
-	<!-- 
+	<!--
 	<constructionHeuristic>
 		<constructionHeuristicType>FIRST_FIT_DECREASING</constructionHeuristicType>
 	</constructionHeuristic>
 	<localSearch>
 		<localSearchType>TABU_SEARCH</localSearchType>
-	</localSearch>
-	-->
+	</localSearch>-->
 
 </solver>

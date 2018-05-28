@@ -8,9 +8,26 @@
 
 		<problemBenchmarks>
 			<xStreamAnnotatedClass>domain.TaskAssagnmentSolution</xStreamAnnotatedClass>
-			<inputSolutionFile>data/emp-3-task-8.xml</inputSolutionFile>
-			<inputSolutionFile>data/emp-10-task-52.xml</inputSolutionFile>
-			<inputSolutionFile>data/emp-10-task-104.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-5-task-100.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-5-task-149.xml</inputSolutionFile>
+			
+			<inputSolutionFile>data/emp-10-task-10.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-10-task-50.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-10-task-100.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-10-task-149.xml</inputSolutionFile>
+			
+			
+			<inputSolutionFile>data/emp-50-task-10.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-50-task-50.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-50-task-100.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-50-task-149.xml</inputSolutionFile>
+			
+			
+			<inputSolutionFile>data/emp-100-task-10.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-100-task-50.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-100-task-100.xml</inputSolutionFile>
+			<inputSolutionFile>data/emp-100-task-149.xml</inputSolutionFile>
+			
 
 			<!-- Statistics -->
 			<problemStatisticEnabled>true</problemStatisticEnabled>
@@ -25,12 +42,12 @@
 			<entityClass>domain.TaskPart</entityClass>
 
 			<scoreDirectorFactory>
-				<scoreDrl>solver/taskAssignmentScoreRules.drl</scoreDrl>
-				<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>
+				<scoreDrl>taskAssignmentScoreRules.drl</scoreDrl>
+				<!--<initializingScoreTrend>ONLY_DOWN</initializingScoreTrend>-->
 			</scoreDirectorFactory>
 
 			<termination>
-				<minutesSpentLimit>2</minutesSpentLimit>
+				<minutesSpentLimit>3</minutesSpentLimit>
 			</termination>
 
 		</solver>

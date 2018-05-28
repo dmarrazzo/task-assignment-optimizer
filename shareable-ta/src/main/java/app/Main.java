@@ -1,6 +1,5 @@
 package app;
 
-import java.io.File;
 import java.time.LocalTime;
 import java.util.HashSet;
 import java.util.List;
@@ -17,11 +16,14 @@ import domain.Employee;
 import domain.Task;
 
 public class Main {
-	public void solve(String employees, String tasks, boolean save) {
-		SolverFactory<TaskAssagnmentSolution> solverFactory = SolverFactory.createFromXmlResource("solver/taskAssignmentSolverConfig.xml");
+	public void solve(final String employees, final String tasks, final String configFile, final boolean save) {
+//		SolverFactory<TaskAssagnmentSolution> solverFactory = SolverFactory.createFromXmlResource("main/resources/solver/taskAssignmentSolverConfig.xml");
+		//SolverFactory<TaskAssagnmentSolution> solverFactory = SolverFactory.createFromXmlResource("taskAssignmentSolverConfig.xml");
+		SolverFactory<TaskAssagnmentSolution> solverFactory = SolverFactory.createFromXmlResource(configFile);
+		
 		Solver<TaskAssagnmentSolution> solver = solverFactory.buildSolver();
 
-		TaskAssagnmentSolution unsolved = ProblemBuilder.readProblemFacts(String.format("data/employees.csv", employees), String.format("data/tasks.csv", tasks));
+		TaskAssagnmentSolution unsolved = ProblemBuilder.readProblemFacts(String.format("data/employees-%s.csv", employees), String.format("data/tasks-%s.csv", tasks));
 		
 		
 		
@@ -29,31 +31,40 @@ public class Main {
 		printEmployees(unsolved.getEmployeeList());
 		printTasks(unsolved.getTaskList());
 		
-
+		// Define the a new interval of time where no task can be assigned to an employee => the morning brief 
 		Set<Interval> gaps = new HashSet<>();
 		Interval brief = new Interval(LocalTime.parse("08:00"), LocalTime.parse("08:30"));
 		gaps.add(brief);
 		unsolved.setGaps(gaps);
 
+		//Once the CSV file has been loaded, it is saved as XML. We will be able to use it in the benchmark
 		ProblemBuilder.save(unsolved, String.format("data/emp-%s-task-%s.xml",employees,tasks));
 
 		
 		TaskAssagnmentSolution solved = solver.solve(unsolved);
 		ProblemBuilder.printSolution(solved);
 
-		ProblemBuilder.save(solved, String.format("data/emp-%s-task-%s-solved.xml",employees,tasks));
-	}
+        ProblemBuilder.save(solved, String.format("data/emp-%s-task-%s-solved.xml", employees, tasks));
+        
+        
+        
+
+        CsvWriterBuilder.writeScheduleByTaskCsvFile(solved, String.format("data/scheduleTask-emp-%s-task-%s-conf-%s.csv", employees, tasks,configFile));
+        CsvWriterBuilder.writeScheduleByEmployeeCsvFile(solved, String.format("data/scheduleEmployee-emp-%s-task-%s-conf-%s.csv", employees, tasks,configFile));
+        
+    }
 
 	public static void main(String[] args) {
 		Main main = new Main();
-		boolean save = false;
-		if (args.length == 3)
-			save=args[2].equalsIgnoreCase("save");
+		boolean save = true;
+		if (args.length == 4)
+			save=args[3].equalsIgnoreCase("save");
 		
 		if (args.length >= 2)
-			main.solve(args[0], args[1], save);
+			main.solve(args[0], args[1],args[2], save);
 		else
-			main.solve("3", "8", save);
+			//If no parameter is passed, we solve the biggest problem
+			main.solve("26", "149", "solver/taskAssignmentSolverConfig-30-secondes.xml", save);
 
 	}
 	
@@ -96,38 +107,5 @@ public class Main {
         }
         System.out.println("-----------------------------------------------------------------");
     }
-
-    /**
-     * Retourne le chemin du fichier passé en paramètres.
-     * 
-     * @param fileName
-     *            nom du fichier
-     * @return le chemin du fichier
-     */
-    private String getPathFile(final String fileName) {
-        final ClassLoader classLoader = this.getClass().getClassLoader();
-        final File file = new File(classLoader.getResource(fileName).getPath());
-        return file.getPath();
-    }
-    
-    public static void mainSogeti(final String[] args) {
-        final Main main = new Main();
-
-        // On récupère le chemin du fichier à lire
-        final String employeeFilePath = main.getPathFile("employees.csv");
-        // On récupère les employés dans un fichier csv
-        final List<Employee> employees = CsvReaderBuilder.readEmployees(employeeFilePath);
-        // Affichage des employés
-        main.printEmployees(employees);
-
-        // On récupère le chemin du fichier à lire
-        final String taskFilePath = main.getPathFile("tasks.csv");
-        // On récupère les tâches dans un fichier csv
-        final List<Task> tasks = CsvReaderBuilder.readTasks(taskFilePath);
-        // Affichage des tâches
-        main.printTasks(tasks);
-
-    }
-
 
 }
