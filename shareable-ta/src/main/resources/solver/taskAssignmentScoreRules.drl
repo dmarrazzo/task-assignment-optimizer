@@ -79,17 +79,6 @@ rule "Gwendal - Tasks should be finished before the end of the day"
         scoreHolder.addSoftConstraintMatch(kcontext, 0, outOfTime);
 end
 
-rule "Priority order (max priority is 6)"
-    when
-        TaskPart(employee != null, $priority : task.priority , $order : order)
-    then
-    	// the following formula works for chain of task <= 10 
-    	// Over that there could be corner case where order is not respected
-    	int priorityFactor = (int) Math.pow(10, (6-$priority)) * $order;
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, -priorityFactor );
-end
-
-
 ////////////////////////////////////
 // TODO m�langer les 2 rules pour qu'on fixe un scor en fonction de la priorit� et du d�passement : outOfTime / $priority (plus la priorit� est grande, moins c'est grave si on d�passe)
 ////////////////////////////////////
@@ -155,5 +144,11 @@ rule "Minimize the number of employees"
         scoreHolder.addSoftConstraintMatch(kcontext, 2, -1);
 end
 
-
+rule "Priority order"
+    when
+        TaskPart(employee != null, $priority : task.priority , $nextTaskPart : nextTaskPart != null)
+        TaskPart(this == $nextTaskPart, $nextPriority : task.priority < $priority)
+    then
+        scoreHolder.addSoftConstraintMatch(kcontext, 2, $nextPriority - $priority );
+end
 
