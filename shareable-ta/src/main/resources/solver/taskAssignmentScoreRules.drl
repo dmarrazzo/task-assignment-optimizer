@@ -107,14 +107,12 @@ end
 // Soft constraints level 2
 // ############################################################################
 
-rule "Priority order (max priority is 6)"
+rule "Priority order"
     when
-        TaskPart(employee != null, $priority : task.priority , $order : order)
+        TaskPart(employee != null, $priority : task.priority , $nextTaskPart : nextTaskPart != null)
+        TaskPart(this == $nextTaskPart, $nextPriority : task.priority < $priority)
     then
-    	// the following formula works for chain of task <= 10 
-    	// Over that there could be corner case where order is not respected
-    	int priorityFactor = (int) Math.pow(10, (6-$priority)) * $order;
-        scoreHolder.addSoftConstraintMatch(kcontext, 2, -priorityFactor );
+        scoreHolder.addSoftConstraintMatch(kcontext, 2, $nextPriority - $priority );
 end
 
 
