@@ -41,10 +41,10 @@ global BendableScoreHolder scoreHolder;
 rule "Gwendal - Skill requirements "
 	when
 		//If there is an assigned taskPart
-		TaskPart(employee != null, $partEmployee : employee, $skill : task.requiredSkill)
+		TaskPart(employee != null, $employee : employee, $skill : task.requiredSkill)
 		//If there is an employee assigned to this taskPart that hasn't the required skill to do the taskPart
 		//TODO : Check if we can get en "Employee" object in this context. The rules is accepted at compilation time though
-		Employee($employee : employee, $partEmployee == $employee, $employee.skillSet not contains $skill) 
+		Employee( employee == $employee, $employee.skillSet not contains $skill) 
 	then
 		//Then we strongly lower the hard constrains score
 		scoreHolder.addHardConstraintMatch(kcontext, 0, -1);
@@ -71,10 +71,11 @@ end
 
 rule "Gwendal - Tasks should be finished before the end of the day"
     when
-        TaskPart( $e : employee != null, $readyTime : readyTime )
-        Employee( this == $e, $endTime : endTime < $readyTime )
+        TaskPart( $e : employee != null, $readyTime : readyTime != null )
+        Employee( this == $e, $endTime : endTime != null, $readyTime.isAfter(endTime) )
     then
         int  outOfTime = (int) ChronoUnit.MINUTES.between($readyTime, $endTime);
+    	//System.out.println(">"+$readyTime+ " "+ $endTime +" ot: "+ outOfTime);
         scoreHolder.addSoftConstraintMatch(kcontext, 0, outOfTime);
 end
 

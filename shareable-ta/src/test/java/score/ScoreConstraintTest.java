@@ -60,7 +60,7 @@ public class ScoreConstraintTest {
 		solution.setEmployeeList(employeeList);
 
 		List<Task> taskList = new ArrayList<>();
-		Task task = new Task("aisle 1","cat 1", new Float(90),new Integer("0"), LocalTime.parse("10:00"), 3);
+		Task task = new Task("aisle 1","reading", 1F ,new Integer("1"), LocalTime.parse("09:00"), 2);
 		task.getTaskParts()[0].setPreviousTaskPartOrEmployee(employee);
 		task.getTaskParts()[0].setEmployee(employee);
 		taskList.add(task);
@@ -77,13 +77,12 @@ public class ScoreConstraintTest {
 		scoreVerifier.assertHardWeight("High priority task must be accomplished on time", 1, 0, solution);
 
 		// Break: High priority task must be accomplished on time
-		employee.setStartTime(LocalTime.parse("09:30"));
-		task.getTaskParts()[0].setPreviousTaskPartOrEmployee(employee);
+		employee.setStartTime(LocalTime.parse("09:00"));
 
 		// shadow start time
 		task.getTaskParts()[0].setStartTime(employee.getReadyTime());
 
-		scoreVerifier.assertHardWeight("High priority task must be accomplished on time", 1, -60, solution);
+		scoreVerifier.assertHardWeight("High priority task must be accomplished on time", 1, -30, solution);
 	}
 
 	public void checkOtherPriorities() {
@@ -130,4 +129,42 @@ public class ScoreConstraintTest {
 		scoreVerifier.assertSoftWeight("Other priorities", 1, -4 * 90, solution);
 
 	}
+	
+	//Gwendal - Tasks should be finished before the end of the day
+	@Test
+	public void taskBeforeDayEnd() {
+		TaskAssagnmentSolution solution = new TaskAssagnmentSolution();
+
+		List<Employee> employeeList = new ArrayList<>();
+		Set<Skill> skills = new HashSet<>();
+		skills.add(new Skill("reading",0));
+		Employee employee = new Employee("emp1",LocalTime.parse("05:00"),LocalTime.parse("14:00"), skills);
+		employeeList.add(employee);
+		solution.setEmployeeList(employeeList);
+
+		List<Task> taskList = new ArrayList<>();
+		Task task = new Task("aisle 1","reading", 12F ,new Integer("1"), LocalTime.parse("14:00"), 1);
+		taskList.add(task);
+		solution.setTaskList(taskList);
+
+		// Uninitialized calculation
+		scoreVerifier.assertSoftWeight("Gwendal - Tasks should be finished before the end of the day", 0, 0, solution);
+		
+		// set the genuine variable
+		task.getTaskParts()[0].setPreviousTaskPartOrEmployee(employee);
+
+		// ------------ SHADOW -------------
+		// set shadow anchor
+		task.getTaskParts()[0].setEmployee(employee);
+		// set shadow start time
+		task.getTaskParts()[0].setStartTime(employee.getReadyTime());
+		// set shadow nextTaskPart
+		employee.setNextTaskPart(task.getTaskParts()[0]);
+
+	
+		scoreVerifier.assertSoftWeight("Gwendal - Tasks should be finished before the end of the day", 0, -180, solution);		
+	}
+	
+	// 
+	
 }
