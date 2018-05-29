@@ -18,9 +18,9 @@ import domain.TaskPart;
 
 public class ScoreConstraintTest {
 	private BendableScoreVerifier<TaskAssagnmentSolution> scoreVerifier = new BendableScoreVerifier<>(
-	        SolverFactory.createFromXmlResource("solver/taskAssignmentSolverConfig.xml"));
+	        SolverFactory.createFromXmlResource("solver/taskAssignmentSolverConfig-10-secondes.xml"));
 
-	@Test
+	//@Test
 	public void keepPartsTogether() {
 		TaskAssagnmentSolution solution = new TaskAssagnmentSolution();
 
@@ -55,7 +55,7 @@ public class ScoreConstraintTest {
 		List<Employee> employeeList = new ArrayList<>();
 		Set<Skill> skills = new HashSet<>();
 		skills.add(new Skill("reading",0));
-		Employee employee = new Employee("emp1",LocalTime.parse("05:00"),LocalTime.parse("20:00"), skills);
+		Employee employee = new Employee("emp1",LocalTime.parse("05:00"),LocalTime.parse("14:00"), skills);
 		employeeList.add(employee);
 		solution.setEmployeeList(employeeList);
 
@@ -66,11 +66,11 @@ public class ScoreConstraintTest {
 		taskList.add(task);
 		solution.setTaskList(taskList);
 		// Uninitialized
-		scoreVerifier.assertHardWeight("Skill requirements", 0, 0, solution);
+		scoreVerifier.assertHardWeight("Gwendal - Skill requirements ", 0, 0, solution);
 
 		// No skill
 		employee.setSkillSet(new HashSet<>());
-		scoreVerifier.assertHardWeight("Skill requirements", 0, -1, solution);
+		scoreVerifier.assertHardWeight("Gwendal - Skill requirements ", 0, -1, solution);
 		employee.setSkillSet(skills);
 
 		// High priority task must be accomplished on time

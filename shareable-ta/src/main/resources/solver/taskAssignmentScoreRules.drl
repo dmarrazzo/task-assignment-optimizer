@@ -33,7 +33,7 @@ import java.time.temporal.ChronoUnit;
 global BendableScoreHolder scoreHolder;
 
 // ############################################################################
-// Hard constraints level 0 - near 0
+// Hard constraints level 0 
 // ############################################################################
 
 
@@ -50,14 +50,10 @@ rule "Gwendal - Skill requirements "
 		scoreHolder.addHardConstraintMatch(kcontext, 0, -1);
 end
 
-
-
-
-
 //TODO : It is a good practice to indicate how the solution is from the perfect score, so the solver can see an improvement in the solutions
 
 // ############################################################################
-// Hard constraints level 1 - near 0
+// Hard constraints level 1 
 // ############################################################################
 
 
@@ -66,13 +62,8 @@ rule "High priority task must be accomplished on time"
     when
         TaskPart(employee != null, task.priority == 1, $outOfTime : outOfTime)
     then
-        scoreHolder.addHardConstraintMatch(kcontext, 0, $outOfTime);
+        scoreHolder.addHardConstraintMatch(kcontext, 1, $outOfTime);
 end
-
-
-// ############################################################################
-// Hard constraints level 2 - near 0
-// ############################################################################
 
 // ############################################################################
 // Soft constraints level 0 - near 0
@@ -80,11 +71,10 @@ end
 
 rule "Gwendal - Tasks should be finished before the end of the day"
     when
-
-        TaskPart(employee != null, $readyTime : readyTime, $readyTime.isAfter(LocalTime.parse("14:00")))
-        //TODO faire un calcul du dépassement d'heure pour l'utiliser dans le score 
+        TaskPart( $e : employee != null, $readyTime : readyTime )
+        Employee( this == $e, $endTime : endTime < $readyTime )
     then
-        int  outOfTime = (int) ChronoUnit.MINUTES.between($readyTime, LocalTime.parse("14:00"));
+        int  outOfTime = (int) ChronoUnit.MINUTES.between($readyTime, $endTime);
         scoreHolder.addSoftConstraintMatch(kcontext, 0, outOfTime);
 end
 
@@ -100,7 +90,7 @@ end
 
 
 ////////////////////////////////////
-// TODO mélanger les 2 rules pour qu'on fixe un scor en fonction de la priorité et du dépassement : outOfTime / $priority (plus la priorité est grande, moins c'est grave si on dépasse)
+// TODO mï¿½langer les 2 rules pour qu'on fixe un scor en fonction de la prioritï¿½ et du dï¿½passement : outOfTime / $priority (plus la prioritï¿½ est grande, moins c'est grave si on dï¿½passe)
 ////////////////////////////////////
 
 
@@ -110,17 +100,6 @@ when
     then
         scoreHolder.addSoftConstraintMatch(kcontext, 0, $outOfTime );
 end
-
-rule "Gwendal - Other priority tasks must be accomplished on time"
-    when
-
-        TaskPart(employee != null, $priority : task.priority,  task.priority != 1, $readyTime : readyTime, $readyTime.isAfter(LocalTime.parse("14:00")))
-    then
-        scoreHolder.addSoftConstraintMatch(kcontext, 0, - (6 - $priority));
-end
-
-
-
 
 rule "Same employee - Keep parts together"
     when
@@ -134,8 +113,6 @@ rule "Same employee - Keep parts together"
        	scoreHolder.addSoftConstraintMatch(kcontext, 0, -1 );
 end
 
-
-
 rule "Same employee - Avoid gaps between parts of a task"
     when
     	$tp : TaskPart (task.maxParts > 1, $t : task, $startTime : startTime)
@@ -143,30 +120,6 @@ rule "Same employee - Avoid gaps between parts of a task"
     then
        	scoreHolder.addSoftConstraintMatch(kcontext, 0, -1 );
 end
-
-
-
-//A ne mettre en place que pour le 2e tir de perf, car c'est une contrainte plus complexe, permettra de voir les changements
-/*rule "Gwendal - Assign first tasks to employees with the higher priorities"
-	when
-		//If there is an assigned taskPart
-		TaskPart(employee != null, $partEmployee : employee, $skill : task.requiredSkill)
-		//The higher the priority property for the task required skill is, the more we lower the score
-		
-		$employeeSkills : ArrayList (size == 1)
-							from collect ( Skill(category == $skill.category)
-								from $partEmployee.skillSet)
-		
-	then
-	
-		// 1 is the "higher" priority value we can have, no penality for this case
-		// The penality starts at a priority value of 2
-		 scoreHolder.addSoftConstraintMatch(kcontext, 0, 1 - ((Skill)$employeeSkills.get(0)).getPriority() );
-		
-end*/
-
-
-
 
 // ############################################################################
 // Soft constraints level 1
