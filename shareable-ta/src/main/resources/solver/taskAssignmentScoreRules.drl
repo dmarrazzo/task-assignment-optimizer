@@ -65,6 +65,14 @@ rule "High priority task must be accomplished on time"
         scoreHolder.addHardConstraintMatch(kcontext, 1, $outOfTime);
 end
 
+rule "Priority order"
+    when
+        TaskPart(employee != null, $priority : task.priority , $nextTaskPart : nextTaskPart != null)
+        TaskPart(this == $nextTaskPart, $nextPriority : task.priority < $priority)
+    then
+        scoreHolder.addHardConstraintMatch(kcontext, 1, $nextPriority - $priority );
+end
+
 // ############################################################################
 // Soft constraints level 0 - near 0
 // ############################################################################
@@ -144,11 +152,4 @@ rule "Minimize the number of employees"
         scoreHolder.addSoftConstraintMatch(kcontext, 2, -1);
 end
 
-rule "Priority order"
-    when
-        TaskPart(employee != null, $priority : task.priority , $nextTaskPart : nextTaskPart != null)
-        TaskPart(this == $nextTaskPart, $nextPriority : task.priority < $priority)
-    then
-        scoreHolder.addSoftConstraintMatch(kcontext, 2, $nextPriority - $priority );
-end
 
