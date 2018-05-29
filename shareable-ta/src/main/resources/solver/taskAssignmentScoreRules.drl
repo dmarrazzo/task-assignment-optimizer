@@ -58,7 +58,7 @@ end
 rule "Same employee - Keep parts together"
     when
     	$tp : TaskPart (task.maxParts > 1, $e : employee, $t : task)
-    	$parts : List() from collect ( TaskPart ( task == $t ) )
+    	$parts : List( size > 1 ) from collect ( TaskPart ( task == $t, employee == $e ) )
         exists TaskPart ( employee == $e, 
         			     task == $t,
                          previousTaskPartOrEmployee not memberOf $parts,
