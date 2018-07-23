@@ -1,5 +1,0 @@
-# Employees 
-# full name, skill1 [,skill2]*
-emp1,writing,reading
-emp2,writing,reading
-emp3,reading
