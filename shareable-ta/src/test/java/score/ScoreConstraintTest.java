@@ -45,7 +45,7 @@ public class ScoreConstraintTest {
 		taskList.add(task);
 		solution.setTaskList(taskList);
 
-		scoreVerifier.assertHardWeight("Same employee - Keep parts together", 0, 0, solution);
+		scoreVerifier.assertSoftWeight("Same employee - Keep parts together", 0, 0, solution);
 	}
 
 	@Test

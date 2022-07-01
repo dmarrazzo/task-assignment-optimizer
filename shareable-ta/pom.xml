@@ -8,53 +8,40 @@
 	<!-- <packaging>kjar</packaging> -->
 	<name>Splittable Task Assignment</name>
 	<properties>
-		<version>7.0.0.GA-redhat-2</version>
+		<version.optaplanner>7.6.0.Final</version.optaplanner>
 	</properties>
 	<dependencies>
 		<dependency>
 			<groupId>org.optaplanner</groupId>
 			<artifactId>optaplanner-core</artifactId>
+			<version>${version.optaplanner}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.optaplanner</groupId>
 			<artifactId>optaplanner-benchmark</artifactId>
+			<version>${version.optaplanner}</version>
 		</dependency>
 		<!-- Testing -->
 		<dependency>
 			<groupId>org.optaplanner</groupId>
 			<artifactId>optaplanner-test</artifactId>
-			<version>7.5.0.Final</version>
-			<scope>test</scope>
+			<version>${version.optaplanner}</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
+			<version>4.13.2</version>
 			<scope>test</scope>
 		</dependency>
 		<!-- Logging -->
 		<dependency>
 			<groupId>ch.qos.logback</groupId>
 			<artifactId>logback-classic</artifactId>
+			<version>1.2.11</version>
 		</dependency>
 	</dependencies>
-	<dependencyManagement>
-		<dependencies>
-			<dependency>
-				<groupId>org.jboss.bom.rhdm</groupId>
-				<artifactId>rhdm-platform-bom</artifactId>
-				<version>${version}</version>
-				<type>pom</type>
-				<scope>import</scope>
-			</dependency>
-		</dependencies>
-	</dependencyManagement>
 	<build>
 		<plugins>
-			<plugin>
-				<groupId>org.kie</groupId>
-				<artifactId>kie-maven-plugin</artifactId>
-				<extensions>true</extensions>
-			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
